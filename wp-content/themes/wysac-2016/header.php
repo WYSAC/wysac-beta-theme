@@ -17,10 +17,12 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body class="container-fluid">
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'wysac-beta' ); ?></a>
 
