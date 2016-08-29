@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for our theme.
+ * The header for the home page.
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
@@ -26,7 +26,7 @@
 <div id="page" class="site">
 	<!--Need a Screenreader skip link here-->
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header masthead-home-page" role="banner">
 		<!-- TOP BAR
 		=================================== -->
 		<div class="topbar">
@@ -48,7 +48,7 @@
 					<div class="row">
 						<div class="col-md-2">
 							<div class="site-logo">
-								<a href="#"><img src="http://placehold.it/165x165" /></a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="http://placehold.it/165x165" /></a>
 							</div> <!--.site-logo-->
 						</div><!--.col-md-2-->
 						<div class="col-md-10">
@@ -59,6 +59,22 @@
 					</div><!--.row-->
 				</div> <!--.container-->
 			</div><!--.site-branding-->
+		<!-- Jumbotron
+		=================================== -->
+		<div class="container front-page-banner">
+			<div class="row">
+				<div class="col-md-12">
+									<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php
+
+						$description = get_bloginfo( 'description', 'display' );
+						if ( $description || is_customize_preview() ) : ?>
+							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<?php
+						endif; ?>
+				</div> <!--.col-md-12-->
+			</div><!--.row-->
+		</div><!--.container-->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
