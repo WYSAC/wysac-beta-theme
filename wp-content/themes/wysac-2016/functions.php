@@ -167,14 +167,14 @@ add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
  			</td>
  		</tr>
 		<tr><!-- FACEBOOK PROFILE -->
- 			<th><label for="facebook">Facebook Profile</label></th>
+ 			<th><label for="facebook">Facebook</label></th>
  			<td>
  				<input type="text" name="facebook" id="facebook" value="<?php echo esc_attr( get_the_author_meta( 'facebook', $user->ID ) ); ?>" class="regular-text code" /><br />
  				<span class="description">Please enter the link to your Facebook profile</span>
  			</td>
  		</tr>
 		<tr><!-- LINKED IN PROFILE -->
-			<th><label for="linkedin">LinkedIn Profile</label></th>
+			<th><label for="linkedin">LinkedIn</label></th>
 			<td>
 				<input type="text" name="linkedin" id="linkedin" value="<?php echo esc_attr( get_the_author_meta( 'linkedin', $user->ID ) ); ?>" class="regular-text code" /><br />
 				<span class="description">Please enter the link to your LinkedIn profile</span>
@@ -186,10 +186,16 @@ add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
 		<tr>
 				<th><label for="education">Educational History</label></th>
 				<td>
-					<textarea name="education" id="education" rows="5" cols="30" value="<?php echo esc_attr(get_the_author_meta('education', $user->ID) ); ?>" class="regular-text" ></textarea></br/><span class="description">Educational history</span>
-			</td>
+					<textarea name="education" id="education" rows="5" cols="30" value="<?php echo esc_attr(get_the_author_meta('education', $user->ID) ); ?>" class="regular-text" ></textarea></br/><span class="description">Description TK</span>
+				</td>
 		</tr>
-	</table><!-- end Education -->
+		<tr>
+				<th><label for="work-history">Work History</label></th>
+				<td>
+					<textarea name="work-history" id="work-history" rows="5" cols="30" value="<?php echo esc_attr(get_the_author_meta('work-history', $user->ID) ); ?>" class="regular-text" ></textarea></br/><span class="description">Description TK</span>
+				</td>
+		</tr>
+	</table><!-- end Education & Experience -->
  <?php };
 
  /**
