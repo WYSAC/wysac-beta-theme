@@ -13,13 +13,35 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wysac-beta' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'wysac-beta' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'wysac-beta' ), 'wysac-beta', '<a href="http://underscores.me/" rel="designer">Jessica Schillinger</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer id="colophon" class="site-footer container-fluid" role="contentinfo">
+		<!-- FOOTER NAVIGATION
+		=================================== -->
+			<div class="row">
+				<div class="col-md-12">
+					<nav class="footer-nav" role="navigation">
+						<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
+					</nav><!--.footer-navigation-->
+				</div><!--.col-md-12-->
+			</div><!--.row-->
+			<!-- FOOTER LEGAL NAVIGATION
+			=================================== -->
+			<div class="row">
+				<div class="col-md-12">
+					<nav class="footer-legal-nav" role="navigation">
+						<?php wp_nav_menu( array( 'theme_location' => 'footer-legal', 'menu_id' => 'Footer-Legal' ) ); ?>
+					</nav><!--.footer-navigation-->
+				</div><!--.col-md-12-->
+			</div><!--.row-->
+			<div class="row">
+				<!-- SITE INFO / COPYRIGHT
+				=================================== -->
+				<div class=" col-md-12 site-info">
+					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wysac-beta' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'wysac-beta' ), 'WordPress' ); ?></a>
+					<span class="sep"> | </span>
+					<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'wysac-beta' ), 'wysac-beta', '<a href="http://underscores.me/" rel="designer">Jessica Schillinger</a>' ); ?>
+				</div><!-- .site-info -->
+			</div><!--.row-->
+	</footer><!-- #colophon .site-footer .container -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -57,7 +57,7 @@ padding:10rem 0;
 }
 
 /*--------------------------------------------------------------
-# ELEMENTS
+# STRUCTURAL ELEMENTS
 ----------------------------------------------------------------*/
 
 .topbar {
@@ -74,6 +74,15 @@ padding:10rem 0;
 	background-image: url('https://my.vetmatrixbase.com/clients/12679/images/Gorgeous_puppies.jpg');
 	background-size: cover;
 }
+
+/*--------------------------------------------------------------
+## FOOTER
+----------------------------------------------------------------*/
+.site-footer {
+	background-color: rgb(74,74,74);
+}
+
+
 /*--------------------------------------------------------------
 # FORMS
 ----------------------------------------------------------------*/
@@ -89,6 +98,10 @@ padding:10rem 0;
 	height:165px;
 	background-color:rgba(232,229,229,0.2);
 }
+
+/*--------------------------------------------------------------
+## PRIMARY MENU
+----------------------------------------------------------------*/
 
 .main-navigation ul {
 	list-style: none;
@@ -115,6 +128,43 @@ padding:10rem 0;
 	text-decoration:none;
 }
 
+/*--------------------------------------------------------------
+## FOOTER MENU
+----------------------------------------------------------------*/
+
+.footer-nav ul,
+.footer-legal-nav ul {
+	list-style: none;
+	padding: 0 0;
+	margin: 0 0;
+}
+
+.footer-nav li,
+.footer-legal-nav li {
+	float:left;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.footer-legal-nav li a:link,
+.footer-legal-nav li a:visited {
+	display: block;
+	padding:3rem;
+	color:#fff;
+
+}
+.footer-nav li a:hover,
+.footer-nav li a:active,
+.footer-nav li a:focus,
+.footer-legal-nav li a:hover,
+.footer-legal-nav li a:active,
+.footer-legal-nav li a:focus {
+	text-decoration: underline;
+}
+
+.footer-legal-nav a:link {
+	font-size: 80%;
+}
 
 
 /*--------------------------------------------------------------
