@@ -207,7 +207,7 @@ function wysac_media_mention() {
 		'label'                 => __( 'Media Mention', 'text_domain' ),
 		'description'           => __( 'Research, people and projects mentioned elsewhere', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor' ),
+		'supports'              => array( 'title'),
 		'taxonomies'            => false,
 		'hierarchical'          => false,
 		'public'                => true,
@@ -265,14 +265,14 @@ add_action( 'add_meta_boxes', 'source_information_add_meta_box' );
 function source_information_html( $post) {
 	wp_nonce_field( '_source_information_nonce', 'source_information_nonce' ); ?>
 
-	<p>Research, people or projects mentioned elsewhere.</p>
+	<p><em>Research, people or projects mentioned elsewhere.</em></p>
 
 	<p>
 		<label for="source_information_source_name"><?php _e( 'Source Name', 'source_information' ); ?></label><br>
-		<input type="text" name="source_information_source_name" id="source_information_source_name" value="<?php echo source_information_get_meta( 'source_information_source_name' ); ?>">
+		<input type="text" name="source_information_source_name" id="source_information_source_name" class="regular-text" value="<?php echo source_information_get_meta( 'source_information_source_name' ); ?>"><br/><span class="description">Newpaper, TV station, blog, etc.</span>
 	</p>	<p>
 		<label for="source_information_source_url"><?php _e( 'Source URL', 'source_information' ); ?></label><br>
-		<input type="text" name="source_information_source_url" id="source_information_source_url" value="<?php echo source_information_get_meta( 'source_information_source_url' ); ?>">
+		<input type="text" name="source_information_source_url" id="source_information_source_url" class="regular-text code" value="<?php echo source_information_get_meta( 'source_information_source_url' ); ?>"><br/><span class="description">PERMALINK to the specific mention within the source.  Newspaper article online, YouTube video, etc.</span>
 	</p><?php
 }
 
