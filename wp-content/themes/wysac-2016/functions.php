@@ -35,6 +35,20 @@ function wysac_beta_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+/*
+ * Enable support for Post Formats
+ *
+ */
+
+ add_theme_support('post-formats', array (
+		'gallery',
+		'link',
+		'image',
+		'quote',
+		'video')
+	);
+
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -150,68 +164,3 @@ function theme_add_bootstrap() {
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
-
-/**
- *	Add Custom Fields on User Profile in the Admin
- **/
- add_action( 'show_user_profile', 'wysac_beta_extra_user_fields' );
- add_action( 'edit_user_profile', 'wysac_beta_extra_user_fields' );
-
- function wysac_beta_extra_user_fields( $user ) { ?>
-
- 	<h3>Social Media Links</h3>
- 	<table class="form-table">
- 		<tr> <!-- TWITTER PROFILE -->
- 			<th><label for="twitter">Twitter</label></th>
- 			<td>
- 				<input type="text" name="twitter" id="twitter" value="<?php echo esc_attr( get_the_author_meta( 'twitter', $user->ID ) ); ?>" class="regular-text" /><br />
- 				<span class="description">Please enter your Twitter username.</span>
- 			</td>
- 		</tr>
-		<tr><!-- FACEBOOK PROFILE -->
- 			<th><label for="facebook">Facebook</label></th>
- 			<td>
- 				<input type="text" name="facebook" id="facebook" value="<?php echo esc_attr( get_the_author_meta( 'facebook', $user->ID ) ); ?>" class="regular-text code" /><br />
- 				<span class="description">Please enter the link to your Facebook profile</span>
- 			</td>
- 		</tr>
-		<tr><!-- LINKED IN PROFILE -->
-			<th><label for="linkedin">LinkedIn</label></th>
-			<td>
-				<input type="text" name="linkedin" id="linkedin" value="<?php echo esc_attr( get_the_author_meta( 'linkedin', $user->ID ) ); ?>" class="regular-text code" /><br />
-				<span class="description">Please enter the link to your LinkedIn profile</span>
-			</td>
-		</tr>
- 	</table><!-- end Social Media Links table-->
-	<h3>Education & Experience</h3>
-	<table class="form-table">
-		<tr>
-				<th><label for="education">Educational History</label></th>
-				<td>
-					<textarea name="education" id="education" rows="5" cols="30" value="<?php echo esc_attr(get_the_author_meta('education', $user->ID) ); ?>" class="regular-text" ></textarea></br/><span class="description">Description TK</span>
-				</td>
-		</tr>
-		<tr>
-				<th><label for="work-history">Work History</label></th>
-				<td>
-					<textarea name="work-history" id="work-history" rows="5" cols="30" value="<?php echo esc_attr(get_the_author_meta('work-history', $user->ID) ); ?>" class="regular-text" ></textarea></br/><span class="description">Description TK</span>
-				</td>
-		</tr>
-	</table><!-- end Education & Experience -->
- <?php };
-
- /**
-  *	 Make sure the Custom Fields for User Profiles Saves to Database
-	**/
-
-add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
-add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
-
-function my_save_extra_profile_fields( $user_id ) {
-
-			if ( !current_user_can( 'edit_user', $user_id ) )
-				return false;
-
-			/* Copy and paste this line for additional fields. Make sure to change 'twitter' to the field ID. */
-			update_usermeta( $user_id, 'twitter', $_POST['twitter'] );
-};
