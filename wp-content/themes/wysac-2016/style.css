@@ -51,7 +51,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later and Bootst
 	text-align:center;
 }
 
-/*text on front page */
+/*site title on front page */
 .front-page-banner {
 padding:10rem 0;
 }
@@ -73,6 +73,13 @@ padding:10rem 0;
 	height:600px;
 	background-image: url('https://my.vetmatrixbase.com/clients/12679/images/Gorgeous_puppies.jpg');
 	background-size: cover;
+}
+
+.full-width {
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: initial;
 }
 
 /*--------------------------------------------------------------
@@ -132,11 +139,12 @@ padding:10rem 0;
 ## FOOTER MENU
 ----------------------------------------------------------------*/
 
+
 .footer-nav ul,
 .footer-legal-nav ul {
 	list-style: none;
 	padding: 0 0;
-	margin: 0 0;
+	margin: 0 auto;
 }
 
 .footer-nav li,
@@ -148,10 +156,9 @@ padding:10rem 0;
 .footer-nav li a:visited,
 .footer-legal-nav li a:link,
 .footer-legal-nav li a:visited {
-	display: block;
 	padding:3rem;
 	color:#fff;
-
+	display: block;
 }
 .footer-nav li a:hover,
 .footer-nav li a:active,
@@ -166,6 +173,13 @@ padding:10rem 0;
 	font-size: 80%;
 }
 
+.footer-nav ul {
+	width:80%;
+}
+
+.footer-legal-nav ul {
+	width: 40%;
+}
 
 /*--------------------------------------------------------------
 ## LINKS

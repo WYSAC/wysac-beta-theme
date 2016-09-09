@@ -48,7 +48,7 @@
 					<div class="row">
 						<div class="col-md-2">
 							<div class="site-logo">
-								<a href="#"><img src="http://placehold.it/165x165" /></a>
+								<a href="<?php echo get_home_url();?>"><img src="http://placehold.it/165x165" /></a>
 							</div> <!--.site-logo-->
 						</div><!--.col-md-2-->
 						<div class="col-md-10">
