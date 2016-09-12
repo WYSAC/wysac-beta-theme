@@ -201,3 +201,31 @@ a:hover.uw-linkback,
 a:active.uw-linkback {
 	color:#fff;
 }
+
+/*--------------------------------------------------------------
+# WIDGETS (and stuff that acts like widgets)
+----------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## HOME PAGE RECENT POSTS
+----------------------------------------------------------------*/
+
+.recent-post-box {
+	border: 1px solid black;
+	border-top: 15px solid red;
+	margin: 0 0.25rem 0.5rem 0;
+	padding:1em;
+}
+
+/*--------------------------------------------------------------
+## CALL TO ACTION DIV
+----------------------------------------------------------------*/
+
+.call-to-action {
+	background-color: blue;
+	padding: 3rem 0;
+}
+
+.class-to-action > h3 {
+	color:#fff;
+}

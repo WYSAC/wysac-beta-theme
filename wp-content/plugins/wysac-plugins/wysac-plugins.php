@@ -20,6 +20,7 @@ URL: http://www.uwyo.edu/wysac
      ~ Source Name / Media Outlet
      ~ URL to source
 ## Expert Quote Post Type
+## Custom Image Sizes
 
 * * * * *
 ----------------------------------------------------------------*/
@@ -291,7 +292,10 @@ function wysac_expert_quote() {
 add_action( 'init', 'wysac_expert_quote', 0 );
 // End Expert Quote
 
+/*--------------------------------------------------------------
+## Custom Image Sizes
+----------------------------------------------------------------*/
 
-
+add_image_size( 'recent-post-box', 320, 230, array ('center', 'center') );
 
 //END OF PLUGIN ?>

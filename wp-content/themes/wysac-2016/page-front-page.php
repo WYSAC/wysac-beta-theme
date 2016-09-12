@@ -16,6 +16,21 @@ get_header('home'); ?>
 			<section class="full-width">
 					<div class="container">
 								<h1>Most Recent Posts</h1>
+										<?php // Define our WP Query Parameters
+										$the_query = new WP_Query( 'posts_per_page=5' );
+										// Start our WP Query
+										while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+												<div class="col-md-4">
+													<div class="recent-post-box">
+													<small><?php the_time('m.d.Y')?></small>
+													<p><?php the_post_thumbnail('recent-post-box'); ?></p>
+													<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+													<p><a href="<?php the_permalink(); ?>"><span class="glyphicon glyphicon-folder-open"></span>  View Project</a></p>
+												</div><!--.recent-post-box-->
+											</div><!--.col-md-4-->
+										<?php endwhile;
+
+										wp_reset_postdata();?>
 					</div>
 				</section>
 				<section class="full-width" style="background-color:gray;">
@@ -30,10 +45,14 @@ get_header('home'); ?>
 						</div>
 					</div>
 				</section>
-				<section class="full-width call-to-action" style="background-color:red;">
+				<section class="full-width call-to-action">
 					<div class="container">
-					<h3>We help people do awesome things</h3>
-					<a class="btn btn-primary pull-right" href="#" role="button">Contact Us</a>
+						<div class="col-md-8">
+							<h3>We help people do awesome things</h3>
+						</div>
+						<div class="col-md-4">
+								<a class="btn btn-primary pull-right" href="#" role="button">Contact Us</a>
+							</div>
 				</div>
 			</section>
 			<section class="full-width">
