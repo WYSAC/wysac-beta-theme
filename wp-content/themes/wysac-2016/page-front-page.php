@@ -76,8 +76,9 @@ get_header('home'); ?>
 								</div>
 								<!--Get the Quote-->
 								<div class="col-md-8">
+									<h5>From Our Experts</h5>
 									<h3><?php the_content(); ?></h3>
-									<h5>- <?php the_title(); ?></h5>
+									<h4>- <?php the_title(); ?></h4>
 								</div>
 							<?php
 							endwhile;
