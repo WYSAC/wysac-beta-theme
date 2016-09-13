@@ -15,6 +15,8 @@ get_header('home'); ?>
 		<main id="main" class="site-main" role="main">
 			<section class="full-width">
 					<div class="container">
+						<!-- MOST RECENT POSTS
+						=================================== -->
 								<h1>Most Recent Posts</h1>
 										<?php // Define our WP Query Parameters
 										$the_query = new WP_Query( 'posts_per_page=5' );
@@ -22,17 +24,18 @@ get_header('home'); ?>
 										while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 												<div class="col-md-4">
 													<div class="recent-post-box">
-													<small><?php the_time('m.d.Y')?></small>
-													<p><?php the_post_thumbnail('recent-post-box'); ?></p>
-													<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-													<p><a href="<?php the_permalink(); ?>"><span class="glyphicon glyphicon-folder-open"></span>  View Project</a></p>
+														<small><?php the_time('m.d.Y')?></small>
+														<p><?php the_post_thumbnail('recent-post-box'); ?></p>
+														<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+														<p><a href="<?php the_permalink(); ?>"><span class="glyphicon glyphicon-folder-open"></span>  View Project</a></p>
 												</div><!--.recent-post-box-->
 											</div><!--.col-md-4-->
 										<?php endwhile;
-
-										wp_reset_postdata();?>
-					</div>
-				</section>
+													wp_reset_postdata();?>
+					</div><!--.container-->
+				</section><!--end Recent Posts-->
+				<!-- CLIENT MAP
+				=================================== -->
 				<section class="full-width" style="background-color:gray;">
 					<div class="container">
 						<div class="row" >
@@ -44,8 +47,10 @@ get_header('home'); ?>
 							</div>
 						</div>
 					</div>
-				</section>
+				</section><!--end Client Map-->
 				<section class="full-width call-to-action">
+					<!-- CALL TO ACTION
+					=================================== -->
 					<div class="container">
 						<div class="col-md-8">
 							<h3>We help people do awesome things</h3>
@@ -54,16 +59,26 @@ get_header('home'); ?>
 								<a class="btn btn-primary pull-right" href="#" role="button">Contact Us</a>
 							</div>
 				</div>
-			</section>
+			</section><!--end Call to Action-->
 			<section class="full-width">
-			</section>
+					<div class="container">
+					<!-- EXPERT QUOTES
+					=================================== -->
+
+
+				</div><!--.container-->
+			</section><!--end Expert Quotes-->
 			<section class="full-width">
+				<!-- SITE TAGS
+				=================================== -->
 				<div class="container">
 						<h3>Site Tags</h3>
 						<p> Get all the tags and put them in cool boxes</p>
 				</div>
-			</section>
+			</section><!-- end Site Tags -->
 			<section class="full-width" style="background-color:green;">
+				<!-- MEDIA MENTIONS
+				=================================== -->
 				<div class="container">
 					<div class="col-md-2">
 						<img src="http://placehold.it/60x60"/>
@@ -73,10 +88,12 @@ get_header('home'); ?>
 						<h1>Title of the Media Mention</h1>
 					</div>
 				</div>
-			</section>
+			</section><!--end Media Mentions-->
 			<section>
+				<!-- FRONT PAGE CONTENT
+				=================================== -->
 				<div class="container">
-					<?php
+					<?php //Get the content of the Front Page and put it here
 					while ( have_posts() ) : the_post();
 						get_template_part( 'template-parts/content', 'page' );
 					endwhile; // End of the loop.
