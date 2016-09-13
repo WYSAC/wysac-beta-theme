@@ -60,12 +60,29 @@ get_header('home'); ?>
 							</div>
 				</div>
 			</section><!--end Call to Action-->
-			<section class="full-width">
+			<section class="full-width quote-box">
 					<div class="container">
 					<!-- EXPERT QUOTES
 					=================================== -->
-
-
+							<?php
+							//Get a single quote randomly on load
+							$args = array ('post_type'=>'expert-quote', 'orderby'=>'rand', 'posts_per_page'=>'1');
+							$the_query = new WP_Query($args);
+							//The Loop
+							while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+							<!--Get the Expert's Photo-->
+								<div class="col-md-4">
+									<?php the_post_thumbnail('profile-image', array('class'=>'img-circle pull-right', 'style'=>'margin-right:5rem;') ); ?>
+								</div>
+								<!--Get the Quote-->
+								<div class="col-md-8">
+									<h3><?php the_content(); ?></h3>
+									<h5>- <?php the_title(); ?></h5>
+								</div>
+							<?php
+							endwhile;
+							wp_reset_postdata();
+							?>
 				</div><!--.container-->
 			</section><!--end Expert Quotes-->
 			<section class="full-width">

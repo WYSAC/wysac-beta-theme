@@ -297,5 +297,8 @@ add_action( 'init', 'wysac_expert_quote', 0 );
 ----------------------------------------------------------------*/
 
 add_image_size( 'recent-post-box', 320, 230, array ('center', 'center') );
+add_image_size( 'profile-image', 165,165, array ('center', 'center') );
+
+
 
 //END OF PLUGIN ?>

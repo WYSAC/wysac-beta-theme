@@ -229,3 +229,11 @@ a:active.uw-linkback {
 .class-to-action > h3 {
 	color:#fff;
 }
+
+/*--------------------------------------------------------------
+## EXPERT QUOTES
+----------------------------------------------------------------*/
+.quote-box {
+	padding:4rem;
+	background-color: purple;
+}
