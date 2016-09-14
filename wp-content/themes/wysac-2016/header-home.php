@@ -36,7 +36,7 @@
 						<a href="http://www.uwyo.edu/" class="uw-linkback"><small>University of Wyoming</small></a>
 					</div>
 					<div class="col-md-6">
-						<a href="http://www.uwyo.edu/" ><img src="http://placehold.it/75x25" class="pull-right" /></a>
+						<a href="http://www.uwyo.edu/" ><img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/uw_white_52x25.png" class="uw-logo pull-right" /></a>
 					</div>
 				</div> <!--.row-->
 			</div><!--.container-->
@@ -48,7 +48,7 @@
 					<div class="row">
 						<div class="col-md-2">
 							<div class="site-logo">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="http://placehold.it/165x165" /></a>
+								<a href="<?php echo get_home_url();?>"><?php the_custom_logo(); ?></a>
 							</div> <!--.site-logo-->
 						</div><!--.col-md-2-->
 						<div class="col-md-10">

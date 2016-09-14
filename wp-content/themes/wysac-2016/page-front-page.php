@@ -1,7 +1,6 @@
 <?php
 /**
  * The template for the front page.
-
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -25,7 +24,7 @@ get_header('home'); ?>
 												<div class="col-md-4">
 													<div class="recent-post-box">
 														<small><?php the_time('m.d.Y')?></small>
-														<p><?php the_post_thumbnail('recent-post-box'); ?></p>
+														<p><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></p>
 														<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 														<p><a href="<?php the_permalink(); ?>"><span class="glyphicon glyphicon-folder-open"></span>  View Project</a></p>
 												</div><!--.recent-post-box-->
@@ -91,7 +90,7 @@ get_header('home'); ?>
 				=================================== -->
 				<div class="container">
 						<h3>Site Tags</h3>
-						<p> Get all the tags and put them in cool boxes</p>
+						<?php wp_tag_cloud(); ?>
 				</div>
 			</section><!-- end Site Tags -->
 			<section class="full-width" style="background-color:green;">

@@ -33,6 +33,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later and Bootst
 # Alignments
 # Clearings
 # Widgets
+# Images
 # Content
 	## Posts and pages
 	## Comments
@@ -236,4 +237,15 @@ a:active.uw-linkback {
 .quote-box {
 	padding:4rem;
 	background-color: purple;
+}
+
+/*--------------------------------------------------------------
+# IMAGES
+----------------------------------------------------------------*/
+.uw-logo {
+	opacity:0.5;
+}
+
+.uw-logo:hover {
+	opacity: 1;
 }

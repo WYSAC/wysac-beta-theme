@@ -21,6 +21,7 @@ URL: http://www.uwyo.edu/wysac
      ~ URL to source
 ## Expert Quote Post Type
 ## Custom Image Sizes
+## Custom Logo Support
 
 * * * * *
 ----------------------------------------------------------------*/
@@ -300,5 +301,16 @@ add_image_size( 'recent-post-box', 320, 230, array ('center', 'center') );
 add_image_size( 'profile-image', 165,165, array ('center', 'center') );
 
 
+/*--------------------------------------------------------------
+## Custom Logo Support
+----------------------------------------------------------------*/
+function theme_prefix_setup() {
+    add_theme_support( 'custom-logo', array(
+    	'height'      => 165,
+    	'width'       => 165,
+    	'header-text' => array( 'site-title', 'site-description' ),
+    ) );
+  }
+  add_action('after_setup_theme', 'theme_prefix_setup');
 
 //END OF PLUGIN ?>
