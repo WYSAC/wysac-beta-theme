@@ -18,13 +18,13 @@ get_header('home'); ?>
 						=================================== -->
 								<h1>Most Recent Posts</h1>
 										<?php // Define our WP Query Parameters
-										$the_query = new WP_Query( 'posts_per_page=5' );
+										$the_query = new WP_Query( 'posts_per_page=6' );
 										// Start our WP Query
 										while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 												<div class="col-md-4">
 													<div class="recent-post-box">
 														<small><?php the_time('m.d.Y')?></small>
-														<p><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></p>
+														<p><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></a></p>
 														<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 														<p><a href="<?php the_permalink(); ?>"><span class="glyphicon glyphicon-folder-open"></span>  View Project</a></p>
 												</div><!--.recent-post-box-->
@@ -35,14 +35,14 @@ get_header('home'); ?>
 				</section><!--end Recent Posts-->
 				<!-- CLIENT MAP
 				=================================== -->
-				<section class="full-width" style="background-color:gray;">
+				<section class="full-width client-map-box">
 					<div class="container">
 						<div class="row" >
 								<div class="col-md-4">
 									<h3>Description of the Map</h3>
 							</div>
 							<div class="col-md-8">
-								<img src="http://placehold.it/500x300" class="pull-right"/>
+								<img class="us-map" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Blank_US_map_borders_labels.svg" />
 							</div>
 						</div>
 					</div>
@@ -93,12 +93,12 @@ get_header('home'); ?>
 						<?php wp_tag_cloud(); ?>
 				</div>
 			</section><!-- end Site Tags -->
-			<section class="full-width" style="background-color:green;">
+			<section class="full-width media-mention-box">
 				<!-- MEDIA MENTIONS
 				=================================== -->
 				<div class="container">
 					<div class="col-md-2">
-						<img src="http://placehold.it/60x60"/>
+						<img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/iconmonstr-newspaper-3-240.png" class="media-mention-icon"/>
 					</div>
 					<div class="col-md-10">
 						<h5>Research in the Media</h5>

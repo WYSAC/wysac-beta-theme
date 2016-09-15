@@ -17,25 +17,26 @@
 		<div class="container">
 		<!-- FOOTER NAVIGATION
 		=================================== -->
+			<div class="col-md-12 main-footer-nav">
 					<nav class="footer-nav" role="navigation">
 						<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
 					</nav><!--.footer-navigation-->
+				</div><!-- .main-footer-nav-->
 			<!-- FOOTER LEGAL NAVIGATION
 			=================================== -->
+			<div class="col-md-12 secondary-footer-nav">
 					<nav class="footer-legal-nav" role="navigation">
 						<?php wp_nav_menu( array( 'theme_location' => 'footer-legal', 'menu_id' => 'Footer-Legal' ) ); ?>
 					</nav><!--.footer-navigation-->
-			<div class="row">
+				</div><!-- .secondary-footer-nav-->
 				<!-- SITE INFO / COPYRIGHT
 				=================================== -->
-				<div class=" col-md-12 site-info">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wysac-beta' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'wysac-beta' ), 'WordPress' ); ?></a>
-					<span class="sep"> | </span>
-					<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'wysac-beta' ), 'wysac-beta', '<a href="http://underscores.me/" rel="designer">Jessica Schillinger</a>' ); ?>
+				<div class="col-md-12 site-info">
+					<p class="small">&copy; <?php the_time('Y'); ?> Wyoming Survey & Analysis Center at the University of Wyoming</p>
+
 				</div><!-- .site-info -->
-			</div><!--.row-->
-		</div>
-	</footer><!-- #colophon .site-footer .container -->
+		</div><!--.container -->
+	</footer><!-- #colophon .site-footer -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

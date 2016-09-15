@@ -47,15 +47,33 @@ Underscores is distributed under the terms of the GNU GPL v2 or later and Bootst
 # TYPOGRAPHY
 ----------------------------------------------------------------*/
 
-.site-title,
-.site-description {
+h1 {
+	font-family:'Montserrat', 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 3em;
+	color:#4A4A4A;
+}
+
+h2 {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 2em;
+}
+
+h3 {
+
+}
+
+h1.site-title {
+	color:#fff;
+	font-weight: bold;
+	text-align: center;
+}
+
+h2.site-description {
+	font-family:'Montserrat', 'Open Sans', Helvetica, Arial, sans-serif;
+	color:#fff;
 	text-align:center;
 }
 
-/*site title on front page */
-.front-page-banner {
-padding:10rem 0;
-}
 
 /*--------------------------------------------------------------
 # STRUCTURAL ELEMENTS
@@ -72,8 +90,13 @@ padding:10rem 0;
 .masthead-home-page {
 	width:100%;
 	height:600px;
-	background-image: url('https://my.vetmatrixbase.com/clients/12679/images/Gorgeous_puppies.jpg');
+	background-image: url('http://localhost:8888/wp-content/uploads/2016/09/15.07.22_Rodney-Chelsea_1024.png');
 	background-size: cover;
+}
+
+/*site title on front page */
+.front-page-banner {
+padding:10rem 0;
 }
 
 .full-width {
@@ -91,6 +114,10 @@ padding:10rem 0;
 	background-color: rgb(74,74,74);
 }
 
+.site-info {
+	text-align: center;
+}
+
 
 /*--------------------------------------------------------------
 # FORMS
@@ -102,7 +129,7 @@ padding:10rem 0;
 /*--------------------------------------------------------------
 # NAVIGATION
 ----------------------------------------------------------------*/
-
+/*transparent area behind the nav*/
 .site-branding {
 	height:165px;
 	background-color:rgba(232,229,229,0.2);
@@ -111,11 +138,13 @@ padding:10rem 0;
 /*--------------------------------------------------------------
 ## PRIMARY MENU
 ----------------------------------------------------------------*/
+/*vertically center the navigation*/
+.menu-main-navigation-container {
+	padding: 8% 0;
+}
 
 .main-navigation ul {
 	list-style: none;
-	padding: 0 0;
-	margin: 0 0;
 }
 
 .main-navigation li {
@@ -125,10 +154,9 @@ padding:10rem 0;
 .main-navigation li a:link,
 .main-navigation li a:visited {
 	display: block;
-	margin:7rem 5rem;
 	color:#000;
-	padding-bottom: 0.25rem;
-
+	font-size:1.3em;
+	margin-right:15rem;
 }
 .main-navigation li a:hover,
 .main-navigation li a:active,
@@ -138,15 +166,19 @@ padding:10rem 0;
 }
 
 /*--------------------------------------------------------------
-## FOOTER MENU
+## FOOTER MENUS
 ----------------------------------------------------------------*/
+.main-footer-nav{
+	padding: 0 10%;
+}
 
+.secondary-footer-nav {
+	padding: 0 25%;
+}
 
 .footer-nav ul,
 .footer-legal-nav ul {
 	list-style: none;
-	padding: 0 0;
-	margin: 0 auto;
 }
 
 .footer-nav li,
@@ -158,10 +190,20 @@ padding:10rem 0;
 .footer-nav li a:visited,
 .footer-legal-nav li a:link,
 .footer-legal-nav li a:visited {
-	padding:3rem;
 	color:#fff;
 	display: block;
 }
+
+.footer-nav li a:link,
+.footer-nav li a:visited {
+	padding:3rem 3rem 0 3rem;
+}
+
+.footer-legal-nav li a:link,
+.footer-legal-nav li a:visited {
+	padding:4rem 3rem;
+}
+
 .footer-nav li a:hover,
 .footer-nav li a:active,
 .footer-nav li a:focus,
@@ -174,15 +216,6 @@ padding:10rem 0;
 .footer-legal-nav a:link {
 	font-size: 80%;
 }
-
-.footer-nav ul {
-	width:80%;
-}
-
-.footer-legal-nav ul {
-	width: 40%;
-}
-
 /*--------------------------------------------------------------
 ## LINKS
 ----------------------------------------------------------------*/
@@ -213,9 +246,30 @@ a:active.uw-linkback {
 ----------------------------------------------------------------*/
 
 .recent-post-box {
-	border: 1px solid black;
-	margin-bottom: 5em;
+	margin-bottom: 3em;
 	padding:1em;
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(220,220,220,1);
+	-moz-box-shadow: 0px 0px 10px 2px rgba(220,220,220,1);
+	box-shadow: 0px 0px 10px 2px rgba(220,220,220,1);
+}
+
+/*--------------------------------------------------------------
+## MAP DIV
+----------------------------------------------------------------*/
+
+.client-map-box {
+	background-color: #1D5A7B;
+	min-height: 400px;
+}
+
+.client-map-box .container {
+	padding: 4% 0;
+}
+
+img.us-map {
+	width:500px;
+	height:300px;
+	float: right;
 }
 
 /*--------------------------------------------------------------
@@ -223,22 +277,51 @@ a:active.uw-linkback {
 ----------------------------------------------------------------*/
 
 .call-to-action {
-	background-color: blue;
-	padding: 3rem 0;
+	background-color: #E8E5E5;
+	min-height: 100px;
 }
 
-.class-to-action > h3 {
+.call-to-action > h3 {
 	color:#fff;
 }
 
+.call-to-action .container .col-md-8 {
+	padding: 2% 0;
+}
+
+.call-to-action .container .col-md-4 {
+	padding: 3% 0;
+}
+
 /*--------------------------------------------------------------
-## EXPERT QUOTES
+## EXPERT QUOTES DIV
 ----------------------------------------------------------------*/
 .quote-box {
 	padding:4rem;
-	background-color: purple;
+	background-color: #767B29;
+	min-height: 300px;
 }
 
+.quote-box .container {
+	padding: 2% 0;
+}
+
+/*--------------------------------------------------------------
+## MEDIA MENTIONS DIV
+----------------------------------------------------------------*/
+
+.media-mention-box {
+	background-color: #A95726;
+	min-height: 200px;
+}
+
+.media-mention-box .container {
+	padding: 4% 0;
+}
+
+img.media-mention-icon {
+	width:130px;
+}
 /*--------------------------------------------------------------
 # IMAGES
 ----------------------------------------------------------------*/

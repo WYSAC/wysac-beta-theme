@@ -64,12 +64,12 @@
 		<div class="container front-page-banner">
 			<div class="row">
 				<div class="col-md-12">
-									<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+									<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 						<?php
 
 						$description = get_bloginfo( 'description', 'display' );
 						if ( $description || is_customize_preview() ) : ?>
-							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+							<h2 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h2>
 						<?php
 						endif; ?>
 				</div> <!--.col-md-12-->
