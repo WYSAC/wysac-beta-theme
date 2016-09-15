@@ -62,6 +62,10 @@ h3 {
 
 }
 
+h4 {
+
+}
+
 h1.site-title {
 	color:#fff;
 	font-weight: bold;
@@ -72,6 +76,10 @@ h2.site-description {
 	font-family:'Montserrat', 'Open Sans', Helvetica, Arial, sans-serif;
 	color:#fff;
 	text-align:center;
+}
+
+.entry-title {
+	text-align: center;
 }
 
 

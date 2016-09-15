@@ -313,4 +313,5 @@ function theme_prefix_setup() {
   }
   add_action('after_setup_theme', 'theme_prefix_setup');
 
+
 //END OF PLUGIN ?>
