@@ -24,7 +24,7 @@
 
 <body>
 <div id="page" class="site">
-	<!--Need a Screenreader skip link here-->
+<a class="skip-link" href="#content">Skip to main content</a>
 
 	<header id="masthead" class="site-header masthead-home-page" role="banner">
 		<!-- TOP BAR

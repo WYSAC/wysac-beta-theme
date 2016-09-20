@@ -30,6 +30,11 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar();?>
+<?php
+ 	if (in_category('projects') ) : //if the post is a Project
+		get_sidebar('projects');  //get sidebar-projects.php
+		else : //if it's any other category
+			get_sidebar(); //get the default sidebar
+		endif; ?>
 </div><!--.container-->
 <?php get_footer();?>

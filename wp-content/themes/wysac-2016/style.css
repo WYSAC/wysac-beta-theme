@@ -66,7 +66,7 @@ h4 {
 
 }
 
-h1.site-title {
+h1.site-title{
 	color:#fff;
 	font-weight: bold;
 	text-align: center;
@@ -78,7 +78,8 @@ h2.site-description {
 	text-align:center;
 }
 
-.entry-title {
+.entry-title,
+.page-title {
 	text-align: center;
 }
 
@@ -164,7 +165,7 @@ padding:10rem 0;
 	display: block;
 	color:#000;
 	font-size:1.3em;
-	margin-right:15rem;
+	margin-right:10rem;
 }
 .main-navigation li a:hover,
 .main-navigation li a:active,
@@ -330,6 +331,50 @@ img.us-map {
 img.media-mention-icon {
 	width:130px;
 }
+
+/*--------------------------------------------------------------
+# SIDEBARS
+----------------------------------------------------------------*/
+.sidebar-title {
+	text-transform: uppercase;
+}
+.sidebar-section-title {
+	font-weight: bold;
+	color:#000;
+}
+
+/*--------------------------------------------------------------
+## ARCHIVE PAGES
+----------------------------------------------------------------*/
+ul.tax-list {
+	padding: 0 0;
+	margin:0 0;
+}
+
+ul.tax-list li {
+	list-style: none;
+	list-style-type: none;
+	margin: 0 0;
+	padding: 0 0;
+}
+
+ul.tax-list li a:link,
+ul.tax-list li a:visited {
+	background-color: red;
+	margin: 0 20px 15px 0;
+	float:left;
+	padding:5px 10px;
+	color:#fff;
+}
+
+ul.tax-list li a:hover {
+	text-decoration:none;
+	background:green;
+	color:#fff;
+}
+.clear-both {
+	clear: both;
+}
 /*--------------------------------------------------------------
 # IMAGES
 ----------------------------------------------------------------*/
@@ -339,4 +384,17 @@ img.media-mention-icon {
 
 .uw-logo:hover {
 	opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# SCREEN READERS
+----------------------------------------------------------------*/
+
+.screen-reader-text,
+.skip-link {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
 }

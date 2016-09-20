@@ -42,6 +42,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php wysac_beta_entry_footer(); ?>
+		<?php //wysac_beta_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
