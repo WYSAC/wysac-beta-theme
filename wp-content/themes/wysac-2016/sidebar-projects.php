@@ -15,8 +15,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 <aside id="secondary" class="widget-area container" role="complementary">
 	<div class="col-md-4">
 		<h5 class="sidebar-section-title">Partner Organization</h5>
-		<?php the_terms( $post->ID, 'clients', '', ' ' );
-					//current post, custom tax, before, after
+		<?php the_terms( $post->ID, 'clients', '<ul class="tax-list"><li>', '</li><li>','</li></ul><div class="clear-both"></div>' );
+					//current post, custom tax, before, between, after
 					?>
 		<h5 class="sidebar-section-title">Experts</h5>
 		<?php if ( function_exists( 'coauthors_posts_links' ) ) {
@@ -27,8 +27,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 					}
 				?>
 		<h5 class="sidebar-section-title">Topics</h5>
-		<?php the_tags('','');
-					//get the tags for this post and don't put anything before or after it
+		<?php the_tags('<ul class="tax-list"><li>', '</li><li>','</li></ul><div class="clear-both"></div>' );
+					//get the tags for this post and format it like the list of boxes
 					?>
 </div>
 </aside><!-- #secondary -->

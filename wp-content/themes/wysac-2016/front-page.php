@@ -52,7 +52,7 @@ get_header('home'); ?>
 					=================================== -->
 					<div class="container">
 						<div class="col-md-8">
-							<h3>We help people do awesome things</h3>
+							<h2>We help people do awesome things</h2>
 						</div>
 						<div class="col-md-4">
 								<a class="btn btn-primary pull-right" href="#" role="button">Contact Us</a>
@@ -76,7 +76,7 @@ get_header('home'); ?>
 								<!--Get the Quote-->
 								<div class="col-md-8">
 									<h5>From Our Experts</h5>
-									<h3><?php the_content(); ?></h3>
+									<h2><?php the_content(); ?></h2>
 									<h4>- <?php the_title(); ?></h4>
 								</div>
 							<?php
