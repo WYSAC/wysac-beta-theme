@@ -23,10 +23,10 @@ get_header('home'); ?>
 										while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 												<div class="col-md-4">
 													<div class="recent-post-box">
-														<small><?php the_time('m.d.Y')?></small>
+														<small class="entry-metadata"><?php the_time('m.d.Y')?></small>
 														<p><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></a></p>
-														<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-														<p><a href="<?php the_permalink(); ?>"><span class="glyphicon glyphicon-folder-open"></span>  View Project</a></p>
+														<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+														<p class="read-more-link"><a href="<?php the_permalink(); ?>"><span class="glyphicon glyphicon-folder-open"></span>  View Project</a></p>
 												</div><!--.recent-post-box-->
 											</div><!--.col-md-4-->
 										<?php endwhile;

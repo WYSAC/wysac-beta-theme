@@ -14,11 +14,9 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<?php if ( have_posts() ) : ?>
 				<div class="row">
-					<header class="page-header">
-						<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
-							the_archive_description( '<div class="taxonomy-description">', '</div>' );
-						?>
+					<header class="page-header col-md-12">
+						<h1 class="page-title"><?php the_archive_title(); ?></h1>
+						<h2 class="taxonomy-description"><?php the_archive_description();  ?></h2>
 					</header><!-- .page-header -->
 				</div><!--.row-->
 				<div class="row">
@@ -30,9 +28,9 @@ get_header(); ?>
 								<?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?>
 							</div><!--col-md-6-->
 							<div class="col-md-6">
-								<small><?php the_time('m.d.Y')?></small>
+								<small class="entry-metadata"><?php the_time('m.d.Y')?></small>
 								<h2><?php the_title(); ?></h2>
-								<a href="<?php the_permalink(); ?>">View Project -></a>
+								<a href="<?php the_permalink(); ?>"" class="read-more-link">View Project -></a>
 							</div><!--col-md-6-->
 						</div><!--.row .archive-project-entry-->
 				<?php endwhile;

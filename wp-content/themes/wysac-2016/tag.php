@@ -17,7 +17,7 @@ get_header(); ?>
 				<div class="row">
 					<header class="page-header col-md-12">
 						<h1 class="page-title"><?php single_tag_title(); ?></h1>
-						<div class="taxonomy-description"><?php the_archive_description(); ?></div>
+						<h2 class="taxonomy-description"><?php the_archive_description();  ?></h2>
 					</header><!-- .page-header -->
 				</div><!--.row-->
 				<div class="row">
@@ -30,9 +30,9 @@ get_header(); ?>
 									<?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?>
 								</div>
 								<div class="col-md-6">
-									<small><?php the_time('m.d.Y')?></small>
+									<small class="entry-metadata"><?php the_time('m.d.Y')?></small>
 									<h2><?php the_title(); ?></h2>
-									<a href="<?php the_permalink(); ?>">View Project -></a>
+									<a href="<?php the_permalink(); ?>" class="read-more-link">View Project -></a>
 								</div>
 							</div><!--.row-->
 						<?php endwhile;
