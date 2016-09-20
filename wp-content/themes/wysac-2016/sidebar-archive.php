@@ -12,26 +12,37 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area container" role="complementary">
-	<div class="col-md-4">
+<aside id="secondary" class="widget-area col-md-4" role="complementary">
 		<h4 class="sidebar-title">Filter Results</h4>
-				<h5 class="sidebar-section-title">Topics</h5>
-					<?php the_tags('<ul class="tax-list"><li>','</li><li>','</li></ul><div class="clear-both"></div>'); ?>
-				<h5 class="sidebar-section-title">Partner Organizations</h5>
+				<!-- TOPICS
+				=================================== -->
+				<h5 class="sidebar-section-title">Topic</h5>
+					<?php $terms = get_terms('post_tag'); //get the list of clients
+								echo '<ul class="tax-list">';
+								foreach ($terms as $term) { //put them in a list
+										echo '<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
+								}
+								echo '</ul><div class="clear-both"></div>';?>
+				<!-- PARTNER ORGANIZATIONS
+				=================================== -->
+				<h5 class="sidebar-section-title">Partner Organization</h5>
 					<?php $terms = get_terms('clients'); //get the list of clients
 								echo '<ul class="tax-list">';
 								foreach ($terms as $term) { //put them in a list
 								    echo '<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
 								}
 								echo '</ul><div class="clear-both"></div>';?>
-				<h5 class="sidebar-section-title">Project Type</h5>
-					<?php $terms = get_terms('project-types'); //get the list of clients
+				<!-- PROJECT TYPES
+				=================================== -->
+				<h5 class="sidebar-section-title">Type</h5>
+					<?php $terms = get_terms('project_type'); //get the list of clients
 								echo '<ul class="tax-list">';
 								foreach ($terms as $term) { //put them in a list
 								    echo '<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
 								}
 								echo '</ul><div class="clear-both"></div>';?>
+				<!-- SEARCH BOX
+				=================================== -->
 				<h5 class="sidebar-section-title">Search</h5>
 				<?php get_search_form(); ?>
-</div>
 </aside><!-- #secondary -->

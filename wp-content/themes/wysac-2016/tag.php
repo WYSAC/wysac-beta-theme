@@ -10,42 +10,40 @@
 get_header(); ?>
 
 <div class="container">
-	<div id="primary" class="content-area col-md-8">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php single_tag_title(); ?></h1>
-				<div class="taxonomy-description"><?php the_archive_description(); ?></div>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
+			<?php if ( have_posts() ) : ?>
+				<div class="row">
+					<header class="page-header col-md-12">
+						<h1 class="page-title"><?php single_tag_title(); ?></h1>
+						<div class="taxonomy-description"><?php the_archive_description(); ?></div>
+					</header><!-- .page-header -->
+				</div><!--.row-->
+				<div class="row">
+					<div class="col-md-8">
+							<?php
+							/* Start the Loop */
+							while ( have_posts() ) : the_post(); ?>
+							<div class="row archive-project-entry">
+								<div class="col-md-6">
+									<?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?>
+								</div>
+								<div class="col-md-6">
+									<small><?php the_time('m.d.Y')?></small>
+									<h2><?php the_title(); ?></h2>
+									<a href="<?php the_permalink(); ?>">View Project -></a>
+								</div>
+							</div><!--.row-->
+						<?php endwhile;
+						the_posts_navigation(); else :
+						get_template_part( 'template-parts/content', 'none' );
+						endif; ?>
+					</div><!--.col-md-8-->
+					<?php get_sidebar('archive');?>
+				</div><!--.row-->
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-<?php get_sidebar('archive');?>
 </div><!--.container-->
 
 <?php get_footer();?>

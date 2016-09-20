@@ -13,7 +13,6 @@ URL: http://www.uwyo.edu/wysac
 
 ## Custom User Profile Fields
 ## Custom Taxonomies
-   - Add Project Types
    - Add Clients
    - Change Tags to Topics
 ## Media Mention Post Type
@@ -23,6 +22,7 @@ URL: http://www.uwyo.edu/wysac
 ## Expert Quote Post Type
 ## Custom Image Sizes
 ## Custom Logo Support
+## Filter Custom Taxonomy Slugs from Archive Title
 
 * * * * *
 ----------------------------------------------------------------*/
@@ -78,44 +78,8 @@ function create_clients_taxonomy() {
 
 } //end create_clients_taxonomy
 
-// PROJECT TYPE TAXONOMY //
 
-//hook into the init action and call create_project_type_taxonomy when it fires
-add_action( 'init', 'create_project_type_taxonomy', 0 );
 
-//create a custom taxonomy name
-
-function create_project_type_taxonomy() {
-
-// Add new taxonomy
-//first do the translations part for GUI
-
-  $labels = array(
-    'name' => _x( 'Project Type', 'taxonomy general name' ),
-    'singular_name' => _x( 'Project Type', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Project Types' ),
-    'all_items' => __( 'All Project Types' ),
-    'parent_item' => __( 'Parent Project Type' ),
-    'parent_item_colon' => __( 'Parent Project Type:' ),
-    'edit_item' => __( 'Edit Project Type' ),
-    'update_item' => __( 'Update Project Type' ),
-    'add_new_item' => __( 'Add New Project Type' ),
-    'new_item_name' => __( 'New Project Type Name' ),
-    'menu_name' => __( 'Project Types' ),
-  );
-
-// Now register the taxonomy
-
-  register_taxonomy('project-types',array('post'), array(
-    'hierarchical' => true, //make it hierarchical like categories
-    'labels' => $labels,
-    'show_ui' => true,
-    'show_admin_column' => true,
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'project-types' ),
-  ));
-
-} //end create_project_type_taxonomy
 
 // CHANGE NAME OF TAG TAXONOMY TO TOPICS //
 
@@ -353,5 +317,17 @@ function theme_prefix_setup() {
   }
   add_action('after_setup_theme', 'theme_prefix_setup');
 
+  /*--------------------------------------------------------------
+  ## Filter Custom Taxonomy Slug from Archive Title
+  ----------------------------------------------------------------*/
+
+  add_filter( 'get_the_archive_title', function ($title) { //if you need to get the title
+      if ( is_tax('clients') ) { //if the taxonomy is a client
+              $title = single_term_title( '', false ); //take out the prefix
+          } elseif ( is_tax('project_type') ) { //if the taxonomy is a project type
+              $title = single_term_title( '', false ); //take out the prefix
+          }
+      return $title; //then print the title
+  });
 
 //END OF PLUGIN ?>
