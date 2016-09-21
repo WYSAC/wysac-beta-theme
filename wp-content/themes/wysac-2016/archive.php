@@ -1,11 +1,11 @@
 <?php
 /**
- * The archive page.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WYSAC_Beta
- */
+* The archive page.
+*
+* @link https://codex.wordpress.org/Template_Hierarchy
+*
+* @package WYSAC_Beta
+*/
 
 get_header(); ?>
 
@@ -25,23 +25,23 @@ get_header(); ?>
 						while ( have_posts() ) : the_post(); ?>
 						<div class="row archive-project-entry">
 							<div class="col-md-6">
-								<?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?>
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></a>
 							</div><!--col-md-6-->
 							<div class="col-md-6">
-								<small class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></small>
-								<h2><?php the_title(); ?></h2>
-								<a href="<?php the_permalink(); ?>" class="read-more-link">View Project</a>
+								<p class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
+								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<a href="<?php the_permalink(); ?>" class="read-more-link">View Project &rarr;</a>
 							</div><!--col-md-6-->
 						</div><!--.row .archive-project-entry-->
-				<?php endwhile;
-				the_posts_navigation(); else :
-					get_template_part( 'template-parts/content', 'none' );
-				endif; ?>
-			</div><!--.col-md-8-->
-			<?php get_sidebar('archive');?>
-		</div><!--row-->
-	</main><!-- #main -->
-</div><!-- #primary -->
+					<?php endwhile;
+					the_posts_navigation(); else :
+						get_template_part( 'template-parts/content', 'none' );
+					endif; ?>
+				</div><!--.col-md-8-->
+				<?php get_sidebar('archive');?>
+			</div><!--row-->
+		</main><!-- #main -->
+	</div><!-- #primary -->
 </div><!--.container-->
 
 <?php get_footer();?>

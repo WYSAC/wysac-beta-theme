@@ -21,7 +21,7 @@
 		<header class="entry-header">
 			<?php if ( 'post' === get_post_type() ) : ?>
 				<div class="entry-meta">
-					<small class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></small>
+					<p class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
 				</div><!--entry-meta-->
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 				<?php

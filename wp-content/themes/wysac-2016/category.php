@@ -29,9 +29,9 @@ get_header(); ?>
 							<?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?>
 						</div><!--.col-md-6-->
 						<div class="col-md-6">
-							<small class="entry-metadata"><?php the_time('m.d.Y')?> <?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></small>
+							<p class="entry-metadata"><?php the_time('m.d.Y')?> <?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
 							<h2><?php the_title(); ?></h2>
-							<a href="<?php the_permalink(); ?>" class="read-more-link">View Project -></a>
+							<a href="<?php the_permalink(); ?>" class="read-more-link">View Project &rarr;</a>
 						</div><!--.col-md-6-->
 					</div><!--.row-->
 
