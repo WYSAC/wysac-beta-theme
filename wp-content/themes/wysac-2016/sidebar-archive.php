@@ -16,7 +16,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		<h3 class="sidebar-title">Filter Results</h3>
 				<!-- TOPICS
 				=================================== -->
-				<h4 class="sidebar-section-title">Topic</h5>
+				<h4 class="sidebar-section-title">Topics</h5>
 					<?php $terms = get_terms('post_tag'); //get the list of clients
 								echo '<ul class="tax-list">';
 								foreach ($terms as $term) { //put them in a list
@@ -25,7 +25,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 								echo '</ul><div class="clear-both"></div>';?>
 				<!-- PARTNER ORGANIZATIONS
 				=================================== -->
-				<h4 class="sidebar-section-title">Partner Organization</h5>
+				<h4 class="sidebar-section-title">Partner Organizations</h5>
 					<?php $terms = get_terms('clients'); //get the list of clients
 								echo '<ul class="tax-list">';
 								foreach ($terms as $term) { //put them in a list
@@ -34,7 +34,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 								echo '</ul><div class="clear-both"></div>';?>
 				<!-- PROJECT TYPES
 				=================================== -->
-				<h4 class="sidebar-section-title">Type</h5>
+				<h4 class="sidebar-section-title">Types</h5>
 					<?php $terms = get_terms('project_type'); //get the list of clients
 								echo '<ul class="tax-list">';
 								foreach ($terms as $term) { //put them in a list

@@ -42,9 +42,9 @@ function wysac_beta_setup() {
 
  add_theme_support('post-formats', array (
 		'gallery',
-		'link',
+		//'link',
 		'image',
-		'quote',
+		//'quote',
 		'video')
 	);
 

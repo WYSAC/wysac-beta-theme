@@ -12,12 +12,15 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area container" role="complementary">
-	<div class="col-md-4">
+<aside id="secondary" class="widget-area col-md-4" role="complementary">
+	<!-- PARTNER ORGANIZATIONS
+	=================================== -->
 		<h5 class="sidebar-section-title">Partner Organization</h5>
 		<?php the_terms( $post->ID, 'clients', '<ul class="tax-list"><li>', '</li><li>','</li></ul><div class="clear-both"></div>' );
 					//current post, custom tax, before, between, after
 					?>
+		<!-- EXPERTS
+		=================================== -->
 		<h5 class="sidebar-section-title">Experts</h5>
 		<?php if ( function_exists( 'coauthors_posts_links' ) ) {
 					coauthors_posts_links(); //get the co-authors
@@ -25,10 +28,12 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 					else {
 					the_author_posts_link(); //if there are none, get the regular author
 					}
+					echo '<div class="clear-both"></div>'
 				?>
+		<!-- TOPICS
+		=================================== -->
 		<h5 class="sidebar-section-title">Topics</h5>
 		<?php the_tags('<ul class="tax-list"><li>', '</li><li>','</li></ul><div class="clear-both"></div>' );
 					//get the tags for this post and format it like the list of boxes
 					?>
-</div>
 </aside><!-- #secondary -->

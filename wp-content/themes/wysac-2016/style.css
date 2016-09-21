@@ -146,9 +146,11 @@ h5 {
 	text-align: left;
 }
 
-.entry-content,
-.page-content {
+.entry-content p,
+.page-content p {
 	font-size: 16px;
+	line-height: 2;
+	margin-bottom: 1.25em;
 }
 
 
@@ -432,6 +434,9 @@ aside.widget-area {
 /*--------------------------------------------------------------
 ## ARCHIVE PAGES
 ----------------------------------------------------------------*/
+
+/* FANCY BLOCK LINKS IN SIDEBARS */
+
 ul.tax-list {
 	padding: 0 0;
 	margin:0 0;
@@ -445,7 +450,9 @@ ul.tax-list li {
 }
 
 ul.tax-list li a:link,
-ul.tax-list li a:visited {
+ul.tax-list li a:visited,
+a.author.url.fn:link,
+a.author.url.fn:visited {
 	background-color: rgb(209,221,228);
 	margin: 0 20px 15px 0;
 	float:left;
@@ -457,7 +464,10 @@ ul.tax-list li a:visited {
 
 ul.tax-list li a:hover,
 ul.tax-list li a:active,
-ul.tax-list li a:focus{
+ul.tax-list li a:focus,
+a.author.url.fn:hover,
+a.author.url.fn:active,
+a.author.url.fn:focus{
 	text-decoration:none;
 	background: rgb(153,181,195);
 	color: rgb(74,74,74);
