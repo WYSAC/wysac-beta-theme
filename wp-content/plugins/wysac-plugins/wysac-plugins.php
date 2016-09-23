@@ -23,6 +23,7 @@ URL: http://www.uwyo.edu/wysac
 ## Custom Image Sizes
 ## Custom Logo Support
 ## Filter Custom Taxonomy Slugs from Archive Title
+## Add new dynamic sidebar for careers category posts
 
 * * * * *
 ----------------------------------------------------------------*/
@@ -329,5 +330,11 @@ function theme_prefix_setup() {
           }
       return $title; //then print the title
   });
+
+  /*--------------------------------------------------------------
+  ## Register new Dynmaic Sidebar for Careers Posts
+  ----------------------------------------------------------------*/
+  
+  // this is actually in the functions.php file of the theme.
 
 //END OF PLUGIN ?>

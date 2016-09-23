@@ -38,7 +38,7 @@ get_header(); ?>
 						get_template_part( 'template-parts/content', 'none' );
 					endif; ?>
 				</div><!--.col-md-8-->
-				<?php get_sidebar('archive');?>
+				<?php get_sidebar('archive'); ?>
 			</div><!--row-->
 		</main><!-- #main -->
 	</div><!-- #primary -->

@@ -32,7 +32,7 @@
 				<!-- SITE INFO / COPYRIGHT
 				=================================== -->
 				<div class="col-md-12 site-info">
-					<p class="small">&copy; <?php the_time('Y'); ?> Wyoming Survey & Analysis Center at the University of Wyoming</p>
+					<p class="small">&copy; <?php echo date("Y"); ?> Wyoming Survey & Analysis Center at the University of Wyoming</p>
 
 				</div><!-- .site-info -->
 		</div><!--.container -->

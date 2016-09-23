@@ -40,7 +40,12 @@ get_header(); ?>
 					get_template_part( 'template-parts/content', 'none' );
 					endif; ?>
 			</div><!--.col-md-8-->
-			<?php get_sidebar('archive');?>
+			<?php
+			if (is_category('careers') ) : //if the post is a Project
+				dynamic_sidebar('sidebar-careers');  //get sidebar-projects.php
+				else : //if it's any other category
+					get_sidebar('archive'); //get the default sidebar
+				endif; ?>
 			</div><!--.row-->
 	</main><!-- #main -->
 	</div><!-- #primary -->

@@ -22,6 +22,8 @@ get_header(); ?>
 		<?php
 		if (in_category('projects') ) : //if the post is a Project
 			get_sidebar('projects');  //get sidebar-projects.php
+			elseif (in_category('careers') ) :
+				dynamic_sidebar('sidebar-careers');
 			else : //if it's any other category
 				get_sidebar(); //get the default sidebar
 			endif; ?>

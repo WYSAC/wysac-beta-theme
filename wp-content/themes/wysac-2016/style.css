@@ -78,7 +78,7 @@ summary {
 }
 
 .site-main {
-	margin-bottom:50px;
+	/* margin:50px 0 ; */
 }
 /*--------------------------------------------------------------
 # TYPOGRAPHY
@@ -149,7 +149,7 @@ h5 {
 
 .entry-content p,
 .page-content p {
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 2;
 	margin-bottom: 1.25em;
 }
@@ -266,11 +266,11 @@ input, button, select, textarea, .btn {
 ## FOOTER MENUS
 ----------------------------------------------------------------*/
 .main-footer-nav{
-	padding: 0 12%;
+	padding: 0 16%;
 }
 
 .secondary-footer-nav {
-	padding: 0 28%;
+	padding: 0 23%;
 }
 
 .footer-nav ul,
@@ -367,7 +367,6 @@ p.entry-metadata {
 /*--------------------------------------------------------------
 # WIDGETS (and stuff that acts like widgets)
 ----------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 ## HOME PAGE RECENT POSTS
 ----------------------------------------------------------------*/
@@ -478,6 +477,11 @@ img.media-mention-icon {
 /*--------------------------------------------------------------
 # SIDEBARS
 ----------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## GENERAL SIDEBAR STUFF
+----------------------------------------------------------------*/
+
 .sidebar-title {
 	text-transform: uppercase;
 }
@@ -488,6 +492,27 @@ img.media-mention-icon {
 
 aside.widget-area {
 	padding-left: 50px;
+}
+
+ul#menu-sidebar-careers.menu {
+	list-style: none;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	margin: 0 0 2rem 0;
+	padding:0 0;
+}
+
+ul#menu-sidebar-careers li {
+	padding-bottom: 1rem;
+}
+
+ul#menu-sidebar-careers li a:link,
+ul#menu-sidebar-careers li a:visited {
+	color:rgb(74,74,74);
+}
+ul#menu-sidebar-careers li a:hover,
+ul#menu-sidebar-careers li a:active {
+text-decoration: underline;;
 }
 
 

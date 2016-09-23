@@ -13,7 +13,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area col-md-4" role="complementary">
-		<h3 class="sidebar-title">Filter Results</h3>
 				<!-- TOPICS
 				=================================== -->
 				<h4 class="sidebar-section-title">Topics</h5>

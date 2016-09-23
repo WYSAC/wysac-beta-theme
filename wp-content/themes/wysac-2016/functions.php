@@ -108,8 +108,17 @@ function wysac_beta_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'wysac-beta' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title sidebar-section-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar - Careers', 'wysac-beta' ),
+		'id'            => 'sidebar-careers',
+		'description'   => esc_html__( 'Sidebar for posts in the Careers category', 'wysac-beta' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s widget-area col-md-4">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title sidebar-section-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'wysac_beta_widgets_init' );
