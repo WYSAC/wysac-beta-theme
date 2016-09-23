@@ -116,7 +116,7 @@ get_header('home'); ?>
 			$meta_value_url = get_post_meta (get_the_ID(), 'source_information_source_url', 'true'); ?>
 
 			<h5 class="text-white">Research in the Media  |  <?php the_time('m.d.Y') ?></h5>
-			<a href="<?php echo $meta_value_url ?>"><h1 class="text-white"><?php the_title(); ?></h1></a>
+			<a href="<?php echo $meta_value_url ?>"><h1 class="text-white"><?php the_title(); ?> &rarr;</h1></a>
 			<a href="<?php echo $meta_value_url ?>"><h4 class="text-white"><?php echo $meta_value_name ?></h4></a>
 			<?php
 		endwhile;

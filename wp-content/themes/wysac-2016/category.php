@@ -26,7 +26,7 @@ get_header(); ?>
 					while ( have_posts() ) : the_post(); ?>
 					<div class="row archive-project-entry">
 						<div class="col-md-6">
-							<?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></a>
 						</div><!--.col-md-6-->
 						<div class="col-md-6">
 							<p class="entry-metadata"><?php the_time('m.d.Y')?> <?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
