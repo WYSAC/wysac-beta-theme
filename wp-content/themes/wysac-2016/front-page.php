@@ -41,7 +41,7 @@ get_header('home'); ?>
 		<div class="container">
 			<div class="row" >
 				<div class="col-md-4">
-					<h3>Description of the Map</h3>
+					<h3 class="text-white">Description of the Map</h3>
 				</div>
 				<div class="col-md-8">
 					<img class="us-map" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Blank_US_map_borders_labels.svg" />
@@ -77,9 +77,9 @@ get_header('home'); ?>
 			</div>
 			<!--Get the Quote-->
 			<div class="col-md-8">
-				<h5>From Our Experts</h5>
-				<h2><?php the_content(); ?></h2>
-				<h4>- <?php the_title(); ?></h4>
+				<h5 class="text-white">From Our Experts</h5>
+				<h2 class="text-white"><?php the_content(); ?></h2>
+				<h4 class="text-white">- <?php the_title(); ?></h4>
 			</div>
 			<?php
 		endwhile;
@@ -103,10 +103,28 @@ get_header('home'); ?>
 			<img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/iconmonstr-newspaper-3-240.png" class="media-mention-icon"/>
 		</div>
 		<div class="col-md-10">
-			<h5>Research in the Media</h5>
-			<h1>Title of the Media Mention</h1>
-		</div>
+			<?php
+			//Get a single media media-mention randomly on load
+			$args = array ('post_type'=>'media-mention', 'orderby'=>'rand', 'posts_per_page'=>'1');
+			$the_query = new WP_Query($args);
+			//The Loop for finding a post
+			while ($the_query -> have_posts()) : $the_query -> the_post();
+			// Get the stored values of the source_name and source_url metaboxes.
+			// 'true' calls the single piece of data, where 'false' or blank calls an array
+			$meta_value_name = get_post_meta (get_the_ID(), 'source_information_source_name', 'true');
+			// Get the stored values of the source_url and source_url metaboxes
+			$meta_value_url = get_post_meta (get_the_ID(), 'source_information_source_url', 'true'); ?>
+
+			<h5 class="text-white">Research in the Media  |  <?php the_time('m.d.Y') ?></h5>
+			<a href="<?php echo $meta_value_url ?>"><h1 class="text-white"><?php the_title(); ?></h1></a>
+			<a href="<?php echo $meta_value_url ?>"><h4 class="text-white"><?php echo $meta_value_name ?></h4></a>
+			<?php
+		endwhile;
+		wp_reset_postdata();
+		?>
+
 	</div>
+</div>
 </section><!--end Media Mentions-->
 <section>
 	<!-- FRONT PAGE CONTENT

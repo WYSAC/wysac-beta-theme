@@ -136,7 +136,7 @@ h4 {
 }
 
 h5 {
-
+	text-transform: uppercase;
 }
 
 .taxonomy-description {
@@ -152,6 +152,10 @@ h5 {
 	font-size: 16px;
 	line-height: 2;
 	margin-bottom: 1.25em;
+}
+
+.text-white {
+	color:rgb(255,255,255);
 }
 
 
@@ -436,7 +440,6 @@ img.us-map {
 .quote-box .container {
 	padding: 2% 0;
 }
-
 /*--------------------------------------------------------------
 ## MEDIA MENTIONS DIV
 ----------------------------------------------------------------*/
