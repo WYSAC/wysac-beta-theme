@@ -29,7 +29,7 @@ get_header(); ?>
 							</div><!--col-md-6-->
 							<div class="col-md-6">
 								<p class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
-								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<h2><a href="<?php the_permalink(); ?>" class="entry-title-link"><?php the_title(); ?></a></h2>
 								<a href="<?php the_permalink(); ?>" class="read-more-link">View Project &rarr;</a>
 							</div><!--col-md-6-->
 						</div><!--.row .archive-project-entry-->

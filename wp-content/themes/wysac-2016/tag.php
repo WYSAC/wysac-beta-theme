@@ -31,7 +31,7 @@ get_header(); ?>
 								</div>
 								<div class="col-md-6">
 									<p class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
-									<h2><?php the_title(); ?></h2>
+									<a href="<?php the_permalink();?>" class="entry-title-link"><h2><?php the_title(); ?></h2></a>
 									<a href="<?php the_permalink(); ?>" class="read-more-link">View Project &rarr;</a>
 								</div>
 							</div><!--.row-->

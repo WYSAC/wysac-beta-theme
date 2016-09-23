@@ -16,7 +16,9 @@ get_header('home'); ?>
 			<div class="container">
 				<!-- MOST RECENT POSTS
 				=================================== -->
-				<h1>Most Recent Posts</h1>
+				<div class="col-md-12 home-section-title">
+					<h1>Most Recent Posts</h1>
+				</div>
 				<?php // Define our WP Query Parameters
 				$the_query = new WP_Query( 'posts_per_page=6' );
 				// Start our WP Query
@@ -25,7 +27,7 @@ get_header('home'); ?>
 					<div class="recent-post-box">
 						<p class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
 						<p><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></a></p>
-						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+						<h2><a href="<?php the_permalink(); ?>" class="entry-title-link"><?php the_title(); ?></a></h2>
 						<p><a href="<?php the_permalink(); ?>" class="read-more-link">View Project &rarr;</a></p>
 					</div><!--.recent-post-box-->
 				</div><!--.col-md-4-->
