@@ -27,20 +27,24 @@ Underscores is distributed under the terms of the GNU GPL v2 or later and Bootst
 # Elements
 # Forms
 # Navigation
-## Links
-## Menus
+	## Links
+	## Menus
 # Accessibility
 # Alignments
 # Clearings
 # Widgets
 # Images
 # Content
-## Posts and pages
-## Comments
+	## Posts and pages
+	## Comments
+	## Author Archive / Bio Pages
+		### Author Avatar Plugin Customizations (archive page -> all-experts.php)
+		### Individual bio pages for authors (author.php)
 # Infinite scroll
 # Media
-## Captions
-## Galleries
+	## Captions
+	## Galleries
+
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -593,6 +597,77 @@ a.author.url.fn:focus{
 	padding-bottom:4rem;
 	border-bottom: solid thin rgb(204,204,204);
 }
+
+
+/*--------------------------------------------------------------
+## AUTHOR AND ALL-EXPERTS
+----------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+### ALL-EXPERTS.PHP
+----------------------------------------------------------------*/
+
+article#post-101 header.page-header {
+	margin-bottom: 0;
+}
+
+/* All the filters/tags at the top of the page for expert areas */
+
+.all-experts-to-filter {
+	margin-top: 4rem;
+}
+
+.expert-topic-filters {
+	margin: 0 0 4rem 0;
+}
+
+
+.expert-topic-filters ul.tax-list {
+	padding-top:2rem;
+}
+
+ul.tax-list li a.filter-view-all:link,
+ul.tax-list li a.filter-view-all:visited {
+	background-color: rgb(228,229,212);
+}
+
+ul.tax-list li  a.filter-view-all:hover,
+ul.tax-list li  a.filter-view-all:active {
+	background-color: rgb(162,165,106);
+}
+
+.expert-archive-photos .avatar {
+	border-radius: 50%;
+	height: 165px;
+	width: 165px;
+}
+
+
+.all-experts-user img {
+	display: block;
+	margin:auto;
+}
+
+.all-experts-info {
+	padding-top:2rem;
+	text-align: center;
+}
+
+span.all-experts-name,
+span.all-experts-title {
+	color: rgb(74,74,74);
+	text-align:center;
+}
+
+.all-experts-name {
+	font-family: 'Open Sans', helvetica, arial, sans-serif;
+	font-size: 1.25em;
+}
+
+.all-experts-title {
+	font-size:1em;
+}
+
 
 
 

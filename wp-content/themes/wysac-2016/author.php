@@ -15,29 +15,13 @@ get_header(); ?>
 			<?php
 	    $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 	    ?>
-			<p><?php echo get_cimyFieldValue($curauth, TITLE); ?></p>
-
-
 	    <h2>About: <?php echo $curauth->nickname; ?></h2>
 	    <dl>
 	        <dt>Website</dt>
 	        <dd><a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a></dd>
 	        <dt>Profile</dt>
 	        <dd><?php echo $curauth->user_description; ?></dd>
-					<dt>Twitter</dt>
-	        <dd><a href="http://www.twitter.com/<?php echo get_cimyFieldValue($curauth, TWITTER); ?>">@<?php echo get_cimyFieldValue($curauth, TWITTER); ?></a></dd>
-					<dt>Facebook</dt>
-	        <dd><a href="http://<?php echo get_cimyFieldValue($curauth, FACEBOOK); ?>">Facebook</a></dd>
-					<dt>LinkedIn</dt>
-	        <dd><?php echo get_cimyFieldValue($curauth, LINKEDIN); ?></dd>
-					<dt>Educational History</dt>
-	        <dd><?php echo get_cimyFieldValue($curauth, EDUCATION); ?></dd>
-					<dt>Work History</dt>
-	        <dd><?php echo get_cimyFieldValue($curauth, WORK); ?></dd>
-					<dt>Publications</dt>
-	        <dd><?php echo get_cimyFieldValue($curauth, PUBLICATIONS); ?></dd>
-					<dt>Presentations</dt>
-	        <dd><?php echo get_cimyFieldValue($curauth, PRESENTATIONS); ?></dd>
+
 	    </dl>
 
 
