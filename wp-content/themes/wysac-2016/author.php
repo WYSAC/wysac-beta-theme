@@ -13,14 +13,18 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
+			// get's the author's name/ID of the current page as a variable to use elsewhere on this page
 	    $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 	    ?>
+
 	    <h2>About: <?php echo $curauth->nickname; ?></h2>
 	    <dl>
 	        <dt>Website</dt>
 	        <dd><a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a></dd>
 	        <dt>Profile</dt>
 	        <dd><?php echo $curauth->user_description; ?></dd>
+					<dt>Twitter</dt>
+	        <dd><?php the_field('twitter', $curauth); ?></dd>
 
 	    </dl>
 
