@@ -668,6 +668,10 @@ span.all-experts-title {
 	font-size:1em;
 }
 
+.wp-user-avatar-profile-image {
+	border-radius: 50%;
+	padding: 0 42%;
+}
 
 
 
