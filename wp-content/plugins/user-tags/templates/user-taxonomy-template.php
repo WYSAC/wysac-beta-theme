@@ -58,7 +58,7 @@ get_header(); ?>
 						'"><span class="all-experts-name">' .
 						get_the_author_meta( 'display_name', $user_id ) .
 						'</span><br/><span class="all-experts-title">' .
-						the_field('job_title', 'user_', $user_id) . //this doesn't work and I'm not sure why
+						get_field( 'job_title', 'user_', $user_ID ) . //this doesn't work and I'm not sure why
 						'</span></a></div> <div class="ut-description">' .
 						wpautop( /*get_the_author_meta( 'description', $user_id )*/ ) .
 						'</div></div>';
