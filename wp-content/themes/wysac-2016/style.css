@@ -108,6 +108,7 @@ a.read-more-link:visited {
 	font-size: 3em;
 	color: rgb(74,74,74);
 	text-align: center;
+	text-transform: capitalize;
 }
 
 .site-title {
@@ -662,6 +663,7 @@ span.all-experts-title {
 .all-experts-name {
 	font-family: 'Open Sans', helvetica, arial, sans-serif;
 	font-size: 1.25em;
+	line-height: 2;
 }
 
 .all-experts-title {

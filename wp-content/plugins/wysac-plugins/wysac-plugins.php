@@ -22,6 +22,9 @@ URL: http://www.uwyo.edu/wysac
 ## Custom Image Sizes
 ## Custom Logo Support
 ## Filter Custom Taxonomy Slugs from Archive Title
+    - Clients
+    - Project Types
+    - Expert Areas
 ## New Dynamic Sidebars -- in the functions.php of this theme
 ## Author archives and author page
     - Building the all-experts.php page
@@ -316,16 +319,26 @@ add_action('after_setup_theme', 'theme_prefix_setup');
 ## Filter Custom Taxonomy Slug from Archive Title
 ----------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+### Clients and Project Type
+----------------------------------------------------------------*/
+
 add_filter( 'get_the_archive_title', function ($title) { //if you need to get the title
   if ( is_tax('clients') ) { //if the taxonomy is a client
     $title = single_term_title( '', false ); //take out the prefix
   } elseif ( is_tax('project_type') ) { //if the taxonomy is a project type
     $title = single_term_title( '', false ); //take out the prefix
-  } elseif (is_tag('expert_areas') ) {
-    $title = the_title('', false);
   }
   return $title; //then print the title
 });
+
+/*--------------------------------------------------------------
+## Expert Areas
+----------------------------------------------------------------*/
+/*
+*   I just ended up changing the user-taxonmy-template.php in the plug-in folder.
+*   Don't forget to copy this if and when the plug-in is ever updated
+*/
 
 /*--------------------------------------------------------------
 ## New Dynamic Sidebars
@@ -355,8 +368,9 @@ function all_experts_page() {
     echo '<span class="all-experts-name">';
     the_author_meta('display_name', $author->ID);
     echo '</span><br/><span class="all-experts-title">';
-    echo "</span></a>";
-    echo "</div></div>";
+    echo get_field('job_title', 'user_' .$author->ID); //get the user's job title
+    echo '</span></a>';
+    echo '</div></div>';
   }
 };
 
