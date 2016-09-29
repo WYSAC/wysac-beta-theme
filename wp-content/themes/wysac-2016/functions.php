@@ -57,6 +57,8 @@ function wysac_beta_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
+
+	//Add the footer nav menus
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'wysac-beta' ),
 		'footer'  => esc_html__( 'Footer', 'wysac-beta'),
@@ -103,6 +105,7 @@ add_action( 'after_setup_theme', 'wysac_beta_content_width', 0 );
  */
 function wysac_beta_widgets_init() {
 	register_sidebar( array(
+		//basic sidebar for the theme
 		'name'          => esc_html__( 'Sidebar', 'wysac-beta' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'wysac-beta' ),
@@ -112,6 +115,7 @@ function wysac_beta_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 	register_sidebar( array(
+		// sidebar for the Careers category
 		'name'          => esc_html__( 'Sidebar - Careers', 'wysac-beta' ),
 		'id'            => 'sidebar-careers',
 		'description'   => esc_html__( 'Sidebar for posts in the Careers category', 'wysac-beta' ),

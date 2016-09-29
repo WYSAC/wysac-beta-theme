@@ -22,7 +22,7 @@ URL: http://www.uwyo.edu/wysac
 ## Custom Image Sizes
 ## Custom Logo Support
 ## Filter Custom Taxonomy Slugs from Archive Title
-## Add new dynamic sidebar for careers category posts
+## New Dynamic Sidebars -- in the functions.php of this theme
 ## Author archives and author page
     - Building the all-experts.php page
     - adjusting the /author/ URL base
@@ -321,15 +321,17 @@ add_filter( 'get_the_archive_title', function ($title) { //if you need to get th
     $title = single_term_title( '', false ); //take out the prefix
   } elseif ( is_tax('project_type') ) { //if the taxonomy is a project type
     $title = single_term_title( '', false ); //take out the prefix
+  } elseif (is_tag('expert_areas') ) {
+    $title = the_title('', false);
   }
   return $title; //then print the title
 });
 
 /*--------------------------------------------------------------
-## Register new Dynmaic Sidebar for Careers Posts
+## New Dynamic Sidebars
 ----------------------------------------------------------------*/
 
-// this is actually in the functions.php file of the theme.
+// these is actually in the functions.php file of the theme.
 
 /*--------------------------------------------------------------
 ## Experts Custom Archive
@@ -368,7 +370,6 @@ function change_author_permalinks() {
   $wp_rewrite->author_base = 'expert'; //change the author based
   $wp_rewrite->author_structure = '/'.$wp_rewrite->author_base.'/%author%'; //change the URL
 };
-
 
 
 //END OF PLUGIN ?>

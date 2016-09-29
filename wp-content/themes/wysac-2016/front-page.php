@@ -17,11 +17,16 @@ get_header('home'); ?>
 				<!-- MOST RECENT POSTS
 				=================================== -->
 				<div class="col-md-12 home-section-title">
-					<h1>Most Recent Posts</h1>
+					<h2>Projects and Publications</h2>
 				</div>
-				<?php // Define our WP Query Parameters
-				$the_query = new WP_Query( 'category_name=projects&posts_per_page=6');
-				// Start our WP Query
+				<?php
+				//get posts in Projects but only get the first 6
+				$args = array (
+				'posts_per_page'	=>		'6',
+				'category_name'		=>		'projects');
+				//Query using these arguments
+				$the_query = new WP_Query($args);
+				//The Loop
 				while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 				<div class="col-md-4">
 					<div class="recent-post-box">
@@ -67,7 +72,11 @@ get_header('home'); ?>
 			=================================== -->
 			<?php
 			//Get a single quote randomly on load
-			$args = array ('post_type'=>'expert-quote', 'orderby'=>'rand', 'posts_per_page'=>'1');
+			$args = array (
+			'post_type'				=>		'expert-quote',
+			'orderby'					=>		'rand',
+			'posts_per_page'	=>		'1');
+			//Query using these arguments
 			$the_query = new WP_Query($args);
 			//The Loop
 			while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
@@ -105,7 +114,10 @@ get_header('home'); ?>
 		<div class="col-md-10">
 			<?php
 			//Get a single media media-mention randomly on load
-			$args = array ('post_type'=>'media-mention', 'orderby'=>'rand', 'posts_per_page'=>'1');
+			$args = array (
+			'post_type'				=>		'media-mention',
+			'orderby'					=>		'rand',
+			'posts_per_page'	=>		'1');
 			$the_query = new WP_Query($args);
 			//The Loop for finding a post
 			while ($the_query -> have_posts()) : $the_query -> the_post();
