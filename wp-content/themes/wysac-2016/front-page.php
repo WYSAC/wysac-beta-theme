@@ -20,7 +20,7 @@ get_header('home'); ?>
 					<h1>Most Recent Posts</h1>
 				</div>
 				<?php // Define our WP Query Parameters
-				$the_query = new WP_Query( 'posts_per_page=6' );
+				$the_query = new WP_Query( 'category_name=projects&posts_per_page=6');
 				// Start our WP Query
 				while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 				<div class="col-md-4">

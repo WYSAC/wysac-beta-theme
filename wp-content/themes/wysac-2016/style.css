@@ -78,7 +78,7 @@ summary {
 }
 
 #content {
-	padding-bottom: 200px; /*same as the max-height of the footer */
+	padding-bottom: 300px; /*same as the max-height of the footer */
 }
 
 .site-main {
@@ -205,7 +205,7 @@ h5 {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	max-height: 200px;
+	max-height: 300px;
 }
 
 .site-info {
@@ -270,7 +270,7 @@ input, button, select, textarea, .btn {
 ## FOOTER MENUS
 ----------------------------------------------------------------*/
 .main-footer-nav{
-	padding: 0 16%;
+	padding: 0 10%;
 }
 
 .secondary-footer-nav {
