@@ -81,30 +81,31 @@ get_header(); ?>
 					=================================== -->
 					<?php if ( ! empty ( $field_twitter_username || $field_facebook_profile_url || $field_linkedin_profile) ) {
 						// if there are any of the social media fields with values, print the heading ?>
-						<h4>Social Media</h4>
+
+						<h4 class="sidebar-section-title">Social Media</h4>
 						<?php }  //Now, let's print each one individually if they exist ?>
 						<!-- TWITTER USERNAME -->
 						<?php if( ! empty( $field_twitter_username ) ) { ?>
-							<a href="http://www.twitter.com/<?php echo $field_twitter_username ?>"><?php echo $field_twitter_username ?></a>
+							<a href="http://www.twitter.com/<?php echo $field_twitter_username ?>"><img src="<?php site_url()?>/wp-content/uploads/2016/09/icon_twitter_32x32.png" class="social-icon" /></a>
 								<?php }?>
 						<!-- FACEBOOK PROFILE  -->
 						<?php if( ! empty( $field_facebook_profile_url ) ) { ?>
-							<a href="<?php echo $field_facebook_profile_url ?>">Facebook</a>
+							<a href="<?php echo $field_facebook_profile_url ?>"><img src="<?php site_url()?>/wp-content/uploads/2016/09/icon_facebook_32x32.png" class="social-icon" /></a>
 								<?php }?>
 						<!-- LINKED IN  PROFILE  -->
 						<?php if( ! empty( $field_linkedin_profile ) ) { ?>
-							<a href="<?php echo $field_linkedin_profile ?>">LinkedIn Profile</a>
+							<a href="<?php echo $field_linkedin_profile ?>"><img src="<?php site_url()?>/wp-content/uploads/2016/09/icon_linkedin_32x32.png" class="social-icon" /></a>
 								<?php }?>
 					<!-- EXPERT AREAS / USER TAGS
 					=================================== -->
-					<h4>Expert Areas</h4>
+					<h4 class="sidebar-section-title">Expert Areas</h4>
 					<ul class="tax-list">
 					</ul>
 					<!-- PUBLICATIONS
 					=================================== -->
 					<?php if ( ! empty ( $field_pubs_books || $field_pubs_journals) ) {
 						// if there are any of the publications fields with values, print the heading ?>
-						<h4>Publications</h4>
+						<h4 class="sidebar-section-title">Publications</h4>
 						<?php }  //Now, let's print each one individually if they exist ?>
 						<!-- BOOKS -->
 						<?php if( ! empty( $field_pubs_books ) ) { ?>
@@ -120,7 +121,7 @@ get_header(); ?>
 					=================================== -->
 					<?php // if there are presentations fields with values, print the heading and the values
 							if( ! empty( $field_pubs_presentations) ) { ?>
-								<h4>Presentations</h4>
+								<h4 class="sidebar-section-title">Presentations</h4>
 								<p><?php echo $field_pubs_presentations ?></p>
 								<?php } ?>
 				</aside>
