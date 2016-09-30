@@ -45,6 +45,7 @@ get_header(); ?>
 				<div class="expert-profile-section">
 					<h3>About <?php echo $curauth->nickname; ?></h3>
 					<p><?php echo $curauth->user_description; ?></p>
+					<!-- SKILLS AND TRAININGS -->
 					<?php if ( ! empty ($field_skills_trainings) ) {
 						//if skills and trainings has a value ?>
 						<h4>Skills and Trainings</h4>
@@ -102,7 +103,7 @@ get_header(); ?>
 					<!-- PUBLICATIONS
 					=================================== -->
 					<?php if ( ! empty ( $field_pubs_books || $field_pubs_journals) ) {
-						// if there are any of the social media fields with values, print the heading ?>
+						// if there are any of the publications fields with values, print the heading ?>
 						<h4>Publications</h4>
 						<?php }  //Now, let's print each one individually if they exist ?>
 						<!-- BOOKS -->
