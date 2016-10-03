@@ -606,8 +606,12 @@ a.author.url.fn:focus{
 /* make the image fit the width and height of the .entry-thumbnail parent container */
 
 .entry-thumbnail img {
-	width:100%;
+	width:90%; /* Percentage of the parent container to fill */
 	height: auto;
+}
+
+.no-header {
+	margin:5rem 0;
 }
 /*--------------------------------------------------------------
 ## ARCHIVE PAGES

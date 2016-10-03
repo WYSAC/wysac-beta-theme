@@ -10,15 +10,18 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="row">
-		<div class="col-md-12 entry-thumbnail">
-			<?php
-			//check to see if the post has a featured image
-			if ( has_post_thumbnail() ) {
-				the_post_thumbnail('entry-thumbnail-post', array('class'=>'img-responsive') );
-			}?>
-		</div><!-- .col-md-12 .entry-thumbnail-->
-	</div><!---.row-->
+	<?php
+	//check to see if the post has a featured image
+	if ( has_post_thumbnail() && in_category('projects') ) { ?>
+
+			<div class="row">
+				<div class="col-md-12 entry-thumbnail">
+					<?php the_post_thumbnail('entry-thumbnail-post', array('class'=>'img-responsive') ); ?>
+				</div><!-- .col-md-12 .entry-thumbnail-->
+			</div><!---.row-->
+			<?php } else { ?>
+				<div class="clear-both no-header"></div>
+			<?php } ?>
 	<div class="col-md-8">
 		<header class="entry-header">
 			<?php
