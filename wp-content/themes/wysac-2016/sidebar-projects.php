@@ -23,7 +23,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		=================================== -->
 		<h4 class="sidebar-section-title">Experts</h5>
 		<?php if ( function_exists( 'coauthors_posts_links' ) ) {
-					coauthors_posts_links(); //get the co-authors
+					coauthors_posts_links('','','',''); //get the co-authors
+					//these options are between, betweenLast, before and after
 					}
 					else {
 					the_author_posts_link(); //if there are none, get the regular author

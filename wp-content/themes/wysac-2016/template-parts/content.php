@@ -10,19 +10,28 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="row">
+		<div class="col-md-12 entry-thumbnail">
+			<?php
+			//check to see if the post has a featured image
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail('entry-thumbnail-post', array('class'=>'img-responsive') );
+			}?>
+		</div><!-- .col-md-12 .entry-thumbnail-->
+	</div><!---.row-->
 	<div class="col-md-8">
 		<header class="entry-header">
 			<?php
-			if ( is_single() ) {
-				the_title( '<h1 class="entry-title">', '</h1>' );
+			if ( is_single() && 'post' === get_post_type() ) {?>
+				<div class="entry-meta">
+					<p class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
+				</div><!--entry-meta-->
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<?php
 			} else {
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
-
-			if ( 'post' === get_post_type() ) : ?>
-			<?php endif; ?>
-	</header><!-- .entry-header -->
-
+			} ?>
+		</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
 		the_content( sprintf(

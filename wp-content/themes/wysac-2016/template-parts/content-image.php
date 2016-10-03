@@ -10,13 +10,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
-	<div class="col-md-12 entry-thumbnail">
-		<?php
-		//check to see if the post has a featured image
-		if ( has_post_thumbnail() ) {
-			the_post_thumbnail('recent-post-box', array('class'=>'img-responsive'));
-		} ?>
-	</div><!-- .col-md-12 .entry-thumbnail-->
+	<div class="row">
+		<div class="col-md-12 entry-thumbnail">
+			<?php
+			//check to see if the post has a featured image
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail('entry-thumbnail-post', array('class'=>'img-responsive') );
+			}?>
+		</div><!-- .col-md-12 .entry-thumbnail-->
+	</div><!---.row-->
 	<div class="col-md-8">
 		<header class="entry-header">
 			<?php if ( 'post' === get_post_type() ) : ?>

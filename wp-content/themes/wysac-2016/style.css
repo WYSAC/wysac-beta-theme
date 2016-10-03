@@ -594,9 +594,21 @@ a.author.url.fn:focus{
 
 .entry-thumbnail,
 .page-header{
-	margin-bottom:5rem;
+	margin:5rem 0;
 }
 
+.entry-thumbnail {
+	margin: 5rem 5%;
+	height:500px; /* limit the height. matches the add_image_size function */
+	overflow: hidden; /* hide the stuff that's too big */
+}
+
+/* make the image fit the width and height of the .entry-thumbnail parent container */
+
+.entry-thumbnail img {
+	width:100%;
+	height: auto;
+}
 /*--------------------------------------------------------------
 ## ARCHIVE PAGES
 ----------------------------------------------------------------*/
