@@ -455,6 +455,45 @@ img.us-map {
 	padding: 2% 0;
 }
 /*--------------------------------------------------------------
+## SITE TAGS DIV
+----------------------------------------------------------------*/
+
+a.site-tag-box:link,
+a.site-tag-box:visited {
+	text-align: center;
+	color: rgb(255,255,255);
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 3rem;
+	text-transform: capitalize;
+	min-height: 150px;
+	padding:5rem;
+	margin:2rem 3rem;
+}
+
+a.site-tag-box:hover,
+a.site-tag-box:focus,
+a.site-tag-box:active {
+	text-decoration: none;
+	color:rgb(255,255,255);
+	background:green;
+}
+
+.site-tags {
+	margin-bottom: 3rem;
+}
+
+.tag-small {
+	background: rgb(200, 200, 200);
+}
+
+.tag-medium {
+	background: rgb(170, 170, 170);
+}
+
+.tag-large {
+	background: rgb(140, 140, 140);
+}
+/*--------------------------------------------------------------
 ## MEDIA MENTIONS DIV
 ----------------------------------------------------------------*/
 
@@ -469,6 +508,7 @@ img.us-map {
 
 img.media-mention-icon {
 	width:130px;
+	margin-right: 5rem;
 }
 
 .media-mention-box a:link,

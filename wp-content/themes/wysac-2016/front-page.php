@@ -99,19 +99,50 @@ get_header('home'); ?>
 <section class="full-width">
 	<!-- SITE TAGS
 	=================================== -->
-	<div class="container">
-		<h3>Site Tags</h3>
-		<?php wp_tag_cloud(); ?>
+	<div class="container site-tags">
+		<div class="col-md-12 home-section-title">
+			<h2>Our experts are knowledgable in ... </h2>
+		</div>
+		<div class="row tags-container">
+			<?php
+			$args = array (
+			'hide_empty'		=> false,
+			'get'						=> 'all',
+		);
+		$tags = get_tags($args);
+		$html = '<div class="post_tags">';
+		foreach ( $tags as $tag ) {
+			if ($tag->count < 1) {
+				$tag_link = get_tag_link( $tag->term_id );
+
+				$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} col-md-3 col-sm-12 col-xs-12 site-tag-box tag-small'>";
+				$html .= "{$tag->name}</a>";
+			} elseif ($tag->count >=1 && $tag->count <=3) {
+				$tag_link = get_tag_link( $tag->term_id );
+
+				$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} col-md-3 col-sm-12 col-xs-12  site-tag-box tag-medium'>";
+				$html .= "{$tag->name}</a>";
+			} else {
+				$tag_link = get_tag_link( $tag->term_id );
+
+				$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} col-md-3 col-sm-12 col-xs-12  site-tag-box tag-large'>";
+				$html .= "{$tag->name}</a>";
+			}
+		}
+		$html .= '</div>';
+		echo $html;
+		?>
 	</div>
+</div>
 </section><!-- end Site Tags -->
 <section class="full-width media-mention-box">
 	<!-- MEDIA MENTIONS
 	=================================== -->
 	<div class="container">
-		<div class="col-md-2">
-			<img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/iconmonstr-newspaper-3-240.png" class="media-mention-icon"/>
+		<div class="col-md-4">
+			<img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/iconmonstr-newspaper-3-240.png" class="media-mention-icon pull-right"/>
 		</div>
-		<div class="col-md-10">
+		<div class="col-md-8">
 			<?php
 			//Get a single media media-mention randomly on load
 			$args = array (

@@ -401,4 +401,5 @@ function change_author_permalinks() {
   $wp_rewrite->author_structure = '/'.$wp_rewrite->author_base.'/%author%'; //change the URL
 };
 
+
 //END OF PLUGIN ?>
