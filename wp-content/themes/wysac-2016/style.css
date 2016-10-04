@@ -16,6 +16,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 WYSAC Beta is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later and Bootstrap 3.3.7.
 
+____    __    ____ ____    ____  _______.     ___       ______
+\   \  /  \  /   / \   \  /   / /       |    /   \     /      |
+ \   \/    \/   /   \   \/   / |   (----`   /  ^  \   |  ,----'
+  \            /     \_    _/   \   \      /  /_\  \  |  |
+   \    /\    /        |  | .----)   |    /  _____  \ |  `----.
+    \__/  \__/         |__| |_______/    /__/     \__\ \______|
+		Wyoming Survey & Analysis Center  |  University of Wyoming
+		www.uwyo.edu/wysac  |  (C) 2016
+
 
 */
 
@@ -266,6 +275,11 @@ input, button, select, textarea, .btn {
 	text-decoration:none;
 	color: rgb(29,90,123);
 }
+
+/*--------------------------------------------------------------
+##  SEARCH BAR in topbar
+----------------------------------------------------------------*/
+
 
 /*--------------------------------------------------------------
 ## FOOTER MENUS

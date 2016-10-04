@@ -33,11 +33,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<a href="http://www.uwyo.edu/" class="uw-linkback"><small>University of Wyoming</small></a>
-					</div>
+						<a href="http://www.uwyo.edu/" class="uw-linkback"><img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/uw_white_52x25.png" class="uw-logo" /> <small>University of Wyoming</small></a>
+					</div><!--.col-md-6 -->
 					<div class="col-md-6">
-						<a href="http://www.uwyo.edu/" ><img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/uw_white_52x25.png" class="uw-logo pull-right" /></a>
-					</div>
+						<form role="search" method="get" id="searchform" class="form-inline pull-right" action="<?php echo get_site_url();?>">
+							<div><label class="screen-reader-text" for="s">Search for:</label>
+								<div class="input-group">
+									<input type="text" value="" name="s" id="s" class="form-control input-sm" placeholder="Search ...">
+									<div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+								</div>
+							</div>
+						</form>
+					</div><!--.col-md-6 -->
 				</div> <!--.row-->
 			</div><!--.container-->
 		</div><!--.topbar-->

@@ -7,6 +7,17 @@ Date: September 8, 2016
 URL: http://www.uwyo.edu/wysac
 */
 
+/*
+____    __    ____ ____    ____  _______.     ___       ______
+\   \  /  \  /   / \   \  /   / /       |    /   \     /      |
+ \   \/    \/   /   \   \/   / |   (----`   /  ^  \   |  ,----'
+  \            /     \_    _/   \   \      /  /_\  \  |  |
+   \    /\    /        |  | .----)   |    /  _____  \ |  `----.
+    \__/  \__/         |__| |_______/    /__/     \__\ \______|
+		Wyoming Survey & Analysis Center  |  University of Wyoming
+		www.uwyo.edu/wysac  |  (C) 2016
+*/
+
 /*--------------------------------------------------------------
 
 * * TABLE OF CONTENTS * *
@@ -298,9 +309,11 @@ add_action( 'init', 'wysac_expert_quote', 0 );
 /*--------------------------------------------------------------
 ## Custom Image Sizes
 ----------------------------------------------------------------*/
-
+// Baseball cards on home & images in archives
 add_image_size( 'recent-post-box', 320, 230, array ('center', 'center') );
+// expert profile pictures
 add_image_size( 'profile-image', 165,165, array ('center', 'center') );
+// Feature images in posts
 add_image_size( 'entry-thumbnail-post', 945, 500, array ('center', 'center') );
 
 
@@ -324,7 +337,7 @@ add_action('after_setup_theme', 'theme_prefix_setup');
 ### Clients and Project Type
 ----------------------------------------------------------------*/
 
-add_filter( 'get_the_archive_title', function ($title) { //if you need to get the title
+add_filter( 'get_the_archive_title', function ($title) { //if you need to get the archive page title
   if ( is_tax('clients') ) { //if the taxonomy is a client
     $title = single_term_title( '', false ); //take out the prefix
   } elseif ( is_tax('project_type') ) { //if the taxonomy is a project type
@@ -338,7 +351,9 @@ add_filter( 'get_the_archive_title', function ($title) { //if you need to get th
 ----------------------------------------------------------------*/
 /*
 *   I just ended up changing the user-taxonmy-template.php in the plug-in folder.
-*   Don't forget to copy this if and when the plug-in is ever updated
+*   Don't forget to copy this if and when the plug-in is ever updated.
+*   I know this isn't the best way of doing it, but I couldn't figure out how to make a filter,
+*   so that might be something to figure out in the future.
 */
 
 /*--------------------------------------------------------------
@@ -385,6 +400,5 @@ function change_author_permalinks() {
   $wp_rewrite->author_base = 'expert'; //change the author based
   $wp_rewrite->author_structure = '/'.$wp_rewrite->author_base.'/%author%'; //change the URL
 };
-
 
 //END OF PLUGIN ?>
