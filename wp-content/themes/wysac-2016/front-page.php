@@ -59,10 +59,12 @@ get_header('home'); ?>
 		=================================== -->
 		<div class="container">
 			<div class="col-md-8">
-				<h2>We help people do awesome things</h2>
+				<h1>We help people do awesome things</h1>
 			</div>
 			<div class="col-md-4">
-				<a class="btn btn-primary pull-right" href="#" role="button">Contact Us</a>
+				<form action="<?php echo get_site_url();?>/contact-wysac">
+					<button type="submit" class="btn btn-warning btn-lg pull-right">Connect with Us</button>
+				</form>
 			</div>
 		</div>
 	</section><!--end Call to Action-->

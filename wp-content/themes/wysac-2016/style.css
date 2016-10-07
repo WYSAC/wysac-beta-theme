@@ -55,6 +55,19 @@ ____    __    ____ ____    ____  _______.     ___       ______
 	## Galleries
 
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Site Color Palette
+--------------------------------------------------------------*/
+
+/*
+* 			Navy: 		rgb(29, 90, 123)
+*				Orange:		rgb(207, 138, 41)
+*				Green:		rgb(118, 123, 41)
+*				Rust:			rgb(169, 87, 38)
+* 			grey:			rgb(140, 140, 140)
+* 			charcoal: rgb(74, 74, 74)
+*/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -87,7 +100,7 @@ summary {
 }
 
 #content {
-	padding-bottom: 300px; /*same as the max-height of the footer */
+	padding-bottom: 200px; /*same as the max-height of the footer */
 }
 
 .site-main {
@@ -232,7 +245,17 @@ input, button, select, textarea, .btn {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
+/* NINJA FORM CUSTOMIZATIONS */
 
+.nf-form-wrap,
+.nf-forms-form-wrap {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	color: rgb(74,74,74);
+}
+
+.nf-before-form-content {
+	padding-bottom: 20px;
+}
 
 
 /*--------------------------------------------------------------
@@ -285,11 +308,11 @@ input, button, select, textarea, .btn {
 ## FOOTER MENUS
 ----------------------------------------------------------------*/
 .main-footer-nav{
-	padding: 0 10%;
+	padding: 0 15%;
 }
 
 .secondary-footer-nav {
-	padding: 0 23%;
+	padding: 0 30%;
 }
 
 .footer-nav ul,
@@ -427,7 +450,7 @@ img.us-map {
 
 .call-to-action {
 	background-color: #E8E5E5;
-	min-height: 100px;
+	min-height: 140px;
 }
 
 .call-to-action > h3 {
@@ -435,11 +458,11 @@ img.us-map {
 }
 
 .call-to-action .container .col-md-8 {
-	padding: 2% 0;
+	padding: 3.5% 0;
 }
 
 .call-to-action .container .col-md-4 {
-	padding: 3% 0;
+	padding: 5% 0;
 }
 
 /*--------------------------------------------------------------
@@ -453,6 +476,10 @@ img.us-map {
 
 .quote-box .container {
 	padding: 2% 0;
+}
+
+.quote-box h2.text-white p {
+	line-height: 1.5;
 }
 /*--------------------------------------------------------------
 ## SITE TAGS DIV
@@ -475,7 +502,7 @@ a.site-tag-box:focus,
 a.site-tag-box:active {
 	text-decoration: none;
 	color:rgb(255,255,255);
-	background:green;
+	background:rgb(74, 74, 74);
 }
 
 .site-tags {
@@ -517,6 +544,10 @@ img.media-mention-icon {
 	text-decoration: none;
 }
 
+.media-mention-box h1.text-white {
+	line-height: 1.3;
+}
+
 /*--------------------------------------------------------------
 # FRONT PAGE CONTENT WITH MAP AND CONTACT INFO
 ----------------------------------------------------------------*/
@@ -527,10 +558,12 @@ img.media-mention-icon {
 	display: none;
 }
 
-/* move the content down */
+.post-4 p {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
 
-.post-4 .entry-content {
-	padding-top: 5rem;
+.front-page-content {
+	margin-top:5rem;
 }
 
 /*--------------------------------------------------------------
