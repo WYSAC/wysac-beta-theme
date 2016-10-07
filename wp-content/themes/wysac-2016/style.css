@@ -769,6 +769,7 @@ span.all-experts-name,
 span.all-experts-title {
 	color: rgb(74,74,74);
 	text-align:center;
+	text-transform: capitalize;
 }
 
 .all-experts-name {

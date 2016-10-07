@@ -384,7 +384,7 @@ function all_experts_page() {
     echo '<span class="all-experts-name">';
     the_author_meta('display_name', $author->ID);
     echo '</span><br/><span class="all-experts-title">';
-    echo get_field('job_title', 'user_' .$author->ID); //get the user's job title
+    the_author_meta('jobtitle', $author->ID); //get the user's job title
     echo '</span></a>';
     echo '</div></div>';
   }

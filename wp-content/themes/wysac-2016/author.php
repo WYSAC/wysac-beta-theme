@@ -17,7 +17,6 @@ get_header(); ?>
 		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 
 		// Create variables for the custom fields to ask about them later
-		$field_job_title 						= get_field('job_title', $curauth);
 		$field_skills_trainings 		= get_field('skills_trainings', $curauth);
 		$field_pubs_books 					= get_field('pubs_books', $curauth);
 		$field_pubs_journals 				= get_field('pubs_journals', $curauth);
@@ -36,14 +35,14 @@ get_header(); ?>
 			<!-- NAME AND JOB TITLE
 			=================================== -->
 			<h1 class="page-title"><?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></h1>
-			<h2 class="taxonomy-description"><?php echo $field_job_title?></h2>
+			<h2 class="taxonomy-description"><?php echo $curauth->jobtitle ?></h2>
 		</header><!--.col-md-12-->
 		<div class="row">
 			<div class="page-content col-md-8">
 				<!-- BIOGRAPHY
 				=================================== -->
 				<div class="expert-profile-section">
-					<h3>About <?php echo $curauth->nickname; ?></h3>
+					<h3>About <?php echo $curauth->first_name; ?></h3>
 					<p><?php echo $curauth->user_description; ?></p>
 					<!-- SKILLS AND TRAININGS -->
 					<?php if ( ! empty ($field_skills_trainings) ) {
@@ -51,11 +50,11 @@ get_header(); ?>
 						<h4>Skills and Trainings</h4>
 						<p><?php echo $field_skills_trainings?></p>
 						<?php } ?>
-				</div>
-				<!-- PROJECTS AND PUBLICATIONS
-				=================================== -->
-				<div class="expert-profile-section">
-					<h3>Projects & Publications</h3>
+					</div>
+					<!-- PROJECTS AND PUBLICATIONS
+					=================================== -->
+					<div class="expert-profile-section">
+						<h3>Projects & Publications</h3>
 						<ul>
 							<!-- The Loop -->
 
@@ -75,59 +74,67 @@ get_header(); ?>
 
 							</ul>
 						</div>
-				</div><!--.col-md-8 page-content -->
-				<aside class="col-md-4 widget-area">
-					<!-- SOCIAL MEDIA ICONS / LINKS
-					=================================== -->
-					<?php if ( ! empty ( $field_twitter_username || $field_facebook_profile_url || $field_linkedin_profile) ) {
-						// if there are any of the social media fields with values, print the heading ?>
+					</div><!--.col-md-8 page-content -->
+					<aside class="col-md-4 widget-area">
+						<!-- SOCIAL MEDIA ICONS / LINKS
+						=================================== -->
+						<?php if ( ! empty ( $field_twitter_username || $field_facebook_profile_url || $field_linkedin_profile) ) {
+							// if there are any of the social media fields with values, print the heading ?>
 
-						<h4 class="sidebar-section-title">Social Media</h4>
-						<?php }  //Now, let's print each one individually if they exist ?>
-						<!-- TWITTER USERNAME -->
-						<?php if( ! empty( $field_twitter_username ) ) { ?>
-							<a href="http://www.twitter.com/<?php echo $field_twitter_username ?>"><img src="<?php site_url()?>/wp-content/uploads/2016/09/icon_twitter_32x32.png" class="social-icon" /></a>
+							<h4 class="sidebar-section-title">Social Media</h4>
+							<?php }  //Now, let's print each one individually if they exist ?>
+							<!-- TWITTER USERNAME -->
+							<?php if( ! empty( $field_twitter_username ) ) { ?>
+								<a href="http://www.twitter.com/<?php echo $field_twitter_username ?>"><img src="<?php site_url()?>/wp-content/uploads/2016/09/icon_twitter_32x32.png" class="social-icon" /></a>
 								<?php }?>
-						<!-- FACEBOOK PROFILE  -->
-						<?php if( ! empty( $field_facebook_profile_url ) ) { ?>
-							<a href="<?php echo $field_facebook_profile_url ?>"><img src="<?php site_url()?>/wp-content/uploads/2016/09/icon_facebook_32x32.png" class="social-icon" /></a>
-								<?php }?>
-						<!-- LINKED IN  PROFILE  -->
-						<?php if( ! empty( $field_linkedin_profile ) ) { ?>
-							<a href="<?php echo $field_linkedin_profile ?>"><img src="<?php site_url()?>/wp-content/uploads/2016/09/icon_linkedin_32x32.png" class="social-icon" /></a>
-								<?php }?>
-					<!-- EXPERT AREAS / USER TAGS
-					=================================== -->
-					<h4 class="sidebar-section-title">Expert Areas</h4>
-					<ul class="tax-list">
-					</ul>
-					<!-- PUBLICATIONS
-					=================================== -->
-					<?php if ( ! empty ( $field_pubs_books || $field_pubs_journals) ) {
-						// if there are any of the publications fields with values, print the heading ?>
-						<h4 class="sidebar-section-title">Publications</h4>
-						<?php }  //Now, let's print each one individually if they exist ?>
-						<!-- BOOKS -->
-						<?php if( ! empty( $field_pubs_books ) ) { ?>
-								<h5>Books</h5>
-								<p><?php echo $field_pubs_books ?></p>
-								<?php } ?>
-						<!-- JOURNALS -->
-						<?php if( ! empty( $field_pubs_journals ) ) { ?>
-								<h5>Journals and Magazines</h5>
-								<p><?php echo $field_pubs_journals ?></p>
-								<?php } ?>
-					<!-- PRESENTATIONS
-					=================================== -->
-					<?php // if there are presentations fields with values, print the heading and the values
-							if( ! empty( $field_pubs_presentations) ) { ?>
-								<h4 class="sidebar-section-title">Presentations</h4>
-								<p><?php echo $field_pubs_presentations ?></p>
-								<?php } ?>
-				</aside>
-			</div><!--.row-->
-		</main><!-- #main -->
-	</div><!-- #primary -->
+								<!-- FACEBOOK PROFILE  -->
+								<?php if( ! empty( $field_facebook_profile_url ) ) { ?>
+									<a href="<?php echo $field_facebook_profile_url ?>"><img src="<?php site_url()?>/wp-content/uploads/2016/09/icon_facebook_32x32.png" class="social-icon" /></a>
+									<?php }?>
+									<!-- LINKED IN  PROFILE  -->
+									<?php if( ! empty( $field_linkedin_profile ) ) { ?>
+										<a href="<?php echo $field_linkedin_profile ?>"><img src="<?php site_url()?>/wp-content/uploads/2016/09/icon_linkedin_32x32.png" class="social-icon" /></a>
+										<?php }?>
+										<!-- EXPERT AREAS / USER TAGS
+										=================================== -->
+										<h4 class="sidebar-section-title">Expert Areas</h4>
+										<?php
+													$terms = get_the_terms( $curauth->ID, 'expert_areas');
+													if ($terms != null ) {
+														echo '<ul class="tax-list">';
+														foreach($terms as $term ) {
+															echo '<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
+															unset($term);
+														}
+														echo '</ul><div class="clear-both"></div>';
+													} ?>
+									<!-- PUBLICATIONS
+									=================================== -->
+									<?php if ( ! empty ( $field_pubs_books || $field_pubs_journals) ) {
+										// if there are any of the publications fields with values, print the heading ?>
+										<h4 class="sidebar-section-title">Publications</h4>
+										<?php }  //Now, let's print each one individually if they exist ?>
+										<!-- BOOKS -->
+										<?php if( ! empty( $field_pubs_books ) ) { ?>
+											<h5>Books</h5>
+											<p><?php echo $field_pubs_books ?></p>
+											<?php } ?>
+											<!-- JOURNALS -->
+											<?php if( ! empty( $field_pubs_journals ) ) { ?>
+												<h5>Journals and Magazines</h5>
+												<p><?php echo $field_pubs_journals ?></p>
+												<?php } ?>
+												<!-- PRESENTATIONS
+												=================================== -->
+												<?php // if there are presentations fields with values, print the heading and the values
+												if( ! empty( $field_pubs_presentations) ) { ?>
+													<h4 class="sidebar-section-title">Presentations</h4>
+													<p><?php echo $field_pubs_presentations ?></p>
+													<?php } ?>
+												</aside>
+											</div><!--.row-->
+										</main><!-- #main -->
+									</div><!-- #primary -->
 
-	<?php
-	get_footer();
+									<?php
+									get_footer();

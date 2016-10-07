@@ -38,6 +38,7 @@ get_header(); ?>
 			$term    = get_queried_object();
 
 			$users   = get_objects_in_term( $term_id, $term->taxonomy );
+			$user_job_title = get_field('job_title', 'user_', $user_id );
 
 			/**
 			* Allows to filter user list before displaying it in template
@@ -51,14 +52,16 @@ get_header(); ?>
 					<?php
 					foreach ( $users as $user_id ) {
 						$c =
-						'<div class="col-md-3 all-experts-user">' .
+						'<div class="col-md-3 all-experts-user"><a href="' .
+						esc_url( get_author_posts_url( $user_id ) ) .
+						'">'.
 						get_avatar( $user_id, '96' ) .
-						'<div class="all-experts-info"><a href="' .
+						'</a><div class="all-experts-info"><a href="'.
 						esc_url( get_author_posts_url( $user_id ) ) .
 						'"><span class="all-experts-name">' .
 						get_the_author_meta( 'display_name', $user_id ) .
 						'</span><br/><span class="all-experts-title">' .
-						get_field( 'job_title', 'user_', $user_ID ) . //this doesn't work and I'm not sure why
+						get_the_author_meta( 'jobtitle', $user_id ) .
 						'</span></a></div> <div class="ut-description">' .
 						wpautop( /*get_the_author_meta( 'description', $user_id )*/ ) .
 						'</div></div>';
