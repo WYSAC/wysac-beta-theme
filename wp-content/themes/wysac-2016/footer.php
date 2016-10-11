@@ -15,6 +15,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
+			<div class="row">
 		<!-- FOOTER NAVIGATION
 		=================================== -->
 			<div class="col-md-12 main-footer-nav">
@@ -22,6 +23,8 @@
 						<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
 					</nav><!--.footer-navigation-->
 				</div><!-- .main-footer-nav-->
+			</div><!--.row-->
+			<div class="row">
 			<!-- FOOTER LEGAL NAVIGATION
 			=================================== -->
 			<div class="col-md-12 secondary-footer-nav">
@@ -29,13 +32,16 @@
 						<?php wp_nav_menu( array( 'theme_location' => 'footer-legal', 'menu_id' => 'Footer-Legal' ) ); ?>
 					</nav><!--.footer-navigation-->
 				</div><!-- .secondary-footer-nav-->
+			</div><!--.row-->
+			<div class="row">
 				<!-- SITE INFO / COPYRIGHT
 				=================================== -->
 				<div class="col-md-12 site-info">
 					<p class="small">&copy; <?php echo date("Y"); ?> Wyoming Survey & Analysis Center at the University of Wyoming</p>
 
 				</div><!-- .site-info -->
-		</div><!--.container -->
+			</div><!--.row-->
+		</div>
 	</footer><!-- #colophon .site-footer -->
 </div><!-- #page -->
 

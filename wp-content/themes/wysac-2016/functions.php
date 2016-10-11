@@ -205,3 +205,9 @@ function wysac_beta_widgets_init() {
 
 				update_user_meta( $user_id, 'jobtitle', $_POST['jobtitle'] );
 			}
+
+			/* Add Navwalker support to make collapasble bootstrap navigation */
+
+			// register bootstrap navigation walker
+			include 'bootstrap/wp_bootstrap_navwalker.php';
+			

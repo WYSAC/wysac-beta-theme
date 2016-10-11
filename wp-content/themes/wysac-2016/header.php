@@ -59,13 +59,37 @@
 							</div> <!--.site-logo-->
 						</div><!--.col-md-2-->
 						<div class="col-md-10">
-							<nav id="site-navigation" class="main-navigation" role="navigation">
-								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-							</nav><!-- #site-navigation -->
-						</div><!--.col-md-10-->
+							<nav class="navbar navbar-default main-navigation" role="navigation">
+								<!-- Brand and toggle get grouped for better mobile display -->
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle .nav-stacked" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+								<!-- Collect the nav links, forms, and other content for toggling -->
+								<div class="collapse navbar-collapse navbar-ex1-collapse">
+									<?php
+									wp_nav_menu( array(
+										'menu'              => 'main-navigation',
+										'theme_location'    => 'primary',
+										'depth'             => 2,
+										'container'         => false,
+										'container_class'   => 'collapse navbar-collapse',
+										'container_id'      => 'bs-example-navbar-collapse-1',
+										'menu_class'        => 'nav navbar-nav',
+										'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+										'walker'            => new wp_bootstrap_navwalker())
+									);
+									?>
+								</div>
+							</nav>
+						</div>
 					</div><!--.row-->
 				</div> <!--.container-->
 			</div><!--.site-branding-->
 		</header><!-- #masthead -->
 
-		<div id="content" class="site-content">
+		<div id="content" class="site-content container">

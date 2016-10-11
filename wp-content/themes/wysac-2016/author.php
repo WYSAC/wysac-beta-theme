@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area container">
+<div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
 		<?php
@@ -29,14 +29,15 @@ get_header(); ?>
 
 
 		?>
-
-		<header class="page-header col-md-12">
-			<?php echo get_wp_user_avatar ($user_id, 'profile-image'); ?>
-			<!-- NAME AND JOB TITLE
-			=================================== -->
-			<h1 class="page-title"><?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></h1>
-			<h2 class="taxonomy-description"><?php echo $curauth->jobtitle ?></h2>
+<div class="row">
+		<header class="page-header">
+				<?php echo get_wp_user_avatar ($user_id, 'profile-image'); ?>
+				<!-- NAME AND JOB TITLE
+				=================================== -->
+				<h1 class="page-title"><?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></h1>
+				<h2 class="taxonomy-description"><?php echo $curauth->jobtitle ?></h2>
 		</header><!--.col-md-12-->
+	</div>
 		<div class="row">
 			<div class="page-content col-md-8">
 				<!-- BIOGRAPHY
@@ -99,42 +100,42 @@ get_header(); ?>
 										=================================== -->
 										<h4 class="sidebar-section-title">Expert Areas</h4>
 										<?php
-													$terms = get_the_terms( $curauth->ID, 'expert_areas');
-													if ($terms != null ) {
-														echo '<ul class="tax-list">';
-														foreach($terms as $term ) {
-															echo '<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
-															unset($term);
-														}
-														echo '</ul><div class="clear-both"></div>';
-													} ?>
-									<!-- PUBLICATIONS
-									=================================== -->
-									<?php if ( ! empty ( $field_pubs_books || $field_pubs_journals) ) {
-										// if there are any of the publications fields with values, print the heading ?>
-										<h4 class="sidebar-section-title">Publications</h4>
-										<?php }  //Now, let's print each one individually if they exist ?>
-										<!-- BOOKS -->
-										<?php if( ! empty( $field_pubs_books ) ) { ?>
-											<h5>Books</h5>
-											<p><?php echo $field_pubs_books ?></p>
-											<?php } ?>
-											<!-- JOURNALS -->
-											<?php if( ! empty( $field_pubs_journals ) ) { ?>
-												<h5>Journals and Magazines</h5>
-												<p><?php echo $field_pubs_journals ?></p>
+										$terms = get_the_terms( $curauth->ID, 'expert_areas');
+										if ($terms != null ) {
+											echo '<ul class="tax-list">';
+											foreach($terms as $term ) {
+												echo '<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
+												unset($term);
+											}
+											echo '</ul><div class="clear-both"></div>';
+										} ?>
+										<!-- PUBLICATIONS
+										=================================== -->
+										<?php if ( ! empty ( $field_pubs_books || $field_pubs_journals) ) {
+											// if there are any of the publications fields with values, print the heading ?>
+											<h4 class="sidebar-section-title">Publications</h4>
+											<?php }  //Now, let's print each one individually if they exist ?>
+											<!-- BOOKS -->
+											<?php if( ! empty( $field_pubs_books ) ) { ?>
+												<h5>Books</h5>
+												<p><?php echo $field_pubs_books ?></p>
 												<?php } ?>
-												<!-- PRESENTATIONS
-												=================================== -->
-												<?php // if there are presentations fields with values, print the heading and the values
-												if( ! empty( $field_pubs_presentations) ) { ?>
-													<h4 class="sidebar-section-title">Presentations</h4>
-													<p><?php echo $field_pubs_presentations ?></p>
+												<!-- JOURNALS -->
+												<?php if( ! empty( $field_pubs_journals ) ) { ?>
+													<h5>Journals and Magazines</h5>
+													<p><?php echo $field_pubs_journals ?></p>
 													<?php } ?>
-												</aside>
-											</div><!--.row-->
-										</main><!-- #main -->
-									</div><!-- #primary -->
+													<!-- PRESENTATIONS
+													=================================== -->
+													<?php // if there are presentations fields with values, print the heading and the values
+													if( ! empty( $field_pubs_presentations) ) { ?>
+														<h4 class="sidebar-section-title">Presentations</h4>
+														<p><?php echo $field_pubs_presentations ?></p>
+														<?php } ?>
+													</aside>
+												</div><!--.row-->
+											</main><!-- #main -->
+										</div><!-- #primary -->
 
-									<?php
-									get_footer();
+										<?php
+										get_footer();
