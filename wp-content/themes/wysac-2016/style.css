@@ -18,12 +18,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later and Bootst
 
 ____    __    ____ ____    ____  _______.     ___       ______
 \   \  /  \  /   / \   \  /   / /       |    /   \     /      |
- \   \/    \/   /   \   \/   / |   (----`   /  ^  \   |  ,----'
-  \            /     \_    _/   \   \      /  /_\  \  |  |
-   \    /\    /        |  | .----)   |    /  _____  \ |  `----.
-    \__/  \__/         |__| |_______/    /__/     \__\ \______|
-		Wyoming Survey & Analysis Center  |  University of Wyoming
-		www.uwyo.edu/wysac  |  (C) 2016
+\   \/    \/   /   \   \/   / |   (----`   /  ^  \   |  ,----'
+\            /     \_    _/   \   \      /  /_\  \  |  |
+\    /\    /        |  | .----)   |    /  _____  \ |  `----.
+\__/  \__/         |__| |_______/    /__/     \__\ \______|
+Wyoming Survey & Analysis Center  |  University of Wyoming
+www.uwyo.edu/wysac  |  (C) 2016
 
 */
 
@@ -35,23 +35,23 @@ ____    __    ____ ____    ____  _______.     ___       ______
 # Elements
 # Forms
 # Navigation
-	## Links
-	## Menus
+## Links
+## Menus
 # Accessibility
 # Alignments
 # Clearings
 # Widgets
 # Images
 # Content
-	## Posts and pages
-	## Comments
-	## Author Archive / Bio Pages
-		### Author Avatar Plugin Customizations (archive page -> all-experts.php)
-		### Individual bio pages for authors (author.php)
+## Posts and pages
+## Comments
+## Author Archive / Bio Pages
+### Author Avatar Plugin Customizations (archive page -> all-experts.php)
+### Individual bio pages for authors (author.php)
 # Infinite scroll
 # Media
-	## Captions
-	## Galleries
+## Captions
+## Galleries
 
 --------------------------------------------------------------*/
 
@@ -112,9 +112,9 @@ summary {
 }
 
 #content {
-/*height:100%;
-margin-bottom: 300px;*/
-	 /*same as the max-height of the footer */
+	/*height:100%;
+	margin-bottom: 300px;*/
+	/*same as the max-height of the footer */
 }
 
 .site-main {
@@ -221,7 +221,6 @@ h5 {
 
 .masthead-home-page {
 	width:100%;
-	height:600px;
 	background-image: url('http://localhost:8888/wp-content/uploads/2016/09/15.07.22_Rodney-Chelsea_1024.png');
 	background-size: cover;
 }
@@ -319,6 +318,18 @@ input, button, select, textarea, .btn {
 	background-color: transparent;
 }
 
+nav.main-navigation button.navbar-toggle {
+	border-color: transparent;
+}
+
+nav.navbar.navbar-default.main-navigation.navbar-static-top {
+	border-color:transparent;
+}
+
+nav.main-navigation button.navbar-toggle {
+	margin-right:45%;
+}
+
 /*--------------------------------------------------------------
 ##  SEARCH BAR in topbar
 ----------------------------------------------------------------*/
@@ -387,6 +398,29 @@ input, button, select, textarea, .btn {
 .footer-legal-nav a:link {
 	font-size: 80%;
 }
+
+/*--------------------------------------------------------------
+## PAGINATION NAVIGATION
+----------------------------------------------------------------*/
+nav.navigation.pagination a:link,
+nav.navigation.pagination a:visited,
+nav.navigation.pagination span.page-numbers.current {
+		display: inline-block;
+    padding: 5px 14px;
+    background-color: rgb(255,255,255);
+    border: 1px solid rgb(170, 170, 170);
+    /*border-radius: 15px;*/
+		font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+		color: rgb(74,74,74);
+}
+
+nav.navigation.pagination a:hover,
+nav.navigation.pagination a:active,
+nav.navigation.pagination span.page-numbers.current {
+	text-decoration: none;
+	background-color:rgb(233, 233, 233);
+}
+
 /*--------------------------------------------------------------
 ## LINKS
 ----------------------------------------------------------------*/
@@ -635,7 +669,7 @@ ul#menu-sidebar-careers li a:visited {
 }
 ul#menu-sidebar-careers li a:hover,
 ul#menu-sidebar-careers li a:active {
-text-decoration: underline;;
+	text-decoration: underline;;
 }
 
 
@@ -846,30 +880,36 @@ span.all-experts-title {
 		font-size: 85%;
 	}
 
-.site-logo img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	height:125px;
-	width:125px;
-}
+	.site-logo img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height:125px;
+		width:125px;
+	}
 
-.main-navigation li a:link,
-.main-navigation li a:visited {
-	text-align: left;
-	margin-right: 0;
-}
+	#menu-main-navigation.navbar-nav {
+		margin-top:0;
+	}
 
-#menu-main-navigation.navbar-nav a:hover,
-#menu-main-navigation.navbar-nav a:active,
-#menu-main-navigation.navbar-nav>.active>a {
-	border-bottom: transparent;
-	text-decoration:none;
-	color: rgb(29,90,123);
-	background-color: #e7e7e7;
-}
+	.main-navigation-container {
+		padding:0 0;
+	}
 
+	.main-navigation li a:link,
+	.main-navigation li a:visited {
+		text-align: left;
+		margin-right: 0;
+	}
 
+	#menu-main-navigation.navbar-nav a:hover,
+	#menu-main-navigation.navbar-nav a:active,
+	#menu-main-navigation.navbar-nav>.active>a {
+		border-bottom: transparent;
+		text-decoration:none;
+		color: rgb(29,90,123);
+		background-color: #e7e7e7;
+	}
 
 
 }
@@ -877,19 +917,23 @@ span.all-experts-title {
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px ) {
 	.navbar-default {
-	border-color: transparent;
-	background-color: transparent;
+		border-color: transparent;
+		background-color: transparent;
+	}
+
+	#menu-main-navigation.navbar-nav {
+		margin-top: 14%;
 	}
 
 	.main-navigation li a:link {
 		margin-right: 1rem;
 	}
 
-.main-navigation li {
+	.main-navigation li {
 		float:left;
 	}
 
- }
+}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -897,10 +941,14 @@ span.all-experts-title {
 		margin-right: 6rem;
 	}
 
+	#menu-main-navigation.navbar-nav {
+		margin-top: 7%;
+	}
 
- }
+
+}
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
- }
+}

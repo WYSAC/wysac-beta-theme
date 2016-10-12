@@ -57,13 +57,13 @@ get_header('home'); ?>
 	<section class="full-width call-to-action">
 		<!-- CALL TO ACTION
 		=================================== -->
-		<div class="container">
-			<div class="col-md-8">
+		<div class="container-fluid">
+			<div class="col-md-6 col-md-offset-1">
 				<h1>We help people do awesome things</h1>
 			</div>
 			<div class="col-md-4">
 				<form action="<?php echo get_site_url();?>/contact-wysac">
-					<button type="submit" class="btn btn-warning btn-lg pull-right">Connect with Us</button>
+					<button type="submit" class="btn btn-warning btn-lg center-block">Connect with Us</button>
 				</form>
 			</div>
 		</div>

@@ -58,8 +58,8 @@
 								<a href="<?php echo get_home_url();?>"><?php the_custom_logo(); ?></a>
 							</div> <!--.site-logo-->
 						</div><!--.col-md-2-->
-						<div class="col-md-10 col-sm-8">
-							<nav class="navbar navbar-default main-navigation" role="navigation">
+						<div class="col-md-10 col-sm-8 	main-navigation-container">
+							<nav class="navbar navbar-default main-navigation navbar-static-top" role="navigation">
 								<!-- Brand and toggle get grouped for better mobile display -->
 								<div class="navbar-header">
 									<button type="button" class="navbar-toggle .nav-stacked" data-toggle="collapse" data-target=".navbar-ex1-collapse">
