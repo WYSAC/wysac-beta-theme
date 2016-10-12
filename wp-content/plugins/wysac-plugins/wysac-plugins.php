@@ -375,7 +375,7 @@ function all_experts_page() {
     echo "<a href=\"".get_bloginfo('url')."/expert/"; //this should match the author_base that appears below in the next add_action
     echo $author->user_nicename; // the user_nicename is the "slug"
     echo "\">";
-    echo get_avatar($author->ID); // photo
+    echo get_avatar($author->ID, 165, array('class' => 'profile-image') ); // photo
     echo "</a>";
     echo '<div class="all-experts-info">'; //name and title
     echo "<a href=\"".get_bloginfo('url')."/expert/";

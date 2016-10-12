@@ -55,7 +55,7 @@ get_header(); ?>
 						'<div class="col-md-3 all-experts-user"><a href="' .
 						esc_url( get_author_posts_url( $user_id ) ) .
 						'">'.
-						get_avatar( $user_id, '96' ) .
+						get_avatar( $user_id, '165' ) .
 						'</a><div class="all-experts-info"><a href="'.
 						esc_url( get_author_posts_url( $user_id ) ) .
 						'"><span class="all-experts-name">' .
