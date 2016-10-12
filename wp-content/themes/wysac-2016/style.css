@@ -283,7 +283,7 @@ input, button, select, textarea, .btn {
 ----------------------------------------------------------------*/
 /*transparent area behind the nav*/
 .site-branding {
-	height:165px;
+	/*height:165px;*/
 	background-color:rgba(232,229,229,0.2);
 }
 
@@ -339,28 +339,28 @@ nav.main-navigation button.navbar-toggle {
 ## FOOTER MENUS
 ----------------------------------------------------------------*/
 .main-footer-nav{
-
+	margin:4rem 0 0 0;
 }
 
 .secondary-footer-nav {
-
+	margin: 3rem 0;
 }
 
 .footer-nav ul,
 .footer-legal-nav ul {
-	list-style: none;
-	width:100%;
-	text-align: center;
+	/*list-style: none;
+	/*width:100%;*/
+	/*text-align: center;*/
 }
 
 .footer-nav li,
 .footer-legal-nav li {
-	float:none;
-	display:inline-block;
+	/*float:none;
+	display:inline-block;*/
 }
 
 .footer-nav li {
-	margin: 3rem 5rem;
+	/*margin: 3rem 5rem;*/
 }
 
 .footer-legal-nav li {
@@ -875,6 +875,9 @@ span.all-experts-title {
 
 @media (max-width: 767px )  {
 
+	.masthead-home-page {
+		background-image: none;
+	}
 
 	.topbar a.uw-linkback {
 		font-size: 85%;
@@ -886,6 +889,7 @@ span.all-experts-title {
 		margin-right: auto;
 		height:125px;
 		width:125px;
+		margin-top: 3rem;
 	}
 
 	#menu-main-navigation.navbar-nav {

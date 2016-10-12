@@ -20,7 +20,10 @@
 		=================================== -->
 			<div class="col-md-12 main-footer-nav">
 					<nav class="footer-nav" role="navigation">
-						<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu' ) ); ?>
+						<?php wp_nav_menu( array(
+							'theme_location' 	=> 'footer',
+							'menu_id' 				=> 'footer-menu',
+						 	'menu_class'			=> 'nav nav-justified') ); ?>
 					</nav><!--.footer-navigation-->
 				</div><!-- .main-footer-nav-->
 			</div><!--.row-->
@@ -29,7 +32,10 @@
 			=================================== -->
 			<div class="col-md-12 secondary-footer-nav">
 					<nav class="footer-legal-nav" role="navigation">
-						<?php wp_nav_menu( array( 'theme_location' => 'footer-legal', 'menu_id' => 'Footer-Legal' ) ); ?>
+						<?php wp_nav_menu( array(
+							'theme_location' 	=> 'footer-legal',
+							'menu_id' 				=> 'footer-Legal',
+						 	'menu_class'			=> 'nav nav-justified') ); ?>
 					</nav><!--.footer-navigation-->
 				</div><!-- .secondary-footer-nav-->
 			</div><!--.row-->

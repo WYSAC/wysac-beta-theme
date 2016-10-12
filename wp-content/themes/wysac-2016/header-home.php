@@ -56,7 +56,16 @@
 						<div class="col-md-2 col-sm-3">
 							<div class="site-logo">
 								<a href="<?php echo get_home_url();?>"><?php the_custom_logo(); ?></a>
-							</div> <!--.site-logo-->
+							</div><!--.site-logo-->
+							<div class="hidden-sm hidden-md hidden-lg"> <!--title and tagline for little screens-->
+								<h2 style="text-align:center;"><?php bloginfo( 'name' ); ?></h2>
+								<?php
+								$description = get_bloginfo( 'description', 'display' );
+								if ( $description || is_customize_preview() ) : ?>
+									<h4 style="text-align:center;"><?php echo $description; /* WPCS: xss ok. */ ?></h4>
+								<?php
+								endif; ?>
+							</div><!--title and tagline for little screens -->
 						</div><!--.col-md-2-->
 						<div class="col-md-10 col-sm-8 	main-navigation-container">
 							<nav class="navbar navbar-default main-navigation navbar-static-top" role="navigation">
@@ -92,7 +101,7 @@
 			</div><!--.site-branding-->
 		<!-- Jumbotron
 		=================================== -->
-		<div class="container front-page-banner">
+		<div class="container front-page-banner hidden-xs">
 			<div class="row">
 				<div class="col-md-12">
 									<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
