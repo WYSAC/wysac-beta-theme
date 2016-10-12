@@ -32,10 +32,10 @@
 		<div class="topbar">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 col-sm-8 col-xs-8">
 						<a href="http://www.uwyo.edu/" class="uw-linkback"><img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/uw_white_52x25.png" class="uw-logo" /> <small>University of Wyoming</small></a>
 					</div><!--.col-md-6 -->
-					<div class="col-md-6">
+					<div class="col-md-6 col-sm-4 col-xs-4">
 						<form role="search" method="get" id="searchform" class="form-inline pull-right" action="<?php echo get_site_url();?>">
 							<div><label class="screen-reader-text" for="s">Search for:</label>
 								<div class="input-group">
@@ -53,16 +53,16 @@
 		<div class="site-branding">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-2">
+						<div class="col-md-2 col-sm-3">
 							<div class="site-logo">
 								<a href="<?php echo get_home_url();?>"><?php the_custom_logo(); ?></a>
 							</div> <!--.site-logo-->
 						</div><!--.col-md-2-->
-						<div class="col-md-10 main-nav-container">
-							<nav class="navbar  main-navigation" role="navigation">
+						<div class="col-md-10 col-sm-8">
+							<nav class="navbar navbar-default main-navigation" role="navigation">
 								<!-- Brand and toggle get grouped for better mobile display -->
 								<div class="navbar-header">
-									<button type="button" class="navbar-toggle nav-stacked" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+									<button type="button" class="navbar-toggle .nav-stacked" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 										<span class="sr-only">Toggle navigation</span>
 										<span class="icon-bar"></span>
 										<span class="icon-bar"></span>
@@ -86,7 +86,7 @@
 									?>
 								</div>
 							</nav>
-						</div><!--.col-md-10-->
+						</div>
 					</div><!--.row-->
 				</div> <!--.container-->
 			</div><!--.site-branding-->

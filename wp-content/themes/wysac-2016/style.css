@@ -292,34 +292,31 @@ input, button, select, textarea, .btn {
 ## PRIMARY MENU
 ----------------------------------------------------------------*/
 /*vertically center the navigation*/
-.navbar .main-navigation {
-	margin-top:35%;
-}
+#menu-main-navigation.navbar-nav {
+	margin-top:7%;
 }
 
 .main-navigation ul {
 	list-style: none;
 }
 
-.main-navigation li {
-	float:left;
-}
-
 .main-navigation li a:link,
 .main-navigation li a:visited {
 	display: block;
+	text-align: center;
+	margin-right: 6rem;
 	color:#000;
+	position: relative;
 	font-size:1.25em;
-	margin-right:10rem;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 .main-navigation li a:hover,
 .main-navigation li a:active,
-.main-navigation li a:focus {
+#menu-main-navigation.navbar-nav>.active>a {
 	border-bottom:solid rgb(29,90,123);
 	text-decoration:none;
 	color: rgb(29,90,123);
-	background: none;
+	background-color: transparent;
 }
 
 /*--------------------------------------------------------------
@@ -843,11 +840,37 @@ span.all-experts-title {
 /* No media query since this is the default in Bootstrap */
 
 @media (max-width: 767px )  {
+
+
+	.topbar a.uw-linkback {
+		font-size: 85%;
+	}
+
 .site-logo img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	height:125px;
+	width:125px;
 }
+
+.main-navigation li a:link,
+.main-navigation li a:visited {
+	text-align: left;
+	margin-right: 0;
+}
+
+#menu-main-navigation.navbar-nav a:hover,
+#menu-main-navigation.navbar-nav a:active,
+#menu-main-navigation.navbar-nav>.active>a {
+	border-bottom: transparent;
+	text-decoration:none;
+	color: rgb(29,90,123);
+	background-color: #e7e7e7;
+}
+
+
+
 
 }
 
@@ -858,11 +881,21 @@ span.all-experts-title {
 	background-color: transparent;
 	}
 
+	.main-navigation li a:link {
+		margin-right: 1rem;
+	}
+
+.main-navigation li {
+		float:left;
+	}
+
  }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
+	.main-navigation li a:link {
+		margin-right: 6rem;
+	}
 
 
  }
