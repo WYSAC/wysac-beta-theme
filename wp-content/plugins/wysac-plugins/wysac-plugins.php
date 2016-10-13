@@ -363,7 +363,7 @@ add_filter( 'get_the_archive_title', function ($title) { //if you need to get th
 // these is actually in the functions.php file of the theme.
 
 /*--------------------------------------------------------------
-## Experts Custom Archive
+## Experts Custom Archive Page
 ----------------------------------------------------------------*/
 
 function all_experts_page() {
@@ -371,7 +371,7 @@ function all_experts_page() {
   $authors = $wpdb->get_results("SELECT ID, user_nicename from $wpdb->users ORDER BY display_name");
 
   foreach ($authors as $author) {
-    echo '<div class="col-md-3 all-experts-user">';
+    echo '<div class="col-md-3 col-sm-4 col-xs-12 all-experts-user">';
     echo "<a href=\"".get_bloginfo('url')."/expert/"; //this should match the author_base that appears below in the next add_action
     echo $author->user_nicename; // the user_nicename is the "slug"
     echo "\">";
@@ -382,11 +382,13 @@ function all_experts_page() {
     echo $author->user_nicename;
     echo "\">";
     echo '<span class="all-experts-name">';
-    the_author_meta('display_name', $author->ID);
+    the_author_meta('first_name', $author->ID);
+    echo ' ';
+    the_author_meta('last_name', $author->ID);
     echo '</span><br/><span class="all-experts-title">';
     the_author_meta('jobtitle', $author->ID); //get the user's job title
     echo '</span></a>';
-    echo '</div></div>';
+    echo '</div><div class="clearfix"></div></div>';
   }
 };
 

@@ -29,7 +29,7 @@ get_header(); ?>
 									}
 									echo '</ul><div class="clear-both"></div>';?>
 								</div><!-- .expert-topic-filters -->
-					<div class="expert-archive-photos row">
+					<div class="expert-archive-photos row clearfix">
 						<!-- function to show all the authors in on the page -->
 						<?php all_experts_page(); ?>
 					</div><!--.expert-archive-photos-->
