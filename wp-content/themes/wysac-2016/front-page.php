@@ -28,7 +28,7 @@ get_header('home'); ?>
 				$the_query = new WP_Query($args);
 				//The Loop
 				while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-				<div class="col-md-4">
+				<div class="col-md-4 col-sm-6">
 					<div class="recent-post-box">
 						<p class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
 						<p><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></a></p>
@@ -83,11 +83,12 @@ get_header('home'); ?>
 			//The Loop
 			while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 			<!--Get the Expert's Photo-->
-			<div class="col-md-4">
-				<?php the_post_thumbnail('profile-image', array('class'=>'img-circle pull-right', 'style'=>'margin-right:5rem;') ); ?>
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<?php the_post_thumbnail('profile-image', array('class'=>'img-circle pull-right hidden-xs', 'style'=>'margin-right:5rem;') ); ?>
+				<?php the_post_thumbnail('profile-image', array('class'=>'img-circle hidden-sm hidden-md hidden-lg center-block') ); ?>
 			</div>
 			<!--Get the Quote-->
-			<div class="col-md-8">
+			<div class="col-md-8 col-sm-8 col-xs-12">
 				<h5 class="text-white">From Our Experts</h5>
 				<h2 class="text-white"><?php the_content(); ?></h2>
 				<h4 class="text-white">- <?php the_title(); ?></h4>
@@ -141,10 +142,11 @@ get_header('home'); ?>
 	<!-- MEDIA MENTIONS
 	=================================== -->
 	<div class="container">
-		<div class="col-md-4">
-			<img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/iconmonstr-newspaper-3-240.png" class="media-mention-icon pull-right"/>
+		<div class="col-md-4 col-sm-4 col-xs-12">
+			<img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/iconmonstr-newspaper-3-240.png" class="media-mention-icon center-block hidden-xs"/>
+			<img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/iconmonstr-newspaper-3-240.png" class=" hidden-sm hidden-md hidden-lg center-block" width=155/>
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-8 col-sm-8 col-xs-12">
 			<?php
 			//Get a single media media-mention randomly on load
 			$args = array (

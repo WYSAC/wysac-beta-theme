@@ -26,18 +26,19 @@ get_header(); ?>
 		$field_linkedin_profile 		= get_field('linkedin_profile', $curauth );
 		$field_awards								= get_field('awards', $curauth);
 		$field_memberships			 		= get_field('memberships', $curauth );
+		$field_education						= get_field('degree', $curauth);
 
 
 		?>
-<div class="row">
-		<header class="page-header">
+		<div class="row">
+			<header class="page-header">
 				<?php echo get_wp_user_avatar ($user_id, 'profile-image'); ?>
 				<!-- NAME AND JOB TITLE
 				=================================== -->
 				<h1 class="page-title"><?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></h1>
 				<h2 class="taxonomy-description"><?php echo $curauth->jobtitle ?></h2>
-		</header><!--.col-md-12-->
-	</div>
+			</header><!--.col-md-12-->
+		</div>
 		<div class="row">
 			<div class="page-content col-md-8">
 				<!-- BIOGRAPHY
@@ -100,8 +101,8 @@ get_header(); ?>
 										=================================== -->
 										<h4 class="sidebar-section-title">Expert Areas</h4>
 										<?php
-										$terms = get_the_terms( $curauth->ID, 'expert_areas');
-										if ($terms != null ) {
+										$terms = get_the_terms( $curauth, 'expert_areas');
+										if (! empty ($terms) ) {
 											echo '<ul class="tax-list">';
 											foreach($terms as $term ) {
 												echo '<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
@@ -109,6 +110,13 @@ get_header(); ?>
 											}
 											echo '</ul><div class="clear-both"></div>';
 										} ?>
+										<!-- EDUCATION
+										=================================== -->
+										<?php // if there are presentations fields with values, print the heading and the values
+										if( ! empty( $field_degree) ) { ?>
+											<h4 class="sidebar-section-title">Education</h4>
+											<p><?php echo $field_degree ?></p>
+											<?php } ?>
 										<!-- PUBLICATIONS
 										=================================== -->
 										<?php if ( ! empty ( $field_pubs_books || $field_pubs_journals) ) {
