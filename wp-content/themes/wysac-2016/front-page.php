@@ -57,8 +57,8 @@ get_header('home'); ?>
 	<section class="full-width call-to-action">
 		<!-- CALL TO ACTION
 		=================================== -->
-		<div class="container-fluid">
-			<div class="col-md-6 col-md-offset-1">
+		<div class="container">
+			<div class="col-md-6">
 				<h1>We help people do awesome things</h1>
 			</div>
 			<div class="col-md-4">
@@ -104,7 +104,7 @@ get_header('home'); ?>
 	=================================== -->
 	<div class="container site-tags">
 		<div class="col-md-12 home-section-title">
-			<h2>Our experts are knowledgable in ... </h2>
+			<h2>Our research covers a variety of topics including ... </h2>
 		</div>
 		<div class="row tags-container">
 			<?php
@@ -113,26 +113,26 @@ get_header('home'); ?>
 			'get'						=> 'all',
 		);
 		$tags = get_tags($args);
-		$html = '<div class="post_tags">';
+		$html = '<div class="post_tags"><ul class="tag-boxes">';
 		foreach ( $tags as $tag ) {
 			if ($tag->count < 1) {
 				$tag_link = get_tag_link( $tag->term_id );
 
-				$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} col-md-3 col-sm-12 col-xs-12 site-tag-box tag-small'>";
-				$html .= "{$tag->name}</a>";
+				$html .= "<li class='col-md-3 col-sm-6 col-xs-12'><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}  site-tag-box tag-small'>";
+				$html .= "{$tag->name}</a></li>";
 			} elseif ($tag->count >=1 && $tag->count <=3) {
 				$tag_link = get_tag_link( $tag->term_id );
 
-				$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} col-md-3 col-sm-12 col-xs-12  site-tag-box tag-medium'>";
-				$html .= "{$tag->name}</a>";
+				$html .= "<li class='col-md-3 col-sm-6 col-xs-12'><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} site-tag-box tag-medium'>";
+				$html .= "{$tag->name}</a></li>";
 			} else {
 				$tag_link = get_tag_link( $tag->term_id );
 
-				$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} col-md-3 col-sm-12 col-xs-12  site-tag-box tag-large'>";
-				$html .= "{$tag->name}</a>";
+				$html .= "<li class='col-md-3 col-sm-6 col-xs-12'><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} site-tag-box tag-large'>";
+				$html .= "{$tag->name}</a></li>";
 			}
 		}
-		$html .= '</div>';
+		$html .= '</ul><div class="clearfix"></div></div>';
 		echo $html;
 		?>
 	</div>
@@ -144,7 +144,7 @@ get_header('home'); ?>
 	<div class="container">
 		<div class="col-md-4 col-sm-4 col-xs-12">
 			<img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/iconmonstr-newspaper-3-240.png" class="media-mention-icon center-block hidden-xs"/>
-			<img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/iconmonstr-newspaper-3-240.png" class=" hidden-sm hidden-md hidden-lg center-block" width=155/>
+			<img src="<?php echo get_site_url();?>/wp-content/uploads/2016/09/iconmonstr-newspaper-3-240.png" class=" hidden-sm hidden-md hidden-lg center-block" width=130/>
 		</div>
 		<div class="col-md-8 col-sm-8 col-xs-12">
 			<?php

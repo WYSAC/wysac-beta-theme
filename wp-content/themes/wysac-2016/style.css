@@ -130,6 +130,12 @@ summary {
 .site-content {
 	flex: 1;
 }
+
+.vcenter {
+	display: inline-block;
+	vertical-align: middle;
+	float:none;
+}
 /*--------------------------------------------------------------
 # TYPOGRAPHY
 ----------------------------------------------------------------*/
@@ -247,7 +253,7 @@ footer {
 	margin-top:5rem;
 }
 .site-footer {
-	background-color: rgb(74,74,74);
+	background-color: rgb(50, 50, 50);
 
 }
 
@@ -393,6 +399,7 @@ nav.main-navigation button.navbar-toggle {
 .footer-legal-nav li a:active,
 .footer-legal-nav li a:focus {
 	text-decoration: underline;
+	background-color: transparent;
 }
 
 .footer-legal-nav a:link {
@@ -522,12 +529,13 @@ img.us-map {
 	color:#fff;
 }
 
-.call-to-action .container .col-md-8 {
-	padding: 3.5% 0;
+.call-to-action h1{
+	padding: 4.5% 0;
+	line-height: 1.5;
 }
 
-.call-to-action .container .col-md-4 {
-	padding: 5% 0;
+.call-to-action form {
+	padding: 13% 0;
 }
 
 /*--------------------------------------------------------------
@@ -545,21 +553,33 @@ img.us-map {
 
 .quote-box h2.text-white p {
 	line-height: 1.5;
+	font-weight: lighter;
+	letter-spacing: 1px;
 }
 /*--------------------------------------------------------------
 ## SITE TAGS DIV
 ----------------------------------------------------------------*/
+
+ul.tag-boxes {
+	list-style: none;
+	margin: 0 0;
+	padding: 0 0;
+}
+
+ul.tag-boxes li {
+}
 
 a.site-tag-box:link,
 a.site-tag-box:visited {
 	text-align: center;
 	color: rgb(255,255,255);
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-size: 3rem;
+	font-size: 2rem;
 	text-transform: capitalize;
-	min-height: 150px;
-	padding:5rem;
-	margin:2rem 3rem;
+	display: block;
+	padding:4rem;
+	margin: 0 20px 20px 0;
+	font-weight: lighter;
 }
 
 a.site-tag-box:hover,
@@ -912,6 +932,10 @@ span.all-experts-title {
 		text-decoration:none;
 		color: rgb(29,90,123);
 		background-color: #e7e7e7;
+	}
+
+	.main-footer-nav nav.footer-nav li {
+		border-bottom: thin dotted rgb(255,255,255);
 	}
 
 

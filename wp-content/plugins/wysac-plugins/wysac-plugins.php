@@ -368,7 +368,10 @@ add_filter( 'get_the_archive_title', function ($title) { //if you need to get th
 
 function all_experts_page() {
   global $wpdb;
-  $authors = $wpdb->get_results("SELECT ID, user_nicename from $wpdb->users ORDER BY display_name");
+  $authors = $wpdb->get_results(
+          "SELECT ID, user_nicename
+           FROM $wpdb->users
+           ORDER BY display_name");
 
   foreach ($authors as $author) {
     echo '<div class="col-md-3 col-sm-4 col-xs-12 all-experts-user">';

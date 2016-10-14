@@ -35,7 +35,7 @@
 						<?php wp_nav_menu( array(
 							'theme_location' 	=> 'footer-legal',
 							'menu_id' 				=> 'footer-Legal',
-						 	'menu_class'			=> 'nav nav-justified') ); ?>
+						 	'menu_class'			=> 'nav nav-justified col-xs-4') ); ?>
 					</nav><!--.footer-navigation-->
 				</div><!-- .secondary-footer-nav-->
 			</div><!--.row-->
