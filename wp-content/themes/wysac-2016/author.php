@@ -31,8 +31,8 @@ get_header(); ?>
 
 		?>
 		<div class="row">
-			<header class="page-header">
-				<?php echo get_wp_user_avatar ($user_id, 'profile-image'); ?>
+			<header class="page-header col-md-12">
+				<img src="<?php echo get_wp_user_avatar_src ($user_id, 'profile-image'); ?>" class="center-block img-circle" />
 				<!-- NAME AND JOB TITLE
 				=================================== -->
 				<h1 class="page-title"><?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></h1>
