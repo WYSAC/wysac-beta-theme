@@ -124,6 +124,7 @@ function wysac_beta_widgets_init() {
 			'before_title'  => '<h4 class="widget-title sidebar-section-title">',
 			'after_title'   => '</h4>',
 			) );
+			
 		}
 		add_action( 'widgets_init', 'wysac_beta_widgets_init' );
 

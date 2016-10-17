@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content col-md-8">
 		<?php the_content(); ?>
 		</div><!-- .entry-content -->
 	</article><!-- #post-## -->

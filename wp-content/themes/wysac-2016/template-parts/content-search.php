@@ -1,32 +1,25 @@
 <?php
 /**
- * Template part for displaying results in search pages.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WYSAC_Beta
- */
+* Template part for displaying results in search pages.
+*
+* @link https://codex.wordpress.org/Template_Hierarchy
+*
+* @package WYSAC_Beta
+*/
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="row">
-		<div class="col-md-8">
-			<header class="entry-header">
-				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-				<?php if ( 'post' === get_post_type() ) : ?>
-				<div class="entry-meta">
-					<?php wysac_beta_posted_on(); ?>
-				</div><!-- .entry-meta -->
-				<?php endif; ?>
-			</header><!-- .entry-header -->
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php //wysac_beta_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</div><!--.col-md-8-->
-</article><!-- #post-## -->
+	<div class="row archive-project-entry">
+		<div class="col-md-6">
+			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></a>
+		</div><!--.col-md-6-->
+		<div class="col-md-6">
+				<?php if ( 'post' === get_post_type() ): ?>
+						<p class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
+					<?php endif; ?>
+					<?php the_title( sprintf( '<h2><a href="%s" rel="bookmark" class="entry-title-link">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+					<a href="<?php the_permalink(); ?>" class="read-more-link">View Project &rarr;</a>
+			</div><!--.col-md-6-->
+		</div><!--.row .archive-project-entry -->
+	</article><!-- #post-## -->

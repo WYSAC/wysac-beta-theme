@@ -667,6 +667,54 @@ img.media-mention-icon {
 	color:#000;
 }
 
+aside.widget-area section.widget,
+aside#search-2.widget_search {
+	margin-bottom:3rem;
+}
+
+section.widget_nav_menu ul.menu,
+ul#menu-sidebar-more-about-wysac {
+	list-style: none;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	padding-left: 0;
+	line-height: 1.65;
+}
+
+section.widget_nav_menu ul.menu a:link,
+section.widget_nav_menu ul.menu a:visited,
+ul#menu-sidebar-more-about-wysac a:link,
+ul#menu-sidebar-more-about-wysac a:visited {
+	color: rgb(74,74,74);
+}
+
+section.widget_nav_menu ul.menu li ul.sub-menu,
+ul#menu-sidebar-more-about-wysac li ul.sub-menu {
+	list-style: none;
+	padding-left:1.5em;
+}
+
+/*--------------------------------------------------------------
+### Recent Projects Widget
+----------------------------------------------------------------*/
+
+.rpwe-block h3.rpwe-title a:link,
+.rpwe-block h3.rpwe-title a:visited  {
+	text-transform: capitalize;
+	color: rgb(74,74,74);
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.rpwe-block h3.rpwe-title a:hover {
+	color: rgb(74,74,74);
+	text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+## CAREERS SIDEBAR
+----------------------------------------------------------------*/
+
 
 ul#menu-sidebar-careers.menu {
 	list-style: none;
@@ -976,6 +1024,7 @@ span.all-experts-title {
 	aside.widget-area {
 		padding-left: 50px;
 	}
+
 
 
 }
