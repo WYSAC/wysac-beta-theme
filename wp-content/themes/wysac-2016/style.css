@@ -201,7 +201,9 @@ h5 {
 }
 
 .entry-content p,
-.page-content p {
+.entry-content ul,
+.page-content p,
+.page-content ul {
 	font-size: 18px;
 	line-height: 2;
 	margin-bottom: 1.25em;
@@ -210,6 +212,21 @@ h5 {
 .text-white {
 	color:rgb(255,255,255);
 }
+
+/*--------------------------------------------------------------
+##  ENTRY CONTENT
+----------------------------------------------------------------*/
+
+.entry-content h1 {
+	font-weight: 800;
+	padding-top: 2rem;
+}
+
+.entry-content h2 {
+	padding-top: 1.5rem;
+	text-transform: uppercase;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -984,6 +1001,10 @@ span.all-experts-title {
 
 	.main-footer-nav nav.footer-nav li {
 		border-bottom: thin dotted rgb(255,255,255);
+	}
+
+	img.spyglass {
+		width:150px;
 	}
 
 

@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<section id="primary" class="content-area">
+<section id="primary" class="content-area turkey-leg">
 	<main id="main" class="site-main" role="main">
 
 		<?php
@@ -37,7 +37,7 @@ get_header(); ?>
 					'mid_size'		=> 2,
 					'prev_text'		=> __('Previous', 'textdomain'),
 					'next_text'		=> __('Next', 'textdomain'),
-				)); else :
+				)); ?> <?php else :
 
 					get_template_part( 'template-parts/content', 'none' );
 
