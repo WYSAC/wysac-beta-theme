@@ -173,17 +173,32 @@ get_header('home'); ?>
 	</div>
 </div>
 </section><!--end Media Mentions-->
-<section>
+<section class="location">
 	<!-- FRONT PAGE CONTENT
 	=================================== -->
 	<div class="container">
 		<?php //Get the content of the Front Page and put it here
-		while ( have_posts() ) : the_post();
-		get_template_part( 'template-parts/content', 'page' );
-	endwhile; // End of the loop.
-	?>
-</div>
-</section>
+		// while ( have_posts() ) : the_post();
+		// get_template_part( 'template-parts/content', 'page' );
+		// endwhile; // End of the loop.
+		?>
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<?php echo do_shortcode('[google_maps id="280"]'); ?>
+			</div><!--.col-md-6-->
+			<div class="col-md-6 col-sm-6 location-info">
+				<h2>Wyoming Survey & Analysis Center <br/>at the University of Wyoming</h2>
+				<p><span class="glyphicon glyphicon-envelope"></span> 1000 E University Ave, Laramie, WY 82070</p>
+				<p><span class="glyphicon glyphicon-map-marker"></span> 406 S 21st St., Laramie, WY 82070 </p>
+				<p><span class="glyphicon glyphicon-earphone"></span> 307.766.2189 </p>
+				<br/>
+				<form action="<?php echo get_site_url();?>/contact-wysac">
+					<button type="submit" class="btn btn-default">Connect with Us</button>
+				</form>
+			</div><!--.col-md-6-->
+		</div><!--.row-->
+	</div>
+</section><!--.location-->
 </main><!-- #main -->
 </div><!-- #primary -->
 

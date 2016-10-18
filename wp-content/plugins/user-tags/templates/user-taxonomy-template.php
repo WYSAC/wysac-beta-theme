@@ -20,7 +20,7 @@ get_header(); ?>
 					?> </h1>
 
 
-					<h2 class="taxonomy-description">page content</h2>
+					<h2 class="taxonomy-description">The knowledge and expertise of our people are our most valuable assets.</h2>
 				</header>
 			</div><!--.row-->
 			<div class="expert-topic-filters row">
