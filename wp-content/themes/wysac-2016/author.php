@@ -44,7 +44,7 @@ get_header(); ?>
 				<!-- BIOGRAPHY
 				=================================== -->
 				<?php if (! empty ($curauth->user_description ) ) { ?>
-					<div class="expert-profile-section">
+					<div>
 						<h3>About <?php echo $curauth->first_name; ?></h3>
 						<p><?php echo $curauth->user_description; ?></p>
 					</div>

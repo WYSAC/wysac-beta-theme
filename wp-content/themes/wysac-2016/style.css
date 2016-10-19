@@ -904,6 +904,11 @@ h3.expert-profile-heading {
 	margin-top:3rem;
 }
 
+.expert-profile-section p {
+	font-family:'Open Sans', Helvetica, Arial, sans-serif;
+	font-size:16px;
+}
+
 /*--------------------------------------------------------------
 ### ALL-EXPERTS.PHP
 ----------------------------------------------------------------*/
@@ -1049,9 +1054,13 @@ span.all-experts-title {
 		width:150px;
 	}
 
-section.quote-box img {
-	margin-bottom:45px;
-}
+	section.quote-box img {
+		margin-bottom:45px;
+	}
+
+	p.entry-metadata {
+		margin-top:2rem;
+	}
 
 
 }
@@ -1078,6 +1087,7 @@ section.quote-box img {
 	.location-logo {
 		margin:3rem 0 3rem;
 	}
+
 
 }
 

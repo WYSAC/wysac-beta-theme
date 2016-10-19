@@ -13,6 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area col-md-4" role="complementary">
+	<div class="col-sm-6 col-md-12">
 				<!-- TOPICS
 				=================================== -->
 				<h4 class="sidebar-section-title">Topics</h5>
@@ -40,8 +41,11 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 								    echo '<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
 								}
 								echo '</ul><div class="clear-both"></div>';?>
+							</div>
 				<!-- SEARCH BOX
 				=================================== -->
-				<h4 class="sidebar-section-title">Search</h5>
+				<div class="col-sm-6 col-md-12 hidden-xs">
+					<h4 class="sidebar-section-title">Search</h5>
 				<?php get_search_form(); ?>
+			</div>
 </aside><!-- #secondary -->
