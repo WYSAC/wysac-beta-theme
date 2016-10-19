@@ -47,62 +47,66 @@ get_header(); ?>
 					<div class="expert-profile-section">
 						<h3>About <?php echo $curauth->first_name; ?></h3>
 						<p><?php echo $curauth->user_description; ?></p>
-						<!-- SKILLS AND TRAININGS -->
-						<?php if ( ! empty ($field_skills_trainings) ) {
-							//if skills and trainings has a value ?>
-							<h4>Skills & Trainings</h4>
-							<p><?php echo $field_skills_trainings?></p>
-							<?php }?>
-						</div>
-						<?php } ?>
-						<!-- Associations and Memberships
+					</div>
+					<?php } ?>
+					<div class="expert-profile-section">
+						<!-- PUBLICATIONS
 						=================================== -->
-						<?php if (! empty ($field_memberships ) ) { ?>
-							<div class="expert-profile-section">
-								<h4>Associations & Memberships</h4>
-								<p><?php echo $field_memberships?></p>
-							</div>
-							<?php } ?>
-							<!-- AWARDS
-							=================================== -->
-							<?php if (! empty ($field_awards ) ) { ?>
-								<div class="expert-profile-section">
-									<h4>Awards & Recoginitions</h4>
-									<p><?php echo $field_awards?></p>
-								</div>
+						<?php if ( ! empty ( $field_pubs_books || $field_pubs_journals) ) {
+							// if there are any of the publications fields with values, print the heading ?>
+							<h3 class="expert-profile-heading">Publications</h3>
+							<?php }  //Now, let's print each one individually if they exist ?>
+							<!-- BOOKS -->
+							<?php if( ! empty( $field_pubs_books ) ) { ?>
+								<h4>Books</h4>
+								<p><?php echo $field_pubs_books ?></p>
 								<?php } ?>
-
-								<!-- PROJECTS AND PUBLICATIONS
-								=================================== -->
+								<!-- JOURNALS -->
+								<?php if( ! empty( $field_pubs_journals ) ) { ?>
+									<h4>Journals and Magazines</h4>
+									<p><?php echo $field_pubs_journals ?></p>
+									<?php } ?>
+								</div>
 								<div class="expert-profile-section">
-									<h3>Projects & Publications</h3>
-									<ul>
+									<!-- PRESENTATIONS
+									=================================== -->
+									<?php // if there are presentations fields with values, print the heading and the values
+									if( ! empty( $field_pubs_presentations) ) { ?>
+										<h3 class="expert-profile-heading">Presentations</h3>
+										<p><?php echo $field_pubs_presentations ?></p>
+										<?php } ?>
+									</div>
+
+									<!-- PROJECTS AND PUBLICATIONS
+									=================================== -->
+									<div class="expert-profile-section">
 										<!-- The Loop -->
 
-										<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-											<li>
-												<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>">
-													<?php the_title(); ?></a>,
-													<?php the_time('d M Y'); ?> in <?php the_category('&');?>
-												</li>
-
-											<?php endwhile; else: ?>
-												<p><?php _e('No posts by this author.'); ?></p>
-
-											<?php endif; ?>
-
-											<!-- End Loop -->
-
-										</ul>
-									</div>
+										<?php if ( have_posts() ) : ?>
+											<h3 class="expert-profile-heading">Projects</h3>
+											<?php	while ( have_posts() ) : the_post(); ?>
+												<div class="row archive-project-entry">
+													<div class="col-md-6">
+														<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></a>
+													</div>
+													<div class="col-md-6">
+														<p class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
+														<a href="<?php the_permalink();?>" class="entry-title-link"><h2><?php the_title(); ?></h2></a>
+														<a href="<?php the_permalink(); ?>" class="read-more-link">View Project &rarr;</a>
+													</div>
+											</div>
+												<div class="clear-both"></div>
+											<?php endwhile;
+										endif; ?>
+										<!-- End Loop -->
+									</div><!--.expert-profile-section-->
 								</div><!--.col-md-8 page-content -->
-								<aside class="col-md-4 widget-area">
+								<aside class="col-md-4 widget-area author-sidebar">
 									<!-- SOCIAL MEDIA ICONS / LINKS
 									=================================== -->
 									<?php if ( ! empty ( $field_twitter_username || $field_facebook_profile_url || $field_linkedin_profile) ) {
 										// if there are any of the social media fields with values, print the heading ?>
-
-										<h4 class="sidebar-section-title">Social Media</h4>
+										<h4>Social Media</h4>
 										<?php }  //Now, let's print each one individually if they exist ?>
 										<!-- TWITTER USERNAME -->
 										<?php if( ! empty( $field_twitter_username ) ) { ?>
@@ -115,10 +119,9 @@ get_header(); ?>
 												<!-- LINKED IN  PROFILE  -->
 												<?php if( ! empty( $field_linkedin_profile ) ) { ?>
 													<a href="<?php echo $field_linkedin_profile ?>"><img src="<?php site_url()?>/wp-content/uploads/2016/09/icon_linkedin_32x32.png" class="social-icon" /></a>
-													<?php }?>
+													<?php } ?>
 													<!-- EXPERT AREAS / USER TAGS
 													=================================== -->
-
 													<?php
 													$terms = get_the_terms( $curauth, 'expert_areas');
 													if (! empty ($terms) ) { ?>
@@ -137,34 +140,36 @@ get_header(); ?>
 														if( ! empty( $field_degree) ) { ?>
 															<h4 class="sidebar-section-title">Education</h4>
 															<p><?php echo $field_degree ?></p>
+															<div class="clear-both"></div>
 															<?php } ?>
-															<!-- PUBLICATIONS
+															<!-- SKILLS & TRAININGS
 															=================================== -->
-															<?php if ( ! empty ( $field_pubs_books || $field_pubs_journals) ) {
-																// if there are any of the publications fields with values, print the heading ?>
-																<h4 class="sidebar-section-title">Publications</h4>
-																<?php }  //Now, let's print each one individually if they exist ?>
-																<!-- BOOKS -->
-																<?php if( ! empty( $field_pubs_books ) ) { ?>
-																	<h5>Books</h5>
-																	<p><?php echo $field_pubs_books ?></p>
+															<?php if ( ! empty ($field_skills_trainings) ) {
+																//if skills and trainings has a value ?>
+																<h4 class="sidebar-section-title">Skills & Trainings</h4>
+																<p><?php echo $field_skills_trainings?></p>
+																<div class="clear-both"></div>
+																<?php }?>
+																<!-- Associations and Memberships
+																=================================== -->
+																<?php if (! empty ($field_memberships ) ) { ?>
+																	<h4 class="sidebar-section-title">Associations & Memberships</h4>
+																	<p><?php echo $field_memberships?></p>
+																	<div class="clear-both"></div>
 																	<?php } ?>
-																	<!-- JOURNALS -->
-																	<?php if( ! empty( $field_pubs_journals ) ) { ?>
-																		<h5>Journals and Magazines</h5>
-																		<p><?php echo $field_pubs_journals ?></p>
+																	<!-- AWARDS
+																	=================================== -->
+																	<?php if (! empty ($field_awards ) ) { ?>
+																		<h4 class="sidebar-section-title">Awards & Recoginitions</h4>
+																		<p><?php echo $field_awards?></p>
+																		<div class="clear-both"></div>
 																		<?php } ?>
-																		<!-- PRESENTATIONS
-																		=================================== -->
-																		<?php // if there are presentations fields with values, print the heading and the values
-																		if( ! empty( $field_pubs_presentations) ) { ?>
-																			<h4 class="sidebar-section-title">Presentations</h4>
-																			<p><?php echo $field_pubs_presentations ?></p>
-																			<?php } ?>
-																		</aside>
-																	</div><!--.row-->
-																</main><!-- #main -->
-															</div><!-- #primary -->
 
-															<?php
-															get_footer();
+																	</aside>
+
+																</div><!--.row-->
+															</main><!-- #main -->
+														</div><!-- #primary -->
+
+														<?php
+														get_footer();

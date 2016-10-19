@@ -218,7 +218,7 @@ h5 {
 ----------------------------------------------------------------*/
 
 .entry-content h1 {
-	font-weight: 800;
+	font-weight: 600;
 	padding-top: 2rem;
 }
 
@@ -595,7 +595,7 @@ a.site-tag-box:visited {
 	text-transform: capitalize;
 	display: block;
 	padding:4rem;
-	margin: 0 20px 20px 0;
+	margin: 0 20px 40px 0;
 	font-weight: 300;
 	letter-spacing: 1px;
 }
@@ -613,15 +613,15 @@ a.site-tag-box:active {
 }
 
 .tag-small {
-	background: #dedad8;
+	border: thin solid #dedad8;
 }
 
 .tag-medium {
-	background: #cec8c6;
+		border: thin solid #cec8c6;
 }
 
 .tag-large {
-	background: #beb7b4;
+		border: thin solid #beb7b4;
 }
 /*--------------------------------------------------------------
 ## MEDIA MENTIONS DIV
@@ -711,7 +711,8 @@ section.location {
 }
 .sidebar-section-title {
 	font-weight: bold;
-	color:#000;
+	color:rgb(74,74,74);
+	margin-top: 30px;
 }
 
 aside.widget-area section.widget,
@@ -786,6 +787,12 @@ ul#menu-sidebar-careers li a:active {
 }
 
 
+aside.widget-area.author-sidebar {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.65
+}
+
 /*--------------------------------------------------------------
 ## ARCHIVE PAGES
 ----------------------------------------------------------------*/
@@ -815,6 +822,7 @@ a.author.url.fn:visited {
 	color: rgb(74,74,74);
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 90%;
+	border-radius: 3px;
 }
 
 ul.tax-list li a:hover,
@@ -892,6 +900,9 @@ a.author.url.fn:focus{
 /*--------------------------------------------------------------
 ## AUTHOR AND ALL-EXPERTS
 ----------------------------------------------------------------*/
+h3.expert-profile-heading {
+	margin-top:3rem;
+}
 
 /*--------------------------------------------------------------
 ### ALL-EXPERTS.PHP
