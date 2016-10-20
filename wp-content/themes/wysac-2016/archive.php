@@ -22,7 +22,7 @@ get_header(); ?>
 					<div class="col-md-8">
 						<?php /* Start the Loop */
 						while ( have_posts() ) : the_post(); ?>
-						<div class="archive-project-entry">
+						<div class="row archive-project-entry">
 							<div class="col-md-6 col-sm-6">
 								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></a>
 							</div><!--col-md-6-->

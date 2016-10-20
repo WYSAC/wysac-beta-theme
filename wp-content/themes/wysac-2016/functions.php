@@ -124,7 +124,7 @@ function wysac_beta_widgets_init() {
 			'before_title'  => '<h4 class="widget-title sidebar-section-title">',
 			'after_title'   => '</h4>',
 			) );
-			
+
 		}
 		add_action( 'widgets_init', 'wysac_beta_widgets_init' );
 
@@ -178,6 +178,16 @@ function wysac_beta_widgets_init() {
 		}
 
 		add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
+
+		/* Add Reamore.js */
+
+		function theme_add_readmore() {
+			wp_enqueue_script('readmore-js',
+			get_template_directory_uri() .
+			'/js/readmore.min.js', array('jquery'), '1.0' );
+			wp_enqueue_script('readmore-js');
+		}
+		add_action('wp_enqueue_scripts', 'theme_add_readmore');
 
 		/** add a custom user field for the job title to try to call it elsewhere */
 

@@ -22,7 +22,7 @@ get_header(); ?>
 		</div>
 
 	<?php	endwhile; // End of the loop. ?>
-	<div class="expert-topic-filters row">
+	<div class="expert-topic-filters row readmore">
 		<h4 style="text-align:center;">View people with expertise in ... </h4>
 		<?php $terms = get_terms('expert_areas'); //get the list of expert areas for experts
 		echo '<ul class="tax-list">';
