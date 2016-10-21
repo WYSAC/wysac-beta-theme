@@ -917,6 +917,10 @@ article#post-101 header.page-header {
 	margin-bottom: 0;
 }
 
+.expert-archive-photos {
+	margin-top:5rem;
+}
+
 /* All the filters/tags at the top of the page for expert areas */
 
 .all-experts-to-filter {
@@ -924,7 +928,8 @@ article#post-101 header.page-header {
 }
 
 .expert-topic-filters {
-	margin: 0 0 4rem 0;
+	margin: 0 0 2rem 0;
+	border-bottom: solid thin rgb(204,204,204);
 }
 
 
@@ -941,6 +946,14 @@ ul.tax-list li  a.filter-view-all:hover,
 ul.tax-list li  a.filter-view-all:active {
 	background-color: rgb(162,165,106);
 }
+
+/* Settings for Readmore.js expand thing for all-experts page */
+
+div.expert-topic-filters + [data-readmore-toggle] {
+	width:5%;
+}
+
+/* Expert Photos */
 
 .expert-archive-photos .avatar {
 	border-radius: 50%;
@@ -1061,6 +1074,11 @@ span.all-experts-title {
 	p.entry-metadata {
 		margin-top:2rem;
 	}
+
+	div.expert-topic-filters + [data-readmore-toggle] {
+		width:10%;
+	}
+
 
 
 }

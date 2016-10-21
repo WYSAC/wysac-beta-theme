@@ -182,12 +182,23 @@ function wysac_beta_widgets_init() {
 		/* Add Reamore.js */
 
 		function theme_add_readmore() {
-			wp_enqueue_script('readmore-js',
-			get_template_directory_uri() .
-			'/js/readmore.min.js', array('jquery'), '1.0' );
+			wp_enqueue_script('readmore-js', // name
+			get_template_directory_uri() . // location
+			'/js/readmore.min.js', array('jquery'), '1.0', true );
 			wp_enqueue_script('readmore-js');
 		}
-		add_action('wp_enqueue_scripts', 'theme_add_readmore');
+		add_action('wp_enqueue_scripts', 'theme_add_readmore'); // add the function
+
+		/* Add the readmore-function.js file, which applies the readmore.js to a specific div class (expert-topic-filters) in all-experts.php */
+
+		function theme_add_readmore_function() {
+			wp_enqueue_script('readmore-function-js',
+			get_template_directory_uri() .
+			'/js/readmore-function.js', array('jquery'), '1.0', true );
+			wp_enqueue_script('readmore-function-js');
+		}
+		add_action('wp_enqueue_scripts', 'theme_add_readmore_function');
+
 
 		/** add a custom user field for the job title to try to call it elsewhere */
 
@@ -217,7 +228,7 @@ function wysac_beta_widgets_init() {
 				update_user_meta( $user_id, 'jobtitle', $_POST['jobtitle'] );
 			}
 
-/* Add Navwalker support to make collapasble bootstrap navigation */
+			/* Add Navwalker support to make collapasble bootstrap navigation */
 
-// register bootstrap navigation walker
-include 'bootstrap/wp_bootstrap_navwalker.php';
+			// register bootstrap navigation walker
+			include 'bootstrap/wp_bootstrap_navwalker.php';
