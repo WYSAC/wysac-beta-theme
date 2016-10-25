@@ -157,6 +157,7 @@ a.read-more-link:visited {
 	color: rgb(74,74,74);
 	text-align: center;
 	text-transform: capitalize;
+	line-height: 1.3;
 }
 
 .site-title {
@@ -473,6 +474,10 @@ a.entry-title-link:visited {
 	text-decoration: none;
 	line-height: 1.5;
 	margin-bottom: 0.75rem;
+}
+
+a.entry-title-link h2 {
+	line-height: 1.5;
 }
 
 /* Project Type Indicator on Archive and Single pages */
@@ -875,7 +880,6 @@ a.author.url.fn:focus{
 }
 
 /* make the image fit the width and height of the .entry-thumbnail parent container */
-
 .entry-thumbnail img {
 	width:90%; /* Percentage of the parent container to fill */
 	height: auto;
@@ -899,12 +903,16 @@ a.author.url.fn:focus{
 ## AUTHOR AND ALL-EXPERTS
 ----------------------------------------------------------------*/
 h3.expert-profile-heading {
-	margin-top:3rem;
+	margin:3rem 0;
 }
 
 .expert-profile-section p {
 	font-family:'Open Sans', Helvetica, Arial, sans-serif;
 	font-size:16px;
+}
+
+.expert-profile-section p.entry-metadata {
+	font-size: 90%;
 }
 
 /*--------------------------------------------------------------
@@ -994,9 +1002,27 @@ span.all-experts-title {
 	/*padding: 0 42%;*/
 }
 
-
-
 /*--------------------------------------------------------------
+## 	OWL CAROUSEL CUSTOMIZATIONS FOR GALLERY POSTS
+----------------------------------------------------------------*/
+
+
+.owl-nav .owl-prev,
+.owl-nav .owl-next {
+	background-color: rgba(74, 74, 74, 0.5);
+	padding:5px 8px;
+	border-radius:50%;
+	color:white;
+	display: inline-block;
+}
+
+.owl-nav .owl-prev:hover,
+.owl-nav .owl-next:hover {
+	background-color: rgba(74, 74, 74, 0.75);
+	cursor: pointer;
+}
+
+/* -----------------------------------------------------------
 # SCREEN READERS
 ----------------------------------------------------------------*/
 
@@ -1077,8 +1103,6 @@ span.all-experts-title {
 		width:10%;
 	}
 
-
-
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -1125,9 +1149,6 @@ span.all-experts-title {
 	.location-logo {
 		margin:6rem 0 3rem;
 	}
-
-
-
 }
 
 /* Large devices (large desktops, 1200px and up) */

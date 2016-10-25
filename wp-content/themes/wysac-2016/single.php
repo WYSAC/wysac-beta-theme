@@ -10,7 +10,6 @@
 get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<div class="row">
 
 			<?php
 			while ( have_posts() ) : the_post();
@@ -27,7 +26,6 @@ get_header(); ?>
 			else : //if it's any other category
 				get_sidebar(); //get the default sidebar
 			endif; ?>
-		</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php get_footer();?>

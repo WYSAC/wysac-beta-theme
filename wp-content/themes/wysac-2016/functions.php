@@ -243,3 +243,20 @@ function wysac_beta_widgets_init() {
 				$wp_roles->role_names['subscriber'] = 'WYSAC Staff';
 			}
 			add_action('init', 'wps_change_role_name');
+
+			// function add_owl_carousel() {
+			// 	wp_enqueue_script('owl-carousel-js', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery') );
+			// 	wp_enqueue_style('owl-carousel-css', get_stylesheet_uri().'/js/owl.carousel.css');
+			// 	wp_enqueue_script('owl-carousel-js-function', get_template_directory_uri() . '/js/owl-slider.js', array('jquery'));
+			// }
+			// add_action('wp_enqueue_scripts', 'add_owl_carousel');
+
+
+			function rudr_css_and_js_for_slider() {
+				wp_enqueue_style( 'owlslider', get_stylesheet_directory_uri() . '/js/owl.carousel.css', '', null );
+				wp_enqueue_script( 'jquery' );
+				wp_enqueue_script( 'owlsliderjs', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), null, true );
+				wp_enqueue_script('turkeysub', get_template_directory_uri().'/js/owl-slider.js', array('jquery'), null, true);
+			}
+
+			add_action( 'wp_enqueue_scripts', 'rudr_css_and_js_for_slider' );
