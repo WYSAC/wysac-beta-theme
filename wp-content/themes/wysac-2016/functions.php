@@ -232,3 +232,14 @@ function wysac_beta_widgets_init() {
 
 			// register bootstrap navigation walker
 			include 'bootstrap/wp_bootstrap_navwalker.php';
+
+			/* Change the name of "Subscriber" role to "WYSAC USER" */
+
+			function wps_change_role_name() {
+				global $wp_roles;
+				if (! isset($wp_roles) )
+				$wp_roles = new WP_Roles();
+				$wp_roles->roles['subscriber']['name'] = 'WYSAC Staff';
+				$wp_roles->role_names['subscriber'] = 'WYSAC Staff';
+			}
+			add_action('init', 'wps_change_role_name');

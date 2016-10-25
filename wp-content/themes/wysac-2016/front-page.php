@@ -44,15 +44,14 @@ get_header('home'); ?>
 	=================================== -->
 	<section class="full-width client-map-box">
 		<div class="container">
-			<div class="row" >
-				<div class="col-md-4">
-					<h3 class="text-white">Description of the Map</h3>
+				<div class="col-sm-4 col-md-offset-1">
+					<h5 class="text-white">Our Reach</h5>
+					<h2 class="text-white">WYSAC works with clients in Wyoming, the west, and beyond.  <br /><br />We work with non-profits, state and local agencies, and universities to generate research to improve lives.</h2>
 				</div>
-				<div class="col-md-8">
-					<img class="us-map" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Blank_US_map_borders_labels.svg" />
+				<div class="col-sm-7">
+					<img class="us-map img img-responsive" src="<?php site_url(); ?>/wp-content/uploads/2016/10/16.10.24_wysac-beta_client-map.png" />
 				</div>
 			</div>
-		</div>
 	</section><!--end Client Map-->
 	<section class="full-width call-to-action">
 		<!-- CALL TO ACTION
