@@ -514,7 +514,6 @@ p.entry-metadata {
 	box-shadow: 0px 0px 10px 2px rgba(220,220,220,1);
 }
 
-
 .home-section-title {
 	text-align: center;
 	padding: 2rem;
@@ -892,6 +891,9 @@ a.author.url.fn:focus{
 	max-height: 500px;
 }
 
+.carousel-control {
+	width:5%;
+}
 
 
 
