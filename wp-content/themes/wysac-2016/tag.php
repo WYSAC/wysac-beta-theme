@@ -36,8 +36,8 @@ get_header(); ?>
 						<?php endwhile;
 						the_posts_pagination( array(
 							'mid_size'		=> 2,
-							'prev_text'		=> __('Previous', 'textdomain'),
-							'next_text'		=> __('Next', 'textdomain'),
+							'prev_text'		=> __('&larr; Previous', 'textdomain'),
+							'next_text'		=> __('Next &rarr;', 'textdomain'),
 						)); else :
 						get_template_part( 'template-parts/content', 'none' );
 						endif; ?>

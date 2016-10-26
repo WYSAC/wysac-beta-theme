@@ -1,22 +1,26 @@
 <?php
 /**
- * Template part for displaying image format posts.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WYSAC_Beta
- */
+* Template part for displaying image format posts.
+*
+* @link https://codex.wordpress.org/Template_Hierarchy
+*
+* @package WYSAC_Beta
+*/
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 	<div class="row">
-		<div class="col-md-12 entry-thumbnail">
-			<?php
-			//check to see if the post has a featured image
-			if ( has_post_thumbnail() ) {
-				the_post_thumbnail('entry-thumbnail-post', array('class'=>'img-responsive') );
-			}?>
+		<?php
+		//check to see if the post has a featured image
+		if ( has_post_thumbnail() ) { ?>
+			<div class="col-md-12 entry-thumbnail hidden-xs">
+				<?php the_post_thumbnail('entry-thumbnail-post', array('class' => 'img-responsive')); ?>
+			</div>
+			<div class="col-md-12 entry-thumbnail hidden-sm hidden-md hidden-lg">
+				<?php the_post_thumbnail('recent-post-box', array('class' => 'img-responsive')); ?>
+			</div>
+			<?php } ?>
 		</div><!-- .col-md-12 .entry-thumbnail-->
 	</div><!---.row-->
 	<div class="col-md-8">

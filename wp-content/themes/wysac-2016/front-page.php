@@ -16,42 +16,47 @@ get_header('home'); ?>
 			<div class="container">
 				<!-- MOST RECENT POSTS
 				=================================== -->
-				<div class="col-md-12 home-section-title">
-					<h2>Projects and Publications</h2>
+				<div class="row">
+					<div class="col-md-12 home-section-title">
+						<h2>Projects and Publications</h2>
+					</div>
 				</div>
-				<?php
-				//get posts in Projects but only get the first 6
-				$args = array (
-				'posts_per_page'	=>		'6',
-				'category_name'		=>		'projects');
-				//Query using these arguments
-				$the_query = new WP_Query($args);
-				//The Loop
-				while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-				<div class="col-md-4 col-sm-6">
-					<div class="recent-post-box">
-						<p class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
-						<p><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></a></p>
-						<h2><a href="<?php the_permalink(); ?>" class="entry-title-link"><?php the_title(); ?></a></h2>
-						<p><a href="<?php the_permalink(); ?>" class="read-more-link">View Project &rarr;</a></p>
-					</div><!--.recent-post-box-->
-				</div><!--.col-md-4-->
-			<?php endwhile;
-			wp_reset_postdata();?>
+				<div class="row" id="ms-container">
+					<?php
+					//get posts in Projects but only get the first 6
+					$args = array (
+					'posts_per_page'	=>		'6',
+					'category_name'		=>		'projects');
+					//Query using these arguments
+					$the_query = new WP_Query($args);
+					//The Loop
+					while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+					<div class="ms-item col-md-4 col-sm-6">
+						<div class="recent-post-box">
+							<p class="entry-metadata"><?php the_time('m.d.Y')?><?php the_terms( $post->ID, 'project_type', ' |  ', '' ); ?></p>
+							<p><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('recent-post-box', array('class'=>'img-responsive')); ?></a></p>
+							<h2><a href="<?php the_permalink(); ?>" class="entry-title-link"><?php the_title(); ?></a></h2>
+							<p><a href="<?php the_permalink(); ?>" class="read-more-link">View Project &rarr;</a></p>
+						</div><!--.recent-post-box-->
+					</div><!--.col-md-4-->
+					<div class="clear-fix"></div>
+				<?php endwhile;
+				wp_reset_postdata();?>
+			</div>
 		</div><!--.container-->
 	</section><!--end Recent Posts-->
 	<!-- CLIENT MAP
 	=================================== -->
 	<section class="full-width client-map-box">
 		<div class="container">
-				<div class="col-sm-4 col-md-offset-1">
-					<h5 class="text-white">Our Reach</h5>
-					<h2 class="text-white">WYSAC works with clients in Wyoming, the west, and beyond.  <br /><br />We work with non-profits, state and local agencies, and universities to generate research to improve lives.</h2>
-				</div>
-				<div class="col-sm-7">
-					<img class="us-map img img-responsive" src="<?php site_url(); ?>/wp-content/uploads/2016/10/16.10.24_wysac-beta_client-map.png" />
-				</div>
+			<div class="col-sm-4 col-md-offset-1">
+				<h5 class="text-white">Our Reach</h5>
+				<h2 class="text-white">WYSAC works with clients in Wyoming, the west, and beyond.  <br /><br />We work with non-profits, state and local agencies, and universities to generate research to improve lives.</h2>
 			</div>
+			<div class="col-sm-7">
+				<img class="us-map img img-responsive" src="<?php site_url(); ?>/wp-content/uploads/2016/10/16.10.24_wysac-beta_client-map.png" />
+			</div>
+		</div>
 	</section><!--end Client Map-->
 	<section class="full-width call-to-action">
 		<!-- CALL TO ACTION
@@ -110,6 +115,8 @@ get_header('home'); ?>
 			$args = array (
 			'hide_empty'		=> false,
 			'get'						=> 'all',
+			'number'				=> 12,
+			'orderby'				=> 'count'
 		);
 		$tags = get_tags($args);
 		$html = '<div class="post_tags"><ul class="tag-boxes">';
@@ -162,7 +169,7 @@ get_header('home'); ?>
 			$meta_value_url = get_post_meta (get_the_ID(), 'source_information_source_url', 'true'); ?>
 
 			<h5 class="text-white">Research in the Media  |  <?php the_time('m.d.Y') ?></h5>
-			<a href="<?php echo $meta_value_url ?>"><h1 class="text-white"><?php the_title(); ?> &rarr;</h1></a>
+			<a href="<?php echo $meta_value_url ?>"><h1 class="text-white"><?php the_title(); ?> <span class="glyphicon glyphicon-new-window small"></span></h1></a>
 			<a href="<?php echo $meta_value_url ?>"><h4 class="text-white"><?php echo $meta_value_name ?></h4></a>
 			<?php
 		endwhile;
@@ -200,6 +207,20 @@ get_header('home'); ?>
 </section><!--.location-->
 </main><!-- #main -->
 </div><!-- #primary -->
+
+<script type="text/javascript">
+
+jQuery(window).load(function() {
+
+	//This is only used here, so the script will also live here
+
+	var container = document.querySelector('#ms-container');
+	var msnry = new Masonry( container, {
+		itemSelector: '.ms-item',
+		columnWidth: '.ms-item',
+	});
+});
+</script>
 
 <?php
 //there's no sidebar on the homepage

@@ -4,7 +4,7 @@
 *
 */
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function() { 
     jQuery('div.expert-topic-filters').readmore({
       speed: 500, //how fast it expands
       moreLink: '<a href="#" class="btn btn-default btn-sm center-block" title="View more expert areas" alt="View more expert areas"><span class="glyphicon glyphicon-chevron-down"></span></a>', //make the link a button
