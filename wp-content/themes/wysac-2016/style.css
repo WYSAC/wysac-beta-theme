@@ -264,13 +264,21 @@ h5 {
 
 .masthead-home-page {
 	width:100%;
-	background-image: url('http://localhost:8888/wp-content/uploads/2016/09/15.07.22_Rodney-Chelsea_1024.png');
+	background-image: url('http://localhost:8888/wp-content/uploads/2016/10/16.10.27_beta_banner-meeting.png');
 	background-size: cover;
 }
 
 /*site title on front page */
 .front-page-banner {
 	padding:14rem 0;
+}
+
+.front-page-banner h1.site-title {
+	text-shadow: 0px 0px 5px #616161;
+}
+
+.front-page-banner h2.site-description {
+	text-shadow: 0px 0px 5px #616161;
 }
 
 .full-width {
