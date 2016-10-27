@@ -115,28 +115,16 @@ get_header('home'); ?>
 			$args = array (
 			'hide_empty'		=> false,
 			'get'						=> 'all',
-			'number'				=> 12,
-			'orderby'				=> 'count'
+			'number'				=> 8,
+			'orderby'				=> 'count',
+			'order'					=> 'ASC'
 		);
 		$tags = get_tags($args);
 		$html = '<div class="post_tags"><ul class="tag-boxes">';
 		foreach ( $tags as $tag ) {
-			if ($tag->count < 1) {
 				$tag_link = get_tag_link( $tag->term_id );
-
 				$html .= "<li class='col-md-3 col-sm-6 col-xs-12'><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}  site-tag-box tag-small'>";
 				$html .= "{$tag->name}</a></li>";
-			} elseif ($tag->count >=1 && $tag->count <=3) {
-				$tag_link = get_tag_link( $tag->term_id );
-
-				$html .= "<li class='col-md-3 col-sm-6 col-xs-12'><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} site-tag-box tag-medium'>";
-				$html .= "{$tag->name}</a></li>";
-			} else {
-				$tag_link = get_tag_link( $tag->term_id );
-
-				$html .= "<li class='col-md-3 col-sm-6 col-xs-12'><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug} site-tag-box tag-large'>";
-				$html .= "{$tag->name}</a></li>";
-			}
 		}
 		$html .= '</ul><div class="clearfix"></div></div>';
 		echo $html;
@@ -169,8 +157,8 @@ get_header('home'); ?>
 			$meta_value_url = get_post_meta (get_the_ID(), 'source_information_source_url', 'true'); ?>
 
 			<h5 class="text-white">Research in the Media  |  <?php the_time('m.d.Y') ?></h5>
-			<a href="<?php echo $meta_value_url ?>"><h1 class="text-white"><?php the_title(); ?> <span class="glyphicon glyphicon-new-window small"></span></h1></a>
-			<a href="<?php echo $meta_value_url ?>"><h4 class="text-white"><?php echo $meta_value_name ?></h4></a>
+			<a href="<?php echo $meta_value_url ?>"  target="_blank"><h1 class="text-white"><?php the_title(); ?> <span class="glyphicon glyphicon-new-window small"></span></h1></a>
+			<a href="<?php echo $meta_value_url ?>"  target="_blank"><h4 class="text-white"><?php echo $meta_value_name ?></h4></a>
 			<?php
 		endwhile;
 		wp_reset_postdata();
