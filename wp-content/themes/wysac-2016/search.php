@@ -9,42 +9,35 @@
 
 get_header(); ?>
 
-<section id="primary" class="content-area turkey-leg">
+<section id="primary" class="content-area bobcat">
 	<main id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
-		<div class="row">
 			<header class="page-header col-md-12">
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'wysac-beta' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header><!-- .page-header -->
-			</div>
-			<div class="row">
 				<div class="col-md-8">
 					<?php
 					/* Start the Loop */
-					while ( have_posts() ) : the_post();
-
-					/**
-					* Run the loop for the search to output the results.
-					* If you want to overload this in a child theme then include a file
-					* called content-search.php and that will be used instead.
-					*/
+					while ( have_posts() ) : the_post(); ?>
+						<?php
 					get_template_part( 'template-parts/content', 'search' );
 
 				endwhile;
 				the_posts_pagination( array(
 					'mid_size'		=> 2,
-					'prev_text'		=> __('Previous', 'textdomain'),
-					'next_text'		=> __('Next', 'textdomain'),
-				)); ?> <?php else :
+					'prev_text'		=> __('&larr; Previous', 'textdomain'),
+					'next_text'		=> __('Next &rarr;', 'textdomain'),
+				)); ?>
+			</div><!--.col-md-8-->
+		<?php else :
 
 					get_template_part( 'template-parts/content', 'none' );
 
 				endif; ?>
-			</div><!--.col-md-8-->
-			<?php get_sidebar(); ?>
-		</div><!--.row-->
+				<?php get_sidebar(); ?>
+			</div>
 	</main><!-- #main -->
 </section><!-- #primary -->
 

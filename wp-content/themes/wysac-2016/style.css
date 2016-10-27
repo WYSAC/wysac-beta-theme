@@ -1076,6 +1076,10 @@ span.all-experts-title {
 		border-bottom: thin dotted rgb(255,255,255);
 	}
 
+	.secondary-footer-nav nav.footer-legal-nav li {
+		margin-bottom:1rem;
+	}
+
 	img.spyglass {
 		width:150px;
 	}
