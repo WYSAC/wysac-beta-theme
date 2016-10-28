@@ -15,7 +15,8 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 			<header class="page-header col-md-12">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'wysac-beta' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( esc_html__( '%s', 'wysac-beta' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h2 class="taxonomy-description">Search Results</h2> 
 				</header><!-- .page-header -->
 				<div class="col-md-8">
 					<?php
