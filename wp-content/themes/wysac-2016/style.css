@@ -213,6 +213,10 @@ h5 {
 .text-white {
 	color:rgb(255,255,255);
 }
+
+.montserrat {
+	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
 /*--------------------------------------------------------------
 ##  ENTRY CONTENT
 ----------------------------------------------------------------*/
@@ -544,7 +548,7 @@ p.entry-metadata {
 
 .home-section-title {
 	text-align: center;
-	padding: 2rem;
+	padding: 3.5rem;
 }
 /*--------------------------------------------------------------
 ## MAP DIV
@@ -620,14 +624,14 @@ ul.tag-boxes li {
 a.site-tag-box:link,
 a.site-tag-box:visited {
 	text-align: center;
-	color: rgb(74, 74, 74);
+	color: rgb(119,119,119);
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 2rem;
 	text-transform: capitalize;
 	display: block;
 	padding:4rem;
 	margin: 0 20px 40px 0;
-	font-weight: 300;
+	font-weight: 500;
 	letter-spacing: 1px;
 }
 

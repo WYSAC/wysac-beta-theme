@@ -62,12 +62,12 @@ get_header('home'); ?>
 		<!-- CALL TO ACTION
 		=================================== -->
 		<div class="container">
-			<div class="col-md-6">
-				<h1>We help people do awesome things</h1>
+			<div class="col-md-8">
+				<h1 class="montserrat">We help people do awesome things</h1>
 			</div>
 			<div class="col-md-4">
 				<form action="<?php echo get_site_url();?>/contact-wysac">
-					<button type="submit" class="btn btn-warning btn-lg center-block">Connect with Us</button>
+					<button type="submit" class="btn btn-primary btn-lg center-block">Connect with Us</button>
 				</form>
 			</div>
 		</div>
