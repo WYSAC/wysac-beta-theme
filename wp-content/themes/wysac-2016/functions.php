@@ -124,128 +124,147 @@ function wysac_beta_widgets_init() {
 			'before_title'  => '<h4 class="widget-title sidebar-section-title">',
 			'after_title'   => '</h4>',
 			) );
+			register_sidebar( array(
+				// sidebar to hold map description on front page
+				'name'          => esc_html__( 'Front Page - Map Description', 'wysac-beta' ),
+				'id'            => 'sidebar-front-map',
+				'description'   => esc_html__( 'Description of client map on the front page.  THIS SIDEBAR SHOULD ONLY CONTAIN A TEXT WIDGET with title!!', 'wysac-beta' ),
+				'before_widget' => '',
+				'after_widget'  => '',
+				'before_title'  => '<h5>',
+				'after_title'   => '</h5>',
+				) );
+				register_sidebar( array(
+					// sidebar to hold call to action language on front page
+					'name'          => esc_html__( 'Front Page - Call to Action', 'wysac-beta' ),
+					'id'            => 'sidebar-front-action',
+					'description'   => esc_html__( 'Call to action language on front page. THIS SIDEBAR SHOULD ONLY CONTAIN A TEXT WIDGET, NO TITLE!!!', 'wysac-beta' ),
+					'before_widget' => '',
+					'after_widget'  => '',
+					'before_title'  => '',
+					'after_title'   => '',
+					) );
+				}
+				add_action( 'widgets_init', 'wysac_beta_widgets_init' );
 
-		}
-		add_action( 'widgets_init', 'wysac_beta_widgets_init' );
+				/**
+				* Enqueue scripts and styles.
+				*/
+				function wysac_beta_scripts() {
+					wp_enqueue_style( 'wysac-beta-style', get_stylesheet_uri() );
 
-		/**
-		* Enqueue scripts and styles.
-		*/
-		function wysac_beta_scripts() {
-			wp_enqueue_style( 'wysac-beta-style', get_stylesheet_uri() );
+					wp_enqueue_script( 'wysac-beta-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-			wp_enqueue_script( 'wysac-beta-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+					wp_enqueue_script( 'wysac-beta-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-			wp_enqueue_script( 'wysac-beta-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+					if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+						wp_enqueue_script( 'comment-reply' );
+					}
+				}
+				add_action( 'wp_enqueue_scripts', 'wysac_beta_scripts' );
 
-			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-				wp_enqueue_script( 'comment-reply' );
-			}
-		}
-		add_action( 'wp_enqueue_scripts', 'wysac_beta_scripts' );
+				/**
+				* Implement the Custom Header feature.
+				*/
+				require get_template_directory() . '/inc/custom-header.php';
 
-		/**
-		* Implement the Custom Header feature.
-		*/
-		require get_template_directory() . '/inc/custom-header.php';
+				/**
+				* Custom template tags for this theme.
+				*/
+				require get_template_directory() . '/inc/template-tags.php';
 
-		/**
-		* Custom template tags for this theme.
-		*/
-		require get_template_directory() . '/inc/template-tags.php';
+				/**
+				* Custom functions that act independently of the theme templates.
+				*/
+				require get_template_directory() . '/inc/extras.php';
 
-		/**
-		* Custom functions that act independently of the theme templates.
-		*/
-		require get_template_directory() . '/inc/extras.php';
+				/**
+				* Customizer additions.
+				*/
+				require get_template_directory() . '/inc/customizer.php';
 
-		/**
-		* Customizer additions.
-		*/
-		require get_template_directory() . '/inc/customizer.php';
+				/**
+				* Load Jetpack compatibility file.
+				*/
+				require get_template_directory() . '/inc/jetpack.php';
 
-		/**
-		* Load Jetpack compatibility file.
-		*/
-		require get_template_directory() . '/inc/jetpack.php';
+				/* Add bootstrap support to the Wordpress theme*/
 
-		/* Add bootstrap support to the Wordpress theme*/
+				function theme_add_bootstrap() {
+					wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
+					wp_enqueue_style( 'style-css', get_template_directory_uri() . '/style.css' );
+					wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array(), '3.3.7', true );
+				}
 
-		function theme_add_bootstrap() {
-			wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
-			wp_enqueue_style( 'style-css', get_template_directory_uri() . '/style.css' );
-			wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array(), '3.3.7', true );
-		}
+				add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
 
-		add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
+				/* Add Reamore.js */
 
-		/* Add Reamore.js */
+				function theme_add_readmore() {
+					wp_enqueue_script('readmore-js', // name
+					get_template_directory_uri() . // location
+					'/js/readmore.min.js', array('jquery'), '1.0', true );
+					wp_enqueue_script('readmore-js');
+				}
+				add_action('wp_enqueue_scripts', 'theme_add_readmore'); // add the function
 
-		function theme_add_readmore() {
-			wp_enqueue_script('readmore-js', // name
-			get_template_directory_uri() . // location
-			'/js/readmore.min.js', array('jquery'), '1.0', true );
-			wp_enqueue_script('readmore-js');
-		}
-		add_action('wp_enqueue_scripts', 'theme_add_readmore'); // add the function
+				/* Add the readmore-function.js file, which applies the readmore.js to a specific div class (expert-topic-filters) in all-experts.php */
 
-		/* Add the readmore-function.js file, which applies the readmore.js to a specific div class (expert-topic-filters) in all-experts.php */
-
-		function theme_add_readmore_function() {
-			wp_enqueue_script('readmore-function-js',
-			get_template_directory_uri() .
-			'/js/readmore-function.js', array('jquery'), '1.0', true );
-			wp_enqueue_script('readmore-function-js');
-		}
-		add_action('wp_enqueue_scripts', 'theme_add_readmore_function');
+				function theme_add_readmore_function() {
+					wp_enqueue_script('readmore-function-js',
+					get_template_directory_uri() .
+					'/js/readmore-function.js', array('jquery'), '1.0', true );
+					wp_enqueue_script('readmore-function-js');
+				}
+				add_action('wp_enqueue_scripts', 'theme_add_readmore_function');
 
 
-		/** add a custom user field for the job title to try to call it elsewhere */
+				/** add a custom user field for the job title to try to call it elsewhere */
 
-		add_action( 'show_user_profile', 'extra_user_profile_fields' );
-		add_action( 'edit_user_profile', 'extra_user_profile_fields' );
+				add_action( 'show_user_profile', 'extra_user_profile_fields' );
+				add_action( 'edit_user_profile', 'extra_user_profile_fields' );
 
-		function extra_user_profile_fields( $user ) { ?>
+				function extra_user_profile_fields( $user ) { ?>
 
-			<table class="form-table">
-				<tr>
-					<th><label for="jobtitle"><?php _e("Job Title"); ?></label></th>
-					<td>
-						<input type="text" name="jobtitle" id="jobtitle" value="<?php echo esc_attr( get_the_author_meta( 'jobtitle', $user->ID ) ); ?>" class="regular-text" /><br />
-						<span class="description"><?php _e("If your current job title (Assistant Research Scientists, for example) is not indicative of your job duties, you can include a more descriptive job title."); ?></span>
-					</td>
-				</tr>
-			</table>
-			<?php }
+					<table class="form-table">
+						<tr>
+							<th><label for="jobtitle"><?php _e("Job Title"); ?></label></th>
+							<td>
+								<input type="text" name="jobtitle" id="jobtitle" value="<?php echo esc_attr( get_the_author_meta( 'jobtitle', $user->ID ) ); ?>" class="regular-text" /><br />
+								<span class="description"><?php _e("If your current job title (Assistant Research Scientists, for example) is not indicative of your job duties, you can include a more descriptive job title."); ?></span>
+							</td>
+						</tr>
+					</table>
+					<?php }
 
-			add_action( 'personal_options_update', 'save_extra_user_profile_fields' );
-			add_action( 'edit_user_profile_update', 'save_extra_user_profile_fields' );
+					add_action( 'personal_options_update', 'save_extra_user_profile_fields' );
+					add_action( 'edit_user_profile_update', 'save_extra_user_profile_fields' );
 
-			function save_extra_user_profile_fields( $user_id ) {
+					function save_extra_user_profile_fields( $user_id ) {
 
-				if ( !current_user_can( 'edit_user', $user_id ) ) { return false; }
+						if ( !current_user_can( 'edit_user', $user_id ) ) { return false; }
 
-				update_user_meta( $user_id, 'jobtitle', $_POST['jobtitle'] );
-			}
+						update_user_meta( $user_id, 'jobtitle', $_POST['jobtitle'] );
+					}
 
-			/* Add Navwalker support to make collapasble bootstrap navigation */
+					/* Add Navwalker support to make collapasble bootstrap navigation */
 
-			// register bootstrap navigation walker
-			include 'bootstrap/wp_bootstrap_navwalker.php';
+					// register bootstrap navigation walker
+					include 'bootstrap/wp_bootstrap_navwalker.php';
 
-			/* Change the name of "Subscriber" role to "WYSAC USER" */
+					/* Change the name of "Subscriber" role to "WYSAC USER" */
 
-			function wps_change_role_name() {
-				global $wp_roles;
-				if (! isset($wp_roles) )
-				$wp_roles = new WP_Roles();
-				$wp_roles->roles['subscriber']['name'] = 'WYSAC Staff';
-				$wp_roles->role_names['subscriber'] = 'WYSAC Staff';
-			}
-			add_action('init', 'wps_change_role_name');
+					function wps_change_role_name() {
+						global $wp_roles;
+						if (! isset($wp_roles) )
+						$wp_roles = new WP_Roles();
+						$wp_roles->roles['subscriber']['name'] = 'WYSAC Staff';
+						$wp_roles->role_names['subscriber'] = 'WYSAC Staff';
+					}
+					add_action('init', 'wps_change_role_name');
 
-			/* Add Masonry Support for Recent Posts on the Front Page */
-			function add_masonry() {
-				wp_enqueue_script( 'masonry', '//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.js' );
-			}
-			add_action('wp_enqueue_scripts', 'add_masonry');
+					/* Add Masonry Support for Recent Posts on the Front Page */
+					function add_masonry() {
+						wp_enqueue_script( 'masonry', '//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.js' );
+					}
+					add_action('wp_enqueue_scripts', 'add_masonry');

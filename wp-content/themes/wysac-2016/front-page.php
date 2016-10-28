@@ -50,8 +50,7 @@ get_header('home'); ?>
 	<section class="full-width client-map-box">
 		<div class="container">
 			<div class="col-sm-4 col-md-offset-1">
-				<h5 class="text-white">Our Reach</h5>
-				<h2 class="text-white">WYSAC works with clients in Wyoming, the west, and beyond.  <br /><br />We work with non-profits, state and local agencies, and universities to generate research to improve lives.</h2>
+				<?php dynamic_sidebar('sidebar-front-map'); ?>
 			</div>
 			<div class="col-sm-7">
 				<img class="us-map img img-responsive" src="<?php site_url(); ?>/wp-content/uploads/2016/10/16.10.24_wysac-beta_client-map.png" />
@@ -62,8 +61,8 @@ get_header('home'); ?>
 		<!-- CALL TO ACTION
 		=================================== -->
 		<div class="container">
-			<div class="col-md-8">
-				<h1 class="montserrat">We help people do awesome things</h1>
+			<div class="col-md-7 col-md-offset-1">
+				<?php dynamic_sidebar('sidebar-front-action'); ?>
 			</div>
 			<div class="col-md-4">
 				<form action="<?php echo get_site_url();?>/contact-wysac">
@@ -122,9 +121,9 @@ get_header('home'); ?>
 		$tags = get_tags($args);
 		$html = '<div class="post_tags"><ul class="tag-boxes">';
 		foreach ( $tags as $tag ) {
-				$tag_link = get_tag_link( $tag->term_id );
-				$html .= "<li class='col-md-3 col-sm-6 col-xs-12'><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}  site-tag-box tag-small'>";
-				$html .= "{$tag->name}</a></li>";
+			$tag_link = get_tag_link( $tag->term_id );
+			$html .= "<li class='col-md-3 col-sm-6 col-xs-12'><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}  site-tag-box tag-small'>";
+			$html .= "{$tag->name}</a></li>";
 		}
 		$html .= '</ul><div class="clearfix"></div></div>';
 		echo $html;

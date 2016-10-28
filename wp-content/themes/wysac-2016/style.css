@@ -390,6 +390,8 @@ nav.main-navigation button.navbar-toggle {
 ----------------------------------------------------------------*/
 
 
+
+
 /*--------------------------------------------------------------
 ## FOOTER MENUS
 ----------------------------------------------------------------*/
@@ -555,7 +557,7 @@ p.entry-metadata {
 ----------------------------------------------------------------*/
 
 .client-map-box {
-	background-color: #1D5A7B;
+	background-color: rgb(228,228,228);
 	min-height: 400px;
 }
 
@@ -603,9 +605,8 @@ img.us-map {
 }
 
 .quote-box h2.text-white p,
-.client-map-box h2.text-white {
+.client-map-box h2 {
 	line-height: 1.5;
-	font-weight: lighter;
 	letter-spacing: 1px;
 }
 /*--------------------------------------------------------------
@@ -673,7 +674,6 @@ a.site-tag-box:active {
 
 img.media-mention-icon {
 	width:130px;
-	margin-right: 5rem;
 }
 
 .media-mention-box a:link,
